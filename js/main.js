@@ -58,7 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-framer-name="Closed"], [data-framer-name="Open"]').forEach(item => {
     item.style.cursor = 'pointer';
     const answer = item.querySelector('[data-framer-name="Answer"]');
-    const icon = item.querySelector('svg, [data-framer-name*="Icon"], [data-framer-name*="Arrow"]');
+    // Target the toggle button container explicitly (NEVER select [data-framer-name*="Icon"] because "Icon & Text" contains the question text!)
+    const toggleBtn = item.querySelector('.framer-181xy7y-container, [data-framer-name="S / Icon Only"]');
 
     item.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
@@ -72,9 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
           answer.style.opacity = '1';
           answer.style.height = 'auto';
         }
-        if (icon) {
-          icon.style.transition = 'transform 0.25s ease';
-          icon.style.transform = 'rotate(180deg)';
+        if (toggleBtn) {
+          toggleBtn.style.transition = 'transform 0.25s ease';
+          toggleBtn.style.transform = 'rotate(45deg)';
         }
       } else {
         item.classList.add('framer-v-czg96');
@@ -83,9 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
           answer.style.opacity = '0';
           answer.style.height = '1px';
         }
-        if (icon) {
-          icon.style.transition = 'transform 0.25s ease';
-          icon.style.transform = 'rotate(0deg)';
+        if (toggleBtn) {
+          toggleBtn.style.transition = 'transform 0.25s ease';
+          toggleBtn.style.transform = 'rotate(0deg)';
         }
       }
     });
