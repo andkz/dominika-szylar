@@ -296,35 +296,24 @@ async function build() {
     html = html.replace(imgRegex, '$1');
     html = html.replace(/(\/images\/[a-zA-Z0-9_\-\.]+)\?[^"\s>,]+/g, '$1');
 
-    // 7. Universal Internal Links (Works 100% on file://, localhost, and production)
-    // Replace remote domain first
+    // 7. Universal Relative Link Normalization
     html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media\/([^\"]*)"/g, 'href="/$1"');
     html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media"/g, 'href="/"');
 
-    // Replace internal paths with relative html files
-    html = html.replace(/href="\.\/o-mnie"/g, `href="${prefix}o-mnie/index.html"`);
-    html = html.replace(/href="\/o-mnie"/g, `href="${prefix}o-mnie/index.html"`);
-
-    html = html.replace(/href="\.\/kontakt"/g, `href="${prefix}kontakt/index.html"`);
-    html = html.replace(/href="\/kontakt"/g, `href="${prefix}kontakt/index.html"`);
-
-    html = html.replace(/href="\.\/efekty"/g, `href="${prefix}efekty/index.html"`);
-    html = html.replace(/href="\/efekty"/g, `href="${prefix}efekty/index.html"`);
-
-    html = html.replace(/href="\.\/blog"/g, `href="${prefix}blog/index.html"`);
-    html = html.replace(/href="\/blog"/g, `href="${prefix}blog/index.html"`);
-
-    html = html.replace(/href="\.\/blog\//g, `href="${prefix}blog/`);
-    html = html.replace(/href="\/blog\//g, `href="${prefix}blog/`);
-
-    // Articles links
-    html = html.replace(/href="([^"]*)\/blog\/jak-zaczac-cwiczac-silowo"/g, `href="${prefix}blog/jak-zaczac-cwiczac-silowo/index.html"`);
-    html = html.replace(/href="([^"]*)\/blog\/trening-poporodowy-kiedy-zaczac"/g, `href="${prefix}blog/trening-poporodowy-kiedy-zaczac/index.html"`);
-    html = html.replace(/href="([^"]*)\/blog\/twoje-nogi-tez-zasluguja-na-chwile-ulgi"/g, `href="${prefix}blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi/index.html"`);
-
-    // Home links
-    html = html.replace(/href="\.\/"/g, `href="${prefix}index.html"`);
-    html = html.replace(/href="\/"/g, `href="${prefix}index.html"`);
+    // Main section targets
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?kontakt(?:\/)?(?:index\.html)?"/g, `href="${prefix}kontakt/index.html"`);
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?o-mnie(?:\/)?(?:index\.html)?"/g, `href="${prefix}o-mnie/index.html"`);
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?efekty(?:\/)?(?:index\.html)?"/g, `href="${prefix}efekty/index.html"`);
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?blog(?:\/)?(?:index\.html)?"/g, `href="${prefix}blog/index.html"`);
+    
+    // Blog articles
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?blog\/jak-zaczac-cwiczac-silowo(?:\/)?(?:index\.html)?"/g, `href="${prefix}blog/jak-zaczac-cwiczac-silowo/index.html"`);
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?blog\/trening-poporodowy-kiedy-zaczac(?:\/)?(?:index\.html)?"/g, `href="${prefix}blog/trening-poporodowy-kiedy-zaczac/index.html"`);
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?blog\/twoje-nogi-tez-zasluguja-na-chwile-ulgi(?:\/)?(?:index\.html)?"/g, `href="${prefix}blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi/index.html"`);
+    
+    // 404 & Home
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)?404(?:\/)?(?:index\.html)?"/g, `href="${prefix}404.html"`);
+    html = html.replace(/href="(?:\.\.\/|\.\/|\/)"/g, `href="${prefix}index.html"`);
 
     // 8. Ensure Hero photo retains eager loading and high priority
     html = html.replace(
