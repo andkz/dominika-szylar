@@ -54,63 +54,25 @@ collections:
 `;
 fs.writeFileSync(path.join(adminDir, 'config.yml'), decapConfig, 'utf8');
 
-// Blog Markdown files
-fs.writeFileSync(path.join(contentBlogDir, 'jak-zaczac-cwiczac-silowo.md'), `---
-title: "Jak zacząć ćwiczyć siłowo, jeśli nigdy nie byłaś na siłowni"
-author: "Oliwia Andreasik"
-date: 2026-03-05
-category: "Trening"
-image: "/images/s1CLvCv4IwolBpAPN6ZpbEeZ7Uo.jpg"
----
-
-Wiele kobiet omija siłownię z jednego powodu: boją się, że zrobią coś nie tak. Że wszyscy będą patrzeć. Że nie wiedzą, jak używać sprzętu. Że to nie dla nich.
-
-To rozumiem. Sama przez to przechodziłam. Ale chcę Ci powiedzieć jedną rzecz: trening siłowy to jedno z najlepszych narzędzi, jakie możesz dać swojemu ciału. Niezależnie od wieku, wagi i punktu startowego.
-
-### Od czego zacząć
-Zacznij od podstawowych wzorców ruchowych, nie od maszyn. Przysiady, martwy ciąg, wyciskanie, wiosłowanie. Każde z tych ćwiczeń możesz wykonywać z minimalnym obciążeniem albo z samym ciałem na początku.
-Nie musisz od razu ćwiczyć 5 razy w tygodniu. Trzy razy to więcej niż wystarczy na start. Regularność jest ważniejsza niż częstotliwość.
-
-### Czego nie robić
-Nie zaczynaj od filmiku z YouTube i masy różnych ćwiczeń naraz. To prosta droga do kontuzji i zniechęcenia.
-`, 'utf8');
-
-fs.writeFileSync(path.join(contentBlogDir, 'trening-poporodowy-kiedy-zaczac.md'), `---
-title: "Trening poporodowy: kiedy zacząć i jak to zrobić bezpiecznie"
-author: "Oliwia Andreasik"
-date: 2026-02-20
-category: "Połóg i powrót do formy"
-image: "/images/EcbN5IpvAwAgLgouDrCsqn1i5E8.jpg"
----
-
-Ciało po porodzie potrzebuje czasu, szacunku i mądrego podejścia. Kiedy jest właściwy moment na powrót do aktywności fizycznej i jak zrobić to bezpiecznie?
-
-### Pierwsze tygodnie połogu
-W pierwszych 6 tygodniach skup się na regeneracji, odpoczynku, nawykach toaletowych oraz łagodnej pracy oddechowej. Twoje mięśnie dna miednicy i kresa biała potrzebują czasu na zagojenie.
-
-### Konsultacja uroginekologiczna
-Zanim wrócisz do klasycznych treningów fitness czy biegania, umów się na wizytę u fizjoterapeutki uroginekologicznej po zakończeniu połogu (około 6-8 tygodnia). Specjalistka oceni stan mięśni dna miednicy, ewentualne rozejście mięśni prostych brzucha (DRA) oraz bliznę po cesarskim cięciu lub nacięciu krocza.
-`, 'utf8');
-
-fs.writeFileSync(path.join(contentBlogDir, 'twoje-nogi-tez-zasluguja-na-chwile-ulgi.md'), `---
-title: "Twoje nogi też zasługują na chwilę ulgi"
-author: "Oliwia Andreasik"
-date: 2026-01-15
-category: "Zdrowie i regeneracja"
-image: "/images/HrYryckxFSwJUlUuLYPM6dhQJFE.jpg"
----
-
-Uczucie ciężkich nóg, obrzęki pod koniec dnia i bolesność to częste objawy zaburzeń krążenia żylno-limfatycznego, szczególnie w ciąży i po całym dniu pracy stojącej lub siedzącej.
-
-### Proste sposoby na ulgę
-1. **Unoszenie nóg**: odpoczynek z nogami uniesionymi powyżej poziomu bioder przez 15 minut dziennie.
-2. **Ćwiczenia pompy mięśniowej**: krążenia stóp, zginanie i prostowanie palców, naprzemienne stawanie na palcach i piętach.
-3. **Masaż i drenaż limfatyczny**: profesjonalna fizjoterapia wspierająca odpływ chłonki.
-`, 'utf8');
-
-// Updated Main Client JS with exact skill patterns
+// Main client JS
 const mainJsContent = `
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. File Protocol Compatibility (fixes local file:/// double-clicking)
+  if (location.protocol === 'file:') {
+    document.querySelectorAll('a[href^="/"]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href === '/') {
+        a.setAttribute('href', location.pathname.includes('/blog/') ? '../../index.html' : (location.pathname.includes('/') && !location.pathname.endsWith('index.html') ? '../index.html' : './index.html'));
+      } else {
+        const clean = href.replace(/^\\//, '');
+        const depth = (location.pathname.match(/\\//g) || []).length;
+        const target = clean.includes('.') ? clean : clean + '/index.html';
+        const prefix = location.pathname.includes('/blog/') ? '../../' : (location.pathname.split('/').slice(-2, -1)[0] === 'scratch' ? './' : '../');
+        a.setAttribute('href', prefix + target);
+      }
+    });
+  }
+
   // 1. Mobile Menu Link Cloning (Ensures 100% valid DOM and identical links)
   const desktopNav = document.querySelector('nav[data-framer-name="Desktop"]');
   const phoneNav = document.querySelector('nav[data-framer-name="Phone"]');
@@ -170,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
     item.style.cursor = 'pointer';
     const answer = item.querySelector('[data-framer-name="Answer"]');
     const icon = item.querySelector('svg, [data-framer-name*="Icon"], [data-framer-name*="Arrow"]');
-    const variantClass = Array.from(item.classList).find(cls => cls.startsWith('framer-v-'));
 
     item.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
@@ -283,24 +244,26 @@ document.addEventListener('DOMContentLoaded', () => {
 fs.writeFileSync(path.join(jsDir, 'main.js'), mainJsContent, 'utf8');
 
 const pages = [
-  { path: '/', file: 'index.html' },
-  { path: '/o-mnie', file: 'o-mnie/index.html' },
-  { path: '/kontakt', file: 'kontakt/index.html' },
-  { path: '/efekty', file: 'efekty/index.html' },
-  { path: '/blog', file: 'blog/index.html' },
-  { path: '/blog/jak-zaczac-cwiczac-silowo', file: 'blog/jak-zaczac-cwiczac-silowo/index.html' },
-  { path: '/blog/trening-poporodowy-kiedy-zaczac', file: 'blog/trening-poporodowy-kiedy-zaczac/index.html' },
-  { path: '/blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi', file: 'blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi/index.html' },
-  { path: '/404', file: '404.html' },
-  { path: '/testing-sht', file: 'testing-sht/index.html' }
+  { path: '/', file: 'index.html', depth: 0 },
+  { path: '/o-mnie', file: 'o-mnie/index.html', depth: 1 },
+  { path: '/kontakt', file: 'kontakt/index.html', depth: 1 },
+  { path: '/efekty', file: 'efekty/index.html', depth: 1 },
+  { path: '/blog', file: 'blog/index.html', depth: 1 },
+  { path: '/blog/jak-zaczac-cwiczac-silowo', file: 'blog/jak-zaczac-cwiczac-silowo/index.html', depth: 2 },
+  { path: '/blog/trening-poporodowy-kiedy-zaczac', file: 'blog/trening-poporodowy-kiedy-zaczac/index.html', depth: 2 },
+  { path: '/blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi', file: 'blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi/index.html', depth: 2 },
+  { path: '/404', file: '404.html', depth: 0 },
+  { path: '/testing-sht', file: 'testing-sht/index.html', depth: 1 }
 ];
 
 async function build() {
   for (const page of pages) {
     const url = `https://dominikaszylar.framer.media${page.path}`;
-    console.log(`Processing ${page.path} -> ${page.file}...`);
+    console.log(`Processing ${page.path} -> ${page.file} (depth: ${page.depth})...`);
     const res = await fetch(url);
     let html = await res.text();
+
+    const prefix = page.depth === 0 ? './' : (page.depth === 1 ? '../' : '../../');
 
     // 1. Strip Framer telemetry & editorbar scripts
     html = html.replace(/<script[^>]*events\.framer\.com[\s\S]*?<\/script>/gi, '');
@@ -325,36 +288,46 @@ async function build() {
       .framer-e91Ap.framer-v-1clfgnr .framer-28cdx0 { display: flex !important; }
       .hidden { display: none !important; }
     </style>
-    <script src="/js/main.js" defer></script>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="${prefix}js/main.js" defer></script>
     `;
     html = html.replace('</head>', `${injectedHeadStyles}\n</head>`);
 
-    // 4. Replace font URLs
+    // 4. Replace font URLs with relative path
     for (const [remoteFont, localFont] of Object.entries(fontMap)) {
-      html = html.split(remoteFont).join(localFont);
+      const relFont = localFont.replace(/^\//, prefix);
+      html = html.split(remoteFont).join(relFont);
     }
 
-    // 5. Replace image URLs
+    // 5. Replace image URLs with relative path
     for (const [remoteImg, localImg] of Object.entries(imageMap)) {
-      html = html.split(remoteImg).join(localImg);
+      const relImg = localImg.replace(/^\//, prefix);
+      html = html.split(remoteImg).join(relImg);
     }
 
     // 6. Clean query strings from local image URLs in src and srcset
-    // e.g. /images/foo.png?scale-down-to=512&amp;width=1018 -> /images/foo.png
+    // e.g. ./images/foo.png?scale-down-to=512 -> ./images/foo.png
+    const imgRegex = new RegExp(`(${prefix.replace(/\\./g, '\\.')}images\\/[a-zA-Z0-9_\\-\\.]+)\\?[^"\\s>,]+`, 'g');
+    html = html.replace(imgRegex, '$1');
+    // Also clean any leftover /images/... queries
     html = html.replace(/(\/images\/[a-zA-Z0-9_\-\.]+)\?[^"\s>,]+/g, '$1');
 
     // 7. Normalize internal links
-    html = html.replace(/href="\.\/o-mnie"/g, 'href="/o-mnie"');
-    html = html.replace(/href="\.\/kontakt"/g, 'href="/kontakt"');
-    html = html.replace(/href="\.\/efekty"/g, 'href="/efekty"');
-    html = html.replace(/href="\.\/blog"/g, 'href="/blog"');
-    html = html.replace(/href="\.\/blog\//g, 'href="/blog/');
-    html = html.replace(/href="\.\/"/g, 'href="/"');
-    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media\/([^\"]*)"/g, 'href="/$1"');
-    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media"/g, 'href="/"');
+    html = html.replace(/href="\.\/o-mnie"/g, `href="/o-mnie"`);
+    html = html.replace(/href="\.\/kontakt"/g, `href="/kontakt"`);
+    html = html.replace(/href="\.\/efekty"/g, `href="/efekty"`);
+    html = html.replace(/href="\.\/blog"/g, `href="/blog"`);
+    html = html.replace(/href="\.\/blog\//g, `href="/blog/`);
+    html = html.replace(/href="\.\/"/g, `href="/"`);
+    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media\/([^\"]*)"/g, `href="/$1"`);
+    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media"/g, `href="/"`);
 
-    // 8. Netlify forms hookup on form if present
+    // 8. Ensure Hero photo retains eager loading and high priority
+    html = html.replace(
+      /(<div class="framer-1is1jg5" data-framer-name="Dominika-original-1x1">[\s\S]*?<img )/i,
+      `$1loading="eager" fetchpriority="high" `
+    );
+
+    // 9. Netlify forms hookup on form if present
     if (html.includes('<form')) {
       html = html.replace(/<form\s+class="([^"]+)">/i, (match, cls) => {
         return `<form name="contact" method="POST" action="/kontakt?success=true" data-netlify="true" data-netlify-honeypot="bot-field" class="${cls}">\n` +
