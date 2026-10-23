@@ -1,21 +1,5 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 0. File Protocol Compatibility (fixes local file:/// double-clicking)
-  if (location.protocol === 'file:') {
-    document.querySelectorAll('a[href^="/"]').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href === '/') {
-        a.setAttribute('href', location.pathname.includes('/blog/') ? '../../index.html' : (location.pathname.includes('/') && !location.pathname.endsWith('index.html') ? '../index.html' : './index.html'));
-      } else {
-        const clean = href.replace(/^\//, '');
-        const depth = (location.pathname.match(/\//g) || []).length;
-        const target = clean.includes('.') ? clean : clean + '/index.html';
-        const prefix = location.pathname.includes('/blog/') ? '../../' : (location.pathname.split('/').slice(-2, -1)[0] === 'scratch' ? './' : '../');
-        a.setAttribute('href', prefix + target);
-      }
-    });
-  }
-
   // 1. Mobile Menu Link Cloning (Ensures 100% valid DOM and identical links)
   const desktopNav = document.querySelector('nav[data-framer-name="Desktop"]');
   const phoneNav = document.querySelector('nav[data-framer-name="Phone"]');

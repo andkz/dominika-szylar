@@ -57,22 +57,6 @@ fs.writeFileSync(path.join(adminDir, 'config.yml'), decapConfig, 'utf8');
 // Main client JS
 const mainJsContent = `
 document.addEventListener('DOMContentLoaded', () => {
-  // 0. File Protocol Compatibility (fixes local file:/// double-clicking)
-  if (location.protocol === 'file:') {
-    document.querySelectorAll('a[href^="/"]').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href === '/') {
-        a.setAttribute('href', location.pathname.includes('/blog/') ? '../../index.html' : (location.pathname.includes('/') && !location.pathname.endsWith('index.html') ? '../index.html' : './index.html'));
-      } else {
-        const clean = href.replace(/^\\//, '');
-        const depth = (location.pathname.match(/\\//g) || []).length;
-        const target = clean.includes('.') ? clean : clean + '/index.html';
-        const prefix = location.pathname.includes('/blog/') ? '../../' : (location.pathname.split('/').slice(-2, -1)[0] === 'scratch' ? './' : '../');
-        a.setAttribute('href', prefix + target);
-      }
-    });
-  }
-
   // 1. Mobile Menu Link Cloning (Ensures 100% valid DOM and identical links)
   const desktopNav = document.querySelector('nav[data-framer-name="Desktop"]');
   const phoneNav = document.querySelector('nav[data-framer-name="Phone"]');
@@ -265,9 +249,12 @@ async function build() {
 
     const prefix = page.depth === 0 ? './' : (page.depth === 1 ? '../' : '../../');
 
-    // 1. Strip Framer telemetry & editorbar scripts
+    // 1. Strip ALL obsolete Framer inline and remote scripts
     html = html.replace(/<script[^>]*events\.framer\.com[\s\S]*?<\/script>/gi, '');
-    html = html.replace(/<script[^>]*__framer_force_showing_editorbar_since[\s\S]*?<\/script>/gi, '');
+    html = html.replace(/<script[\s\S]*?__framer_force_showing_editorbar_since[\s\S]*?<\/script>/gi, '');
+    html = html.replace(/<script[\s\S]*?data-nested-link[\s\S]*?<\/script>/gi, '');
+    html = html.replace(/<script[\s\S]*?framer_variant[\s\S]*?<\/script>/gi, '');
+    html = html.replace(/<script[\s\S]*?NODE_ENV[\s\S]*?<\/script>/gi, '');
     html = html.replace(/<script[^>]*data-framer-appear-animation[\s\S]*?<\/script>/gi, '');
     html = html.replace(/<script[^>]*script_main[\s\S]*?<\/script>/gi, '');
     html = html.replace(/<link\s+rel="modulepreload"[^>]*>/gi, '');
@@ -305,21 +292,39 @@ async function build() {
     }
 
     // 6. Clean query strings from local image URLs in src and srcset
-    // e.g. ./images/foo.png?scale-down-to=512 -> ./images/foo.png
     const imgRegex = new RegExp(`(${prefix.replace(/\\./g, '\\.')}images\\/[a-zA-Z0-9_\\-\\.]+)\\?[^"\\s>,]+`, 'g');
     html = html.replace(imgRegex, '$1');
-    // Also clean any leftover /images/... queries
     html = html.replace(/(\/images\/[a-zA-Z0-9_\-\.]+)\?[^"\s>,]+/g, '$1');
 
-    // 7. Normalize internal links
-    html = html.replace(/href="\.\/o-mnie"/g, `href="/o-mnie"`);
-    html = html.replace(/href="\.\/kontakt"/g, `href="/kontakt"`);
-    html = html.replace(/href="\.\/efekty"/g, `href="/efekty"`);
-    html = html.replace(/href="\.\/blog"/g, `href="/blog"`);
-    html = html.replace(/href="\.\/blog\//g, `href="/blog/`);
-    html = html.replace(/href="\.\/"/g, `href="/"`);
-    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media\/([^\"]*)"/g, `href="/$1"`);
-    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media"/g, `href="/"`);
+    // 7. Universal Internal Links (Works 100% on file://, localhost, and production)
+    // Replace remote domain first
+    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media\/([^\"]*)"/g, 'href="/$1"');
+    html = html.replace(/href="https:\/\/dominikaszylar\.framer\.media"/g, 'href="/"');
+
+    // Replace internal paths with relative html files
+    html = html.replace(/href="\.\/o-mnie"/g, `href="${prefix}o-mnie/index.html"`);
+    html = html.replace(/href="\/o-mnie"/g, `href="${prefix}o-mnie/index.html"`);
+
+    html = html.replace(/href="\.\/kontakt"/g, `href="${prefix}kontakt/index.html"`);
+    html = html.replace(/href="\/kontakt"/g, `href="${prefix}kontakt/index.html"`);
+
+    html = html.replace(/href="\.\/efekty"/g, `href="${prefix}efekty/index.html"`);
+    html = html.replace(/href="\/efekty"/g, `href="${prefix}efekty/index.html"`);
+
+    html = html.replace(/href="\.\/blog"/g, `href="${prefix}blog/index.html"`);
+    html = html.replace(/href="\/blog"/g, `href="${prefix}blog/index.html"`);
+
+    html = html.replace(/href="\.\/blog\//g, `href="${prefix}blog/`);
+    html = html.replace(/href="\/blog\//g, `href="${prefix}blog/`);
+
+    // Articles links
+    html = html.replace(/href="([^"]*)\/blog\/jak-zaczac-cwiczac-silowo"/g, `href="${prefix}blog/jak-zaczac-cwiczac-silowo/index.html"`);
+    html = html.replace(/href="([^"]*)\/blog\/trening-poporodowy-kiedy-zaczac"/g, `href="${prefix}blog/trening-poporodowy-kiedy-zaczac/index.html"`);
+    html = html.replace(/href="([^"]*)\/blog\/twoje-nogi-tez-zasluguja-na-chwile-ulgi"/g, `href="${prefix}blog/twoje-nogi-tez-zasluguja-na-chwile-ulgi/index.html"`);
+
+    // Home links
+    html = html.replace(/href="\.\/"/g, `href="${prefix}index.html"`);
+    html = html.replace(/href="\/"/g, `href="${prefix}index.html"`);
 
     // 8. Ensure Hero photo retains eager loading and high priority
     html = html.replace(
@@ -330,7 +335,7 @@ async function build() {
     // 9. Netlify forms hookup on form if present
     if (html.includes('<form')) {
       html = html.replace(/<form\s+class="([^"]+)">/i, (match, cls) => {
-        return `<form name="contact" method="POST" action="/kontakt?success=true" data-netlify="true" data-netlify-honeypot="bot-field" class="${cls}">\n` +
+        return `<form name="contact" method="POST" action="${prefix}kontakt/index.html?success=true" data-netlify="true" data-netlify-honeypot="bot-field" class="${cls}">\n` +
           `  <input type="hidden" name="form-name" value="contact" />\n` +
           `  <p class="hidden"><label>Don't fill: <input name="bot-field" /></label></p>`;
       });
