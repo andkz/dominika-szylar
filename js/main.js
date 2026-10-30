@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (toggleBtn) {
           toggleBtn.style.transition = 'transform 0.25s ease';
-          toggleBtn.style.transform = 'rotate(45deg)';
+          toggleBtn.style.transform = 'rotate(180deg)';
         }
       } else {
         item.classList.add('framer-v-czg96');
