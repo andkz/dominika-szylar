@@ -527,9 +527,16 @@
 
     <style>
       #__framer-badge-container, .__framer-badge { display: none !important; }
+      html { scroll-behavior: smooth; }
+      .framer-e91Ap.framer-v-1clfgnr { z-index: 9999 !important; background-color: #ffffff !important; }
+      .framer-e91Ap.framer-v-1clfgnr .framer-1b6shkl { display: flex !important; }
+      .framer-e91Ap.framer-v-1clfgnr .framer-28cdx0 { display: flex !important; }
+      .hidden { display: none !important; }
 
-      /* === 1. Jeden font: Inter bez wariantów wszędzie === */
-      html, body, *, *::before, *::after,
+      /* === 1. Jeden font: Inter wszędzie bez wyjątków === */
+      html, body, *, *::before, *::after {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+      }
       input, textarea, select, button {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
       }
@@ -543,10 +550,9 @@
         --framer-font-family-bold-italic: 'Inter', sans-serif !important;
       }
 
-      /* === 2. Zebra: naprzemienne sekcje jasna / ciemniejsza === */
+      /* === 2. Zebra: sekcje na zmianę jasna / ciemniejsza na stronie głównej === */
       .framer-olpvqv { background-color: #ffffff !important; }
       .framer-8tekcf { background-color: #f7f8fa !important; border-top: 1px solid #ededf0 !important; border-bottom: 1px solid #ededf0 !important; }
-      .framer-8tekcf [data-framer-name="Container"] { background-color: #ffffff !important; border: 1px solid #e5e7eb !important; border-radius: 16px !important; }
       .framer-dU8K6 { background-color: #ffffff !important; }
       .framer-cov1xy { background-color: #f7f8fa !important; border-top: 1px solid #ededf0 !important; border-bottom: 1px solid #ededf0 !important; }
       .framer-cov1xy [data-framer-name="Feature Card"],
@@ -558,17 +564,67 @@
       .framer-cov1xy .framer-1qm3gp0 { background-color: #ffffff !important; border: 1px solid #e5e7eb !important; border-radius: 16px !important; }
       .framer-w3d9lw { background-color: #ffffff !important; }
       .framer-1ix845k { background-color: #f7f8fa !important; border-top: 1px solid #ededf0 !important; border-bottom: 1px solid #ededf0 !important; }
-      .framer-1ix845k [data-framer-name="Closed"],
-      .framer-1ix845k [data-framer-name="Open"] { background-color: #ffffff !important; border: 1px solid #e5e7eb !important; border-radius: 12px !important; margin-bottom: 12px !important; }
       .framer-lhTDQ { background-color: #ffffff !important; }
       .framer-MW4wf { background-color: #f7f8fa !important; border-top: 1px solid #ededf0 !important; border-bottom: 1px solid #ededf0 !important; }
       .framer-iiv745 { display: none !important; }
 
-      html { scroll-behavior: smooth; }
-      .framer-e91Ap.framer-v-1clfgnr { z-index: 9999 !important; background-color: #ffffff !important; }
-      .framer-e91Ap.framer-v-1clfgnr .framer-1b6shkl { display: flex !important; }
-      .framer-e91Ap.framer-v-1clfgnr .framer-28cdx0 { display: flex !important; }
-      .hidden { display: none !important; }
+      /* === 3. Badge w sekcji Indiba (spójny styl z pozostałymi sekcjami) === */
+      [data-framer-name="Sec Btn"],
+      .framer-l6r7d3 {
+        background: linear-gradient(180deg, rgb(250, 250, 250) 0%, rgb(250, 250, 250) 100%) !important;
+        background-color: rgb(250, 250, 250) !important;
+        border: 1px solid rgb(229, 229, 229) !important;
+        border-radius: 8px !important;
+        padding: 5px 12px !important;
+        width: fit-content !important;
+        height: auto !important;
+        display: inline-flex !important;
+        align-items: center !important;
+      }
+      [data-framer-name="Sec Btn"] p,
+      .framer-l6r7d3 p {
+        font-size: 12px !important;
+        line-height: 1.5em !important;
+        color: rgb(64, 64, 64) !important;
+        font-weight: 500 !important;
+      }
+
+      /* === 4. Poprawka FAQ (komfortowy padding + dropdown) === */
+      .framer-1ix845k [data-framer-name="Closed"],
+      .framer-1ix845k [data-framer-name="Open"],
+      .framer-1ix845k .framer-pdzzun {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 12px !important;
+        padding: 20px 24px !important;
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+      }
+      .framer-1ix845k [data-framer-name="Question"],
+      .framer-1ix845k .framer-1cobtjt {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 16px !important;
+      }
+      .framer-1ix845k [data-framer-name="Answer"] {
+        padding-top: 12px !important;
+      }
+
+      /* === 5. Usunięcie podwójnego obramowania inputów w formularzu === */
+      input.framer-form-input,
+      textarea.framer-form-input,
+      form input, form textarea {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+
     </style>
     <script src="../../js/main.js" defer></script>
     
