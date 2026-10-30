@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const projectDir = 'C:\\Users\\kamil\\.gemini\\antigravity\\scratch\\dominikaszylar';
+const projectDir = process.cwd();
 const imagesDir = path.join(projectDir, 'images');
 const fontsDir = path.join(projectDir, 'fonts');
 const jsDir = path.join(projectDir, 'js');
