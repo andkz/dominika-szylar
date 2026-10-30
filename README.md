@@ -1,5 +1,13 @@
 # Dominika Szylar | Fizjoterapia — Migracja 1:1
 
+### 🔗 Szybkie linki (Live Sites):
+- 🚀 **Netlify (Produkcja + Netlify Forms + CMS):** [https://dominika-szylar.netlify.app](https://dominika-szylar.netlify.app)
+- 🌐 **GitHub Pages:** [https://andkz.github.io/dominika-szylar](https://andkz.github.io/dominika-szylar)
+- 🛠️ **Panel CMS (/admin):** [https://dominika-szylar.netlify.app/admin/](https://dominika-szylar.netlify.app/admin/)
+- 🎨 **Oryginalny Framer:** [https://dominikaszylar.framer.media](https://dominikaszylar.framer.media/)
+
+---
+
 Strona internetowa [dominikaszylar.framer.media](https://dominikaszylar.framer.media/) przeniesiona w standardzie 1:1 z Framera do w pełni niezależnego, statycznego kodu HTML/CSS/Vanilla JS zgodnie ze skillem `framer-migration`.
 
 ## Kluczowe cechy wdrożenia
