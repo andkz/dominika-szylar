@@ -1,9 +1,9 @@
 @import url('../fonts/variants.css');
 
 /* ==========================================================================
-   DOMINIKA SZYLAR - 10 ARTISTIC MONOCHROMATIC THEMES
-   Tone-on-tone mastery, zero zebra stripes, seamless continuity,
-   Merriweather Light typography everywhere.
+   DOMINIKA SZYLAR - HARMONIC TONAL ZEBRA SYSTEM
+   Subtle alternating sections within the SAME color family.
+   Tone-on-tone cards (no stark white), Merriweather Light typography everywhere.
    ========================================================================== */
 
 /* --- Smooth Transitions --- */
@@ -21,115 +21,115 @@ html[data-theme] p {
 }
 
 /* ==========================================================================
-   WARIANT 1: CIEPŁY KASZMIR & PIASEK (Warm Cashmere & Sand)
+   WARIANT 1: CIEPŁY KASZMIR & PIASEK (Harmonic Beige Zebra)
    ========================================================================== */
 html[data-theme="kaszmir-piasek"] {
-  --ds-page-bg: #f5efeb;
-  --ds-page-glow: radial-gradient(circle at 10% 20%, rgba(225, 205, 185, 0.4) 0%, transparent 45%),
-                  radial-gradient(circle at 90% 70%, rgba(215, 190, 165, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #ebe2d8;
-  --ds-card-border: #ddd1c3;
-  --ds-card-shadow: 0 8px 25px -4px rgba(80, 50, 30, 0.06);
+  --ds-page-bg: #f6f0ec;      /* Odcień A: Jasny kaszmir */
+  --ds-section-bg: #ece3db;   /* Odcień B: Kaszmir głębszy o 3% (ten sam kolor) */
+  --ds-card-bg: #ece4dc;      /* Karty w sekcji A */
+  --ds-card-bg-alt: #f5efeb;  /* Karty w sekcji B */
+  --ds-card-border: #dcd0c2;
+  --ds-card-shadow: 0 8px 24px -4px rgba(80, 50, 30, 0.06);
   --ds-text-primary: #2d211a;
   --ds-text-secondary: #5e4d43;
   --ds-text-muted: #8c776c;
   --ds-accent: #b06543;
   --ds-accent-hover: #985132;
   --ds-accent-text: #fffdfb;
-  --ds-secondary-btn-bg: #ebe2d8;
+  --ds-secondary-btn-bg: #ece4dc;
   --ds-secondary-btn-border: #d2c3b2;
   --ds-secondary-btn-text: #2d211a;
   --ds-badge-bg: #e4d7cb;
   --ds-badge-border: #d0c0b0;
   --ds-badge-text: #5a3320;
   --ds-cta-bg: #32231b;
-  --ds-cta-text: #f5efeb;
+  --ds-cta-text: #f6f0ec;
   --ds-cta-muted: #cbbbae;
-  --ds-nav-bg: rgba(245, 239, 235, 0.94);
+  --ds-nav-bg: rgba(246, 240, 236, 0.94);
   --ds-card-radius: 16px;
   --ds-btn-radius: 8px;
   --ds-badge-radius: 999px;
 }
 
 /* ==========================================================================
-   WARIANT 2: SZAŁWIOWA HARMONIA (Sage Garden & Eucalyptus)
+   WARIANT 2: SZAŁWIOWA HARMONIA (Harmonic Sage Zebra)
    ========================================================================== */
 html[data-theme="szalwiowy-spokoj"] {
-  --ds-page-bg: #edf3ee;
-  --ds-page-glow: radial-gradient(circle at 15% 15%, rgba(205, 225, 210, 0.45) 0%, transparent 45%),
-                  radial-gradient(circle at 85% 75%, rgba(195, 220, 200, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #e0ece3;
-  --ds-card-border: #ccdccf;
-  --ds-card-shadow: 0 8px 25px -4px rgba(35, 65, 45, 0.06);
+  --ds-page-bg: #eef4ef;      /* Odcień A: Jasna szałwia */
+  --ds-section-bg: #e2ede4;   /* Odcień B: Szałwia głębsza o 3% */
+  --ds-card-bg: #dfece2;
+  --ds-card-bg-alt: #eef5f0;
+  --ds-card-border: #cbddcf;
+  --ds-card-shadow: 0 8px 24px -4px rgba(35, 65, 45, 0.06);
   --ds-text-primary: #1a3024;
   --ds-text-secondary: #41574b;
   --ds-text-muted: #6a8274;
   --ds-accent: #2c6148;
   --ds-accent-hover: #214b37;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #e0ece3;
+  --ds-secondary-btn-bg: #dfece2;
   --ds-secondary-btn-border: #bed2c2;
   --ds-secondary-btn-text: #1a3024;
   --ds-badge-bg: #d4e5d8;
   --ds-badge-border: #bbd3bf;
   --ds-badge-text: #1e4733;
   --ds-cta-bg: #1c3527;
-  --ds-cta-text: #edf3ee;
+  --ds-cta-text: #eef4ef;
   --ds-cta-muted: #bdd0c3;
-  --ds-nav-bg: rgba(237, 243, 238, 0.94);
+  --ds-nav-bg: rgba(238, 244, 239, 0.94);
   --ds-card-radius: 16px;
   --ds-btn-radius: 999px;
   --ds-badge-radius: 999px;
 }
 
 /* ==========================================================================
-   WARIANT 3: KREMOWY ALABASTER (Alabaster & Ivory Pearl)
+   WARIANT 3: KREMOWY ALABASTER (Harmonic Ivory Zebra)
    ========================================================================== */
 html[data-theme="alabaster-krem"] {
-  --ds-page-bg: #f9f8f5;
-  --ds-page-glow: radial-gradient(circle at 20% 20%, rgba(240, 235, 220, 0.4) 0%, transparent 45%),
-                  radial-gradient(circle at 80% 80%, rgba(235, 230, 215, 0.3) 0%, transparent 50%);
-  --ds-card-bg: #f0ece5;
-  --ds-card-border: #e0d9ce;
+  --ds-page-bg: #faf8f5;      /* Odcień A: Ciepła perła */
+  --ds-section-bg: #efebe3;   /* Odcień B: Alabaster głębszy o 3% */
+  --ds-card-bg: #efece4;
+  --ds-card-bg-alt: #f7f4ee;
+  --ds-card-border: #ddd7ca;
   --ds-card-shadow: 0 6px 20px -3px rgba(60, 50, 40, 0.05);
   --ds-text-primary: #232528;
   --ds-text-secondary: #555960;
   --ds-text-muted: #838891;
   --ds-accent: #232528;
   --ds-accent-hover: #3b3d42;
-  --ds-accent-text: #f9f8f5;
-  --ds-secondary-btn-bg: #f0ece5;
+  --ds-accent-text: #faf8f5;
+  --ds-secondary-btn-bg: #efece4;
   --ds-secondary-btn-border: #d0c8b9;
   --ds-secondary-btn-text: #232528;
   --ds-badge-bg: #e8e2d7;
   --ds-badge-border: #d6cdbe;
   --ds-badge-text: #35383d;
   --ds-cta-bg: #232528;
-  --ds-cta-text: #f9f8f5;
+  --ds-cta-text: #faf8f5;
   --ds-cta-muted: #adb2ba;
-  --ds-nav-bg: rgba(249, 248, 245, 0.94);
+  --ds-nav-bg: rgba(250, 248, 245, 0.94);
   --ds-card-radius: 12px;
   --ds-btn-radius: 6px;
   --ds-badge-radius: 6px;
 }
 
 /* ==========================================================================
-   WARIANT 4: GŁĘBOKI MECH & ZŁOTO (Forest Moss & Champagne)
+   WARIANT 4: GŁĘBOKI MECH & ZŁOTO (Harmonic Forest Zebra)
    ========================================================================== */
 html[data-theme="gleboki-mech"] {
-  --ds-page-bg: #f1f4ee;
-  --ds-page-glow: radial-gradient(circle at 10% 30%, rgba(195, 215, 185, 0.35) 0%, transparent 50%),
-                  radial-gradient(circle at 85% 70%, rgba(215, 200, 160, 0.25) 0%, transparent 45%);
-  --ds-card-bg: #e4ebe0;
-  --ds-card-border: #cfdac9;
-  --ds-card-shadow: 0 8px 25px -4px rgba(25, 45, 30, 0.07);
+  --ds-page-bg: #f2f5ef;      /* Odcień A: Jasny mech */
+  --ds-section-bg: #e3eae0;   /* Odcień B: Leśna oliwka */
+  --ds-card-bg: #e2e9de;
+  --ds-card-bg-alt: #eef3ec;
+  --ds-card-border: #ccd8c7;
+  --ds-card-shadow: 0 8px 24px -4px rgba(25, 45, 30, 0.07);
   --ds-text-primary: #13261c;
   --ds-text-secondary: #3a4e43;
   --ds-text-muted: #657b6f;
   --ds-accent: #193627;
   --ds-accent-hover: #10241a;
   --ds-accent-text: #f5eedb;
-  --ds-secondary-btn-bg: #e4ebe0;
+  --ds-secondary-btn-bg: #e2e9de;
   --ds-secondary-btn-border: #bfcfb8;
   --ds-secondary-btn-text: #13261c;
   --ds-badge-bg: #d7e3d1;
@@ -138,21 +138,21 @@ html[data-theme="gleboki-mech"] {
   --ds-cta-bg: #142a1f;
   --ds-cta-text: #f5eedb;
   --ds-cta-muted: #b8c7b8;
-  --ds-nav-bg: rgba(241, 244, 238, 0.94);
+  --ds-nav-bg: rgba(242, 245, 239, 0.94);
   --ds-card-radius: 14px;
   --ds-btn-radius: 6px;
   --ds-badge-radius: 6px;
 }
 
 /* ==========================================================================
-   WARIANT 5: PUDROWY KWIAT & JEDWAB (Soft Blush & Silk)
+   WARIANT 5: PUDROWY KWIAT & JEDWAB (Harmonic Blush Zebra)
    ========================================================================== */
 html[data-theme="pudrowy-kwiat"] {
-  --ds-page-bg: #f8f0ed;
-  --ds-page-glow: radial-gradient(circle at 15% 15%, rgba(240, 215, 210, 0.45) 0%, transparent 45%),
-                  radial-gradient(circle at 85% 65%, rgba(230, 200, 205, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #efe3df;
-  --ds-card-border: #e2cfca;
+  --ds-page-bg: #f9f1ee;      /* Odcień A: Jasny pudrowy nude */
+  --ds-section-bg: #efe3df;   /* Odcień B: Różany beż */
+  --ds-card-bg: #ece0dc;
+  --ds-card-bg-alt: #f8eeea;
+  --ds-card-border: #dfcec9;
   --ds-card-shadow: 0 8px 24px -4px rgba(120, 60, 70, 0.06);
   --ds-text-primary: #352024;
   --ds-text-secondary: #664e53;
@@ -160,30 +160,30 @@ html[data-theme="pudrowy-kwiat"] {
   --ds-accent: #9a4f5f;
   --ds-accent-hover: #823e4d;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #efe3df;
+  --ds-secondary-btn-bg: #ece0dc;
   --ds-secondary-btn-border: #d8c0b9;
   --ds-secondary-btn-text: #352024;
   --ds-badge-bg: #e6d4cf;
   --ds-badge-border: #d4bfb8;
   --ds-badge-text: #6f2e3c;
   --ds-cta-bg: #381f25;
-  --ds-cta-text: #f8f0ed;
+  --ds-cta-text: #f9f1ee;
   --ds-cta-muted: #d6bebe;
-  --ds-nav-bg: rgba(248, 240, 237, 0.94);
+  --ds-nav-bg: rgba(249, 241, 238, 0.94);
   --ds-card-radius: 20px;
   --ds-btn-radius: 999px;
   --ds-badge-radius: 999px;
 }
 
 /* ==========================================================================
-   WARIANT 6: TERAKOTA & GLINKA (Terracotta & Clay Craft)
+   WARIANT 6: TERAKOTA & GLINKA (Harmonic Clay Zebra)
    ========================================================================== */
 html[data-theme="terakota-ziemia"] {
-  --ds-page-bg: #f4ece3;
-  --ds-page-glow: radial-gradient(circle at 15% 25%, rgba(225, 190, 170, 0.35) 0%, transparent 45%),
-                  radial-gradient(circle at 85% 75%, rgba(215, 175, 150, 0.3) 0%, transparent 50%);
-  --ds-card-bg: #e8dccf;
-  --ds-card-border: #d8c7b5;
+  --ds-page-bg: #f5ece4;      /* Odcień A: Jasna glinka */
+  --ds-section-bg: #e8dcd1;   /* Odcień B: Ciepły piaskowiec */
+  --ds-card-bg: #e4d7cb;
+  --ds-card-bg-alt: #f3e9e0;
+  --ds-card-border: #d7c5b5;
   --ds-card-shadow: 0 8px 24px -4px rgba(110, 50, 30, 0.07);
   --ds-text-primary: #331e15;
   --ds-text-secondary: #5f483d;
@@ -191,92 +191,92 @@ html[data-theme="terakota-ziemia"] {
   --ds-accent: #964227;
   --ds-accent-hover: #7e341c;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #e8dccf;
+  --ds-secondary-btn-bg: #e4d7cb;
   --ds-secondary-btn-border: #cbb6a1;
   --ds-secondary-btn-text: #331e15;
   --ds-badge-bg: #dfcebf;
   --ds-badge-border: #ccb7a4;
   --ds-badge-text: #6c2a15;
   --ds-cta-bg: #351a10;
-  --ds-cta-text: #f4ece3;
+  --ds-cta-text: #f5ece4;
   --ds-cta-muted: #c8b4a5;
-  --ds-nav-bg: rgba(244, 236, 227, 0.94);
+  --ds-nav-bg: rgba(245, 236, 228, 0.94);
   --ds-card-radius: 16px;
   --ds-btn-radius: 10px;
   --ds-badge-radius: 999px;
 }
 
 /* ==========================================================================
-   WARIANT 7: MORSKA BRYZA & MIĘTA (Ocean Mist & Mint)
+   WARIANT 7: MORSKA BRYZA & MIĘTA (Harmonic Mist Zebra)
    ========================================================================== */
 html[data-theme="morska-bryza"] {
-  --ds-page-bg: #eaf1f2;
-  --ds-page-glow: radial-gradient(circle at 20% 15%, rgba(190, 220, 225, 0.45) 0%, transparent 45%),
-                  radial-gradient(circle at 80% 75%, rgba(180, 210, 215, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #dbe7e9;
-  --ds-card-border: #c6d8db;
-  --ds-card-shadow: 0 8px 25px -4px rgba(20, 60, 65, 0.06);
+  --ds-page-bg: #ecf3f4;      /* Odcień A: Jasna bryza */
+  --ds-section-bg: #dde9eb;   /* Odcień B: Miętowa laguna */
+  --ds-card-bg: #d8e5e7;
+  --ds-card-bg-alt: #e8f1f2;
+  --ds-card-border: #c4d7da;
+  --ds-card-shadow: 0 8px 24px -4px rgba(20, 60, 65, 0.06);
   --ds-text-primary: #102b30;
   --ds-text-secondary: #385257;
   --ds-text-muted: #627e84;
   --ds-accent: #18606b;
   --ds-accent-hover: #114a53;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #dbe7e9;
+  --ds-secondary-btn-bg: #d8e5e7;
   --ds-secondary-btn-border: #b5cbcf;
   --ds-secondary-btn-text: #102b30;
   --ds-badge-bg: #cedeeb;
   --ds-badge-border: #b2cbd3;
   --ds-badge-text: #12464e;
   --ds-cta-bg: #112d33;
-  --ds-cta-text: #eaf1f2;
+  --ds-cta-text: #ecf3f4;
   --ds-cta-muted: #b4cbcf;
-  --ds-nav-bg: rgba(234, 241, 242, 0.94);
+  --ds-nav-bg: rgba(236, 243, 244, 0.94);
   --ds-card-radius: 16px;
   --ds-btn-radius: 999px;
   --ds-badge-radius: 999px;
 }
 
 /* ==========================================================================
-   WARIANT 8: STARY PERGAMIN & ANTYKWA (Parchment & Editorial)
+   WARIANT 8: STARY PERGAMIN & ANTYKWA (Harmonic Parchment Zebra)
    ========================================================================== */
 html[data-theme="stary-pergamin"] {
-  --ds-page-bg: #f6f2e8;
-  --ds-page-glow: radial-gradient(circle at 10% 20%, rgba(235, 225, 200, 0.4) 0%, transparent 45%),
-                  radial-gradient(circle at 90% 80%, rgba(225, 215, 190, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #ece5d6;
-  --ds-card-border: #ded4bf;
+  --ds-page-bg: #f7f3e9;      /* Odcień A: Jasny pergamin */
+  --ds-section-bg: #ece4d4;   /* Odcień B: Papier biblioteczny */
+  --ds-card-bg: #e7dfce;
+  --ds-card-bg-alt: #f5efe3;
+  --ds-card-border: #ddd3bf;
   --ds-card-shadow: 0 6px 20px -3px rgba(50, 45, 35, 0.06);
   --ds-text-primary: #1f1c18;
   --ds-text-secondary: #4d473e;
   --ds-text-muted: #797165;
   --ds-accent: #2c261f;
   --ds-accent-hover: #40382f;
-  --ds-accent-text: #f6f2e8;
-  --ds-secondary-btn-bg: #ece5d6;
+  --ds-accent-text: #f7f3e9;
+  --ds-secondary-btn-bg: #e7dfce;
   --ds-secondary-btn-border: #cec2a8;
   --ds-secondary-btn-text: #1f1c18;
   --ds-badge-bg: #e3d9c5;
   --ds-badge-border: #cfc2a8;
   --ds-badge-text: #2c261f;
   --ds-cta-bg: #231f19;
-  --ds-cta-text: #f6f2e8;
+  --ds-cta-text: #f7f3e9;
   --ds-cta-muted: #b8af9e;
-  --ds-nav-bg: rgba(246, 242, 232, 0.94);
+  --ds-nav-bg: rgba(247, 243, 233, 0.94);
   --ds-card-radius: 4px;
   --ds-btn-radius: 4px;
   --ds-badge-radius: 4px;
 }
 
 /* ==========================================================================
-   WARIANT 9: SŁONECZNY BURSZTYN & WANILIA (Golden Amber & Vanilla)
+   WARIANT 9: SŁONECZNY BURSZTYN & WANILIA (Harmonic Amber Zebra)
    ========================================================================== */
 html[data-theme="sloneczny-bursztyn"] {
-  --ds-page-bg: #f7f3e8;
-  --ds-page-glow: radial-gradient(circle at 15% 15%, rgba(245, 225, 180, 0.45) 0%, transparent 45%),
-                  radial-gradient(circle at 85% 70%, rgba(235, 210, 160, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #efe6d4;
-  --ds-card-border: #e0d2b8;
+  --ds-page-bg: #f8f4ea;      /* Odcień A: Jasna wanilia */
+  --ds-section-bg: #eee5d2;   /* Odcień B: Miodowy krem */
+  --ds-card-bg: #eae0cb;
+  --ds-card-bg-alt: #f6f0e3;
+  --ds-card-border: #dfd3b9;
   --ds-card-shadow: 0 8px 24px -4px rgba(100, 70, 20, 0.06);
   --ds-text-primary: #302613;
   --ds-text-secondary: #5c4e33;
@@ -284,30 +284,30 @@ html[data-theme="sloneczny-bursztyn"] {
   --ds-accent: #a66b24;
   --ds-accent-hover: #8c5719;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #efe6d4;
+  --ds-secondary-btn-bg: #eae0cb;
   --ds-secondary-btn-border: #d4bf9c;
   --ds-secondary-btn-text: #302613;
   --ds-badge-bg: #e6dac1;
   --ds-badge-border: #d4c29f;
   --ds-badge-text: #6b4312;
   --ds-cta-bg: #2e230f;
-  --ds-cta-text: #f7f3e8;
+  --ds-cta-text: #f8f4ea;
   --ds-cta-muted: #ccbc9d;
-  --ds-nav-bg: rgba(247, 243, 232, 0.94);
+  --ds-nav-bg: rgba(248, 244, 234, 0.94);
   --ds-card-radius: 16px;
   --ds-btn-radius: 10px;
   --ds-badge-radius: 999px;
 }
 
 /* ==========================================================================
-   WARIANT 10: CIEMNY AKSAMIT & MIEDŹ (Dark Velvet & Copper)
+   WARIANT 10: CIEMNY AKSAMIT & MIEDŹ (Harmonic Dark Velvet Zebra)
    ========================================================================== */
 html[data-theme="ciemny-aksamit"] {
-  --ds-page-bg: #131217;
-  --ds-page-glow: radial-gradient(circle at 15% 20%, rgba(45, 35, 55, 0.45) 0%, transparent 50%),
-                  radial-gradient(circle at 85% 75%, rgba(55, 30, 35, 0.35) 0%, transparent 50%);
-  --ds-card-bg: #1d1c24;
-  --ds-card-border: #2e2c3a;
+  --ds-page-bg: #121116;      /* Odcień A: Aksamitna ciemność */
+  --ds-section-bg: #191820;   /* Odcień B: Grafit z tej samej palety (+3% jaśniejszy) */
+  --ds-card-bg: #1f1e28;
+  --ds-card-bg-alt: #171620;
+  --ds-card-border: #2e2c3d;
   --ds-card-shadow: 0 12px 36px -6px rgba(0, 0, 0, 0.55);
   --ds-text-primary: #f3eff5;
   --ds-text-secondary: #a29db0;
@@ -315,7 +315,7 @@ html[data-theme="ciemny-aksamit"] {
   --ds-accent: #d9795f;
   --ds-accent-hover: #c4674e;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #1d1c24;
+  --ds-secondary-btn-bg: #1f1e28;
   --ds-secondary-btn-border: #383547;
   --ds-secondary-btn-text: #f3eff5;
   --ds-badge-bg: #262330;
@@ -324,108 +324,121 @@ html[data-theme="ciemny-aksamit"] {
   --ds-cta-bg: #191821;
   --ds-cta-text: #f3eff5;
   --ds-cta-muted: #a29db0;
-  --ds-nav-bg: rgba(19, 18, 23, 0.94);
+  --ds-nav-bg: rgba(18, 17, 22, 0.94);
   --ds-card-radius: 16px;
   --ds-btn-radius: 10px;
   --ds-badge-radius: 8px;
 }
 
 /* ==========================================================================
-   UNIVERSAL THEME ENGINE - NO ZEBRA, FULL HARMONY & MERRIWEATHER LIGHT
+   APPLYING THE TONAL ZEBRA RHYTHM ACROSS SECTIONS
    ========================================================================== */
 
-/* 1. Seamless Page Canvas (NO ZEBRA STRIPING!) */
+/* Root & Global Container Defaults */
 html[data-theme],
 html[data-theme] body,
 html[data-theme] #main,
 html[data-theme] .framer-cWFbg,
-html[data-theme] .framer-zqDo3,
-html[data-theme] .framer-olpvqv,
-html[data-theme] .framer-8tekcf,
-html[data-theme] .framer-cov1xy,
-html[data-theme] .framer-w3d9lw,
-html[data-theme] .framer-1ix845k,
-html[data-theme] .framer-12bfmsn,
-html[data-theme] .framer-1olcsf0,
-html[data-theme] footer,
-html[data-theme] .framer-l9ghc {
+html[data-theme] .framer-zqDo3 {
   background-color: var(--ds-page-bg) !important;
-  background-image: var(--ds-page-glow) !important;
-  background-attachment: fixed !important;
   color: var(--ds-text-primary) !important;
 }
 
-/* 2. Remove abrasive dividers, make them soft tonal hints */
+/* 1. SEKCJA HERO: Odcień A (page-bg) */
+html[data-theme] .framer-olpvqv {
+  background-color: var(--ds-page-bg) !important;
+  background: var(--ds-page-bg) !important;
+}
+
+/* 2. SEKCJA PORÓWNANIE (Dlaczego warto?): Odcień B (section-bg) - w tej samej tonacji! */
+html[data-theme] .framer-8tekcf {
+  background-color: var(--ds-section-bg) !important;
+  background: var(--ds-section-bg) !important;
+}
+
+/* 3. SEKCJA OFERTA (6 kafelków): Odcień A (page-bg) */
+html[data-theme] .framer-cov1xy,
+html[data-theme] .framer-12bfmsn {
+  background-color: var(--ds-page-bg) !important;
+  background: var(--ds-page-bg) !important;
+}
+
+/* 4. SEKCJA OPINIE (Karuzela): Odcień B (section-bg) - w tej samej tonacji! */
+html[data-theme] .framer-w3d9lw,
+html[data-theme] .framer-1olcsf0 {
+  background-color: var(--ds-section-bg) !important;
+  background: var(--ds-section-bg) !important;
+}
+
+/* 5. SEKCJA FAQ: Odcień A (page-bg) */
+html[data-theme] .framer-1ix845k {
+  background-color: var(--ds-page-bg) !important;
+  background: var(--ds-page-bg) !important;
+}
+
+/* 6. FOOTER: Odcień B (section-bg) */
+html[data-theme] footer,
+html[data-theme] .framer-l9ghc {
+  background-color: var(--ds-section-bg) !important;
+  background: var(--ds-section-bg) !important;
+  border-top: 1px solid var(--ds-card-border) !important;
+}
+
+/* Delikatne, miękkie linie podziału między sekcjami */
 html[data-theme] [data-framer-name="divider"],
 html[data-theme] .framer-iiv745,
 html[data-theme] .framer-1355r18,
 html[data-theme] .framer-9j74ux,
 html[data-theme] .framer-1ebq8wo {
   background-color: var(--ds-card-border) !important;
-  opacity: 0.5 !important;
+  opacity: 0.6 !important;
   height: 1px !important;
 }
 
-/* 3. HEADINGS: MERRIWEATHER LIGHT (300) EVERYWHERE */
-html[data-theme] h1,
-html[data-theme] h2,
-html[data-theme] h3,
-html[data-theme] h4,
-html[data-theme] .framer-o0mgjp h1,
-html[data-theme] .framer-ihlnxx h2,
-html[data-theme] .framer-1din01n h2 {
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-weight: 300 !important; /* Elegant, airy Light serif */
-  color: var(--ds-text-primary) !important;
-  letter-spacing: -0.015em !important;
-  line-height: 1.25em !important;
+/* ==========================================================================
+   TONE-ON-TONE CARDS (Never harsh stark white!)
+   ========================================================================== */
+
+/* Karty w sekcji Porównanie (Sekcja B) */
+html[data-theme] .framer-8tekcf .framer-pdt5y6,
+html[data-theme] .framer-8tekcf .framer-e8j9a1 {
+  background: var(--ds-card-bg-alt) !important;
+  background-color: var(--ds-card-bg-alt) !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+  box-shadow: var(--ds-card-shadow) !important;
 }
 
-html[data-theme] h1 *,
-html[data-theme] h2 *,
-html[data-theme] h3 *,
-html[data-theme] h4 * {
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-weight: inherit !important;
-  color: inherit !important;
-  letter-spacing: inherit !important;
-}
-
-/* Italic keywords inside headings for refined editorial look */
-html[data-theme] h1 em,
-html[data-theme] h2 em,
-html[data-theme] h3 em {
-  font-style: italic !important;
-  font-weight: 300 !important;
-}
-
-/* 4. PARAGRAPHS & BODY TEXT: CLEAN HUMANIST SANS */
-html[data-theme] p.framer-text,
-html[data-theme] .framer-tqpn7m p,
-html[data-theme] .framer-1rg1he4 p,
-html[data-theme] .framer-1vobr7r p {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-  color: var(--ds-text-secondary) !important;
-  font-weight: 400 !important;
-  line-height: 1.6em !important;
-}
-
-/* 5. TONE-ON-TONE CARDS (NEVER WHITE RECTANGLES ON BEIGE!) */
-html[data-theme] .framer-pdt5y6,
-html[data-theme] .framer-e8j9a1,
+/* Karty w sekcji Oferta (Sekcja A) */
 html[data-theme] .framer-19bricz > div,
 html[data-theme] .framer-158kfqd,
 html[data-theme] .framer-15xlo9f,
 html[data-theme] .framer-1o1w9us,
 html[data-theme] .framer-e78txs,
 html[data-theme] .framer-sh17ld,
-html[data-theme] .framer-1qm3gp0,
-html[data-theme] .framer-18tr0e7,
-html[data-theme] .framer-101ix0d,
-html[data-theme] .framer-107o4e1,
-html[data-theme] .framer-kasu0y,
-html[data-theme] .framer-qompb8,
-html[data-theme] .framer-1gp8po5,
+html[data-theme] .framer-1qm3gp0 {
+  background: var(--ds-card-bg) !important;
+  background-color: var(--ds-card-bg) !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+  box-shadow: var(--ds-card-shadow) !important;
+}
+
+/* Karty w sekcji Opinie (Sekcja B) */
+html[data-theme] .framer-1olcsf0 .framer-18tr0e7,
+html[data-theme] .framer-1olcsf0 .framer-101ix0d,
+html[data-theme] .framer-1olcsf0 .framer-107o4e1,
+html[data-theme] .framer-1olcsf0 .framer-kasu0y,
+html[data-theme] .framer-1olcsf0 .framer-qompb8,
+html[data-theme] .framer-1olcsf0 .framer-1gp8po5 {
+  background: var(--ds-card-bg-alt) !important;
+  background-color: var(--ds-card-bg-alt) !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+  box-shadow: var(--ds-card-shadow) !important;
+}
+
+/* Elementy akordeonu FAQ (Sekcja A) */
 html[data-theme] .framer-1ix845k [data-framer-name="Closed"],
 html[data-theme] .framer-1ix845k [data-framer-name="Open"],
 html[data-theme] .framer-1ix845k .framer-pdzzun {
@@ -452,6 +465,33 @@ html[data-theme] .framer-ze08om {
   border-color: var(--ds-card-border) !important;
 }
 
+/* ==========================================================================
+   HEADINGS: MERRIWEATHER LIGHT (300) EVERYWHERE
+   ========================================================================== */
+html[data-theme] h1,
+html[data-theme] h2,
+html[data-theme] h3,
+html[data-theme] h4,
+html[data-theme] .framer-o0mgjp h1,
+html[data-theme] .framer-ihlnxx h2,
+html[data-theme] .framer-1din01n h2 {
+  font-family: 'Merriweather', Georgia, serif !important;
+  font-weight: 300 !important; /* Elegant, airy Light serif */
+  color: var(--ds-text-primary) !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.25em !important;
+}
+
+html[data-theme] h1 *,
+html[data-theme] h2 *,
+html[data-theme] h3 *,
+html[data-theme] h4 * {
+  font-family: 'Merriweather', Georgia, serif !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+  letter-spacing: inherit !important;
+}
+
 /* Card Titles */
 html[data-theme] .framer-c5e0tw p,
 html[data-theme] .framer-1h30d63 p,
@@ -471,7 +511,18 @@ html[data-theme] .framer-1ix845k [data-framer-name="Question"] p {
   color: var(--ds-text-primary) !important;
 }
 
-/* Testimonial Quotes: Literary Serif Italic with high aesthetic value */
+/* Paragraphs & Secondary Text */
+html[data-theme] p.framer-text,
+html[data-theme] .framer-tqpn7m p,
+html[data-theme] .framer-1rg1he4 p,
+html[data-theme] .framer-1vobr7r p {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  color: var(--ds-text-secondary) !important;
+  font-weight: 400 !important;
+  line-height: 1.6em !important;
+}
+
+/* Testimonial Quotes: Literary Serif Italic */
 html[data-theme] .framer-snd0k5 p,
 html[data-theme] .framer-jyvuhg p,
 html[data-theme] .framer-1s9h2ib p,
@@ -492,7 +543,11 @@ html[data-theme] [data-framer-name="Stars"] svg path {
   fill: var(--ds-accent) !important;
 }
 
-/* 6. CATEGORY BADGES / PILLS */
+/* ==========================================================================
+   BUTTONS, BADGES, CTA & NAV
+   ========================================================================== */
+
+/* Category Badges */
 html[data-theme] .framer-AwuL6,
 html[data-theme] .framer-RypRx,
 html[data-theme] .framer-CZ0F5,
@@ -502,7 +557,6 @@ html[data-theme] [data-framer-name="Primary / L"] {
   border: 1px solid var(--ds-badge-border) !important;
   border-radius: var(--ds-badge-radius) !important;
 }
-
 html[data-theme] .framer-AwuL6 *,
 html[data-theme] .framer-RypRx *,
 html[data-theme] .framer-CZ0F5 *,
@@ -512,17 +566,15 @@ html[data-theme] [data-framer-name="Primary / L"] * {
   font-weight: 600 !important;
   letter-spacing: 0.02em !important;
 }
-
-/* Detail inner pill inside badge */
 html[data-theme] .framer-1yca21i {
-  background-color: var(--ds-card-bg) !important;
+  background-color: var(--ds-card-bg-alt) !important;
   border-color: var(--ds-badge-border) !important;
 }
 html[data-theme] .framer-1yca21i * {
   color: var(--ds-badge-text) !important;
 }
 
-/* 7. PRIMARY ACTION BUTTONS (e.g. "Umów wizytę") */
+/* Primary CTA Button */
 html[data-theme] .framer-SGVm4,
 html[data-theme] a[href*="kontakt"].framer-SGVm4,
 html[data-theme] button.framer-btn-primary {
@@ -531,23 +583,20 @@ html[data-theme] button.framer-btn-primary {
   border-radius: var(--ds-btn-radius) !important;
   box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.18) !important;
   border: none !important;
-  cursor: pointer;
 }
-
 html[data-theme] .framer-SGVm4:hover {
   background: var(--ds-accent-hover) !important;
   background-color: var(--ds-accent-hover) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 22px -3px rgba(0, 0, 0, 0.25) !important;
 }
-
 html[data-theme] .framer-SGVm4 * {
   color: var(--ds-accent-text) !important;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
   font-weight: 600 !important;
 }
 
-/* 8. SECONDARY BUTTONS (e.g. "O mnie i gabinecie") */
+/* Secondary Button */
 html[data-theme] .framer-mR9ne,
 html[data-theme] a[href*="o-mnie"].framer-mR9ne {
   background: var(--ds-secondary-btn-bg) !important;
@@ -555,19 +604,17 @@ html[data-theme] a[href*="o-mnie"].framer-mR9ne {
   border: 1px solid var(--ds-secondary-btn-border) !important;
   border-radius: var(--ds-btn-radius) !important;
 }
-
 html[data-theme] .framer-mR9ne:hover {
   border-color: var(--ds-text-primary) !important;
   transform: translateY(-1px) !important;
 }
-
 html[data-theme] .framer-mR9ne * {
   color: var(--ds-secondary-btn-text) !important;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
   font-weight: 500 !important;
 }
 
-/* 9. HARMONIOUS CTA BANNER (Matches Theme, No Crude Void) */
+/* CTA Banner */
 html[data-theme] .framer-l8skex,
 html[data-theme] [data-framer-name="CTA Card"] {
   background: var(--ds-cta-bg) !important;
@@ -576,30 +623,28 @@ html[data-theme] [data-framer-name="CTA Card"] {
   border-radius: var(--ds-card-radius) !important;
   box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.25) !important;
 }
-
 html[data-theme] .framer-l8skex h2,
 html[data-theme] [data-framer-name="CTA Card"] h2 {
   color: var(--ds-cta-text) !important;
   font-family: 'Merriweather', Georgia, serif !important;
   font-weight: 300 !important;
 }
-
 html[data-theme] .framer-l8skex p,
 html[data-theme] [data-framer-name="CTA Card"] p {
   color: var(--ds-cta-muted) !important;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
 }
 
-/* Comparison checkmark round pill */
+/* Comparison badges */
 html[data-theme] .framer-litcfs {
   background-color: var(--ds-accent) !important;
 }
 html[data-theme] .framer-13e0z7j {
-  background-color: var(--ds-card-bg) !important;
+  background-color: var(--ds-card-bg-alt) !important;
   border: 1px solid var(--ds-card-border) !important;
 }
 
-/* 10. FIXED NAVBAR (Transparent Glass of Page Color) */
+/* Fixed Header Navbar */
 html[data-theme] .framer-wp0bcl-container > div,
 html[data-theme] .framer-wp0bcl-container nav {
   background: var(--ds-nav-bg) !important;
@@ -613,12 +658,7 @@ html[data-theme] .framer-wp0bcl-container a {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
 }
 
-/* 11. FOOTER (Fluid integration) */
-html[data-theme] footer,
-html[data-theme] .framer-l9ghc {
-  background-color: var(--ds-page-bg) !important;
-  border-top: 1px solid var(--ds-card-border) !important;
-}
+/* Footer Links & Text */
 html[data-theme] footer a {
   color: var(--ds-text-secondary) !important;
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
