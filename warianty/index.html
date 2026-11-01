@@ -1,0 +1,646 @@
+<!doctype html>
+<html lang="pl-PL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Przegląd Wariantów Wizualnych | Dominika Szylar Fizjoterapia</title>
+  <link rel="stylesheet" href="../fonts/variants.css">
+  <style>
+    :root {
+      --bg: #0f1216;
+      --card: #181d24;
+      --border: #262e3b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #10b981;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px 80px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+    p.lead {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 24px;
+    }
+    .actions-top {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #10b981;
+      color: #042f1f;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 10px;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-main:hover {
+      transform: translateY(-2px);
+      background: #34d399;
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
+    }
+    .variant-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
+    }
+    .variant-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .card-preview {
+      padding: 28px 24px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      position: relative;
+    }
+    .card-meta {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+    .variant-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .variant-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .chips-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .color-palette {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .color-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 11px;
+      font-family: monospace;
+    }
+    .color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+    .font-info {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .font-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    .font-sample {
+      font-size: 16px;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .card-footer {
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .launch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      color: #ffffff;
+      background: #2563eb;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .launch-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+    .copy-btn {
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.15s;
+    }
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    /* Live Mini Preview Box */
+    .mini-hero {
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid transparent;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .mini-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+    .mini-h1 {
+      font-size: 17px;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .mini-p {
+      font-size: 12px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      opacity: 0.85;
+    }
+    .mini-btn {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">🎨 Studio Wariantów Wizualnych</div>
+      <h1>10 Wariantów Stylistycznych dla Dominiki Szylar</h1>
+      <p class="lead">Przetestuj różne nastroje, palety kolorystyczne i zestawy typograficzne. Każdy wariant możesz otworzyć jednym kliknięciem na pełnej stronie lub skopiować link do konsultacji.</p>
+      <div class="actions-top">
+        <a href="../index.html" class="btn-main">🌐 Otwórz stronę główną z przełącznikiem</a>
+        <a href="../index.html?theme=sage-wellness" class="btn-outline">🌿 Wariant 1: Sage Wellness</a>
+        <a href="../index.html?theme=warm-earth" class="btn-outline">🌾 Wariant 2: Warm Earth</a>
+        <a href="../index.html?theme=forest-gold" class="btn-outline">🌲 Wariant 4: Forest VIP</a>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- 1. Sage & Clean Wellness -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #f8faf8; border-color: #dfe7df; color: #182e22;">
+            <div class="mini-badge" style="background: #e3ede5; color: #214f3a; border: 1px solid #c4d7c8;">Fizjoterapia Kobiet</div>
+            <div class="mini-h1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #45584d; font-family: 'Plus Jakarta Sans', sans-serif;">Skuteczna terapia dna miednicy, wsparcie w ciąży i regeneracja.</div>
+            <div class="mini-btn" style="background: #2e684d; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">1. Sage & Clean Wellness</div>
+            <div class="variant-desc">Świeży, naturalny, medyczny ład. Połączenie uspokajającej szałwii, kremowych bieli i leśnego grafitu. Nowoczesne podejście eko-medycyny.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#f8faf8"></span>#F8FAF8</div>
+              <div class="color-chip"><span class="color-dot" style="background:#2e684d"></span>#2E684D</div>
+              <div class="color-chip"><span class="color-dot" style="background:#182e22"></span>#182E22</div>
+              <div class="color-chip"><span class="color-dot" style="background:#dfe7df"></span>#DFE7DF</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Plus Jakarta Sans</div>
+            <div class="font-sample" style="font-family: 'Plus Jakarta Sans', sans-serif;">Nowoczesny, humanistyczny, bardzo czytelny</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=sage-wellness" class="launch-btn" style="background: #2e684d;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('sage-wellness')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 2. Warm Sand & Earth -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #faf6f0; border-color: #e6dacb; color: #38271d;">
+            <div class="mini-badge" style="background: #f4e8dc; color: #7d3c22; border: 1px solid #e5d1bf;">Holistyczne Wsparcie</div>
+            <div class="mini-h1" style="font-family: 'Playfair Display', serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #6b5647; font-family: 'Inter', sans-serif;">Ciepła, bezpieczna atmosfera bez pośpiechu i oceny.</div>
+            <div class="mini-btn" style="background: #bf6640; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">2. Warm Sand & Earth</div>
+            <div class="variant-desc">Ciepły piaskowy beż, terakota i cynamonowy orzech. Bardzo kobiecy, przyjazny, redukujący lęk przed pierwszą wizytą ginekologiczną.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#faf6f0"></span>#FAF6F0</div>
+              <div class="color-chip"><span class="color-dot" style="background:#bf6640"></span>#BF6640</div>
+              <div class="color-chip"><span class="color-dot" style="background:#38271d"></span>#38271D</div>
+              <div class="color-chip"><span class="color-dot" style="background:#e6dacb"></span>#E6DACB</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Playfair Display + Inter</div>
+            <div class="font-sample" style="font-family: 'Playfair Display', serif;">Elegancki, szlachetny szeryf nagłówków</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=warm-earth" class="launch-btn" style="background: #bf6640;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('warm-earth')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 3. Nordic Minimalist -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #ffffff; border-color: #e2e8f0; color: #0f172a;">
+            <div class="mini-badge" style="background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Precyzja Medyczna</div>
+            <div class="mini-h1" style="font-family: 'Geist', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #475569; font-family: 'Geist', sans-serif;">Dokładna diagnostyka funkcjonalna i nowoczesna terapia.</div>
+            <div class="mini-btn" style="background: #0f172a; color: #ffffff; border-radius: 6px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">3. Nordic Minimalist</div>
+            <div class="variant-desc">Skandynawski ład, porcelanowa biel, atramentowy grafit i precyzyjne cienkie linie. Rzetelność, profesjonalizm, zero ozdobników.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#ffffff"></span>#FFFFFF</div>
+              <div class="color-chip"><span class="color-dot" style="background:#0f172a"></span>#0F172A</div>
+              <div class="color-chip"><span class="color-dot" style="background:#475569"></span>#475569</div>
+              <div class="color-chip"><span class="color-dot" style="background:#e2e8f0"></span>#E2E8F0</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Geist Pure</div>
+            <div class="font-sample" style="font-family: 'Geist', sans-serif;">Architektoniczny, geometryczny, modernistyczny</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=nordic-pure" class="launch-btn" style="background: #0f172a;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('nordic-pure')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 4. Forest Deep & Gold -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #fbfbf9; border-color: #e0e4d7; color: #12281d;">
+            <div class="mini-badge" style="background: #edf2eb; color: #153727; border: 1px solid #cdd9cb;">Klinika VIP</div>
+            <div class="mini-h1" style="font-family: 'Cormorant Garamond', serif; font-size: 19px;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #3f5247; font-family: 'Inter', sans-serif;">Najwyższy standard opieki i nowoczesna technologia INDIBA®.</div>
+            <div class="mini-btn" style="background: #153727; color: #f5eed9; border-radius: 6px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">4. Forest Deep & Gold</div>
+            <div class="variant-desc">Butelkowa leśna zieleń, szampańskie złoto i heban. Wrażenie elitarnego, prywatnego gabinetu o najwyższym standardzie opieki.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#fbfbf9"></span>#FBFBF9</div>
+              <div class="color-chip"><span class="color-dot" style="background:#153727"></span>#153727</div>
+              <div class="color-chip"><span class="color-dot" style="background:#c9b788"></span>#C9B788</div>
+              <div class="color-chip"><span class="color-dot" style="background:#12281d"></span>#12281D</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Cormorant Garamond + Inter</div>
+            <div class="font-sample" style="font-family: 'Cormorant Garamond', serif; font-size: 18px;">Luksusowa klasyka z francuską gracją</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=forest-gold" class="launch-btn" style="background: #153727;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('forest-gold')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 5. Soft Blush & Power -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #fdf9f8; border-color: #eedadb; color: #302023;">
+            <div class="mini-badge" style="background: #f6e5e8; color: #7b3242; border: 1px solid #e9ccd2;">Zdrowie Kobiet</div>
+            <div class="mini-h1" style="font-family: 'Outfit', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #665054; font-family: 'Outfit', sans-serif;">Wzmocnienie mięśni głębokich i bezpieczny powrót do formy.</div>
+            <div class="mini-btn" style="background: #a35667; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">5. Soft Blush & Power</div>
+            <div class="variant-desc">Pudrowy róż, zgaszony wrzos i ciepły grafit. Przyjazna, kobieca estetyka dedykowana młodym mamom i kobietom w każdym wieku.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#fdf9f8"></span>#FDF9F8</div>
+              <div class="color-chip"><span class="color-dot" style="background:#a35667"></span>#A35667</div>
+              <div class="color-chip"><span class="color-dot" style="background:#302023"></span>#302023</div>
+              <div class="color-chip"><span class="color-dot" style="background:#eedadb"></span>#EEDADB</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Outfit Rounded</div>
+            <div class="font-sample" style="font-family: 'Outfit', sans-serif;">Przyjazny, łagodny, z zaokrąglonymi kształtami</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=soft-blush" class="launch-btn" style="background: #a35667;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('soft-blush')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 6. Athletic Energy -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #0f1216; border-color: #2c333e; color: #f8fafc;">
+            <div class="mini-badge" style="background: #132820; color: #34d399; border: 1px solid #1a4231;">Trening Siłowy & Progres</div>
+            <div class="mini-h1" style="font-family: 'Syne', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #94a3b8; font-family: 'Inter', sans-serif;">Mądry trening, budowanie siły i stabilności bez kontuzji.</div>
+            <div class="mini-btn" style="background: #10b981; color: #052216; border-radius: 6px; font-weight: 800;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">6. Athletic Energy (Dark)</div>
+            <div class="variant-desc">Sportowy, węglowy ciemny motyw z neonowym akcentem szmaragdowo-limonkowym. Podkreśla siłę, dynamikę, progres i sprawność fizyczną.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#0f1216"></span>#0F1216</div>
+              <div class="color-chip"><span class="color-dot" style="background:#10b981"></span>#10B981</div>
+              <div class="color-chip"><span class="color-dot" style="background:#1e232b"></span>#1E232B</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f8fafc"></span>#F8FAFC</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Syne Grotesk</div>
+            <div class="font-sample" style="font-family: 'Syne', sans-serif;">Mocny, odważny, z charakterem</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=athletic-energy" class="launch-btn" style="background: #10b981; color: #042618;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('athletic-energy')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 7. Ocean Petrol & Ice -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #f4f8f9; border-color: #d0e0e5; color: #0e2a30;">
+            <div class="mini-badge" style="background: #dbedf1; color: #11535d; border: 1px solid #bdd9e1;">Terapia Bólu</div>
+            <div class="mini-h1" style="font-family: 'DM Sans', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #3b565d; font-family: 'DM Sans', sans-serif;">Regeneracja powięziowa, praca z oddechem i likwidacja napięć.</div>
+            <div class="mini-btn" style="background: #196f7c; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">7. Ocean Petrol & Ice</div>
+            <div class="variant-desc">Głęboki morski petrol, chłodna arktyczna mięta i przejrzyste perłowe tła. Działa kojąco na ból, wycisza układ nerwowy.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#f4f8f9"></span>#F4F8F9</div>
+              <div class="color-chip"><span class="color-dot" style="background:#196f7c"></span>#196F7C</div>
+              <div class="color-chip"><span class="color-dot" style="background:#0e2a30"></span>#0E2A30</div>
+              <div class="color-chip"><span class="color-dot" style="background:#d0e0e5"></span>#D0E0E5</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: DM Sans</div>
+            <div class="font-sample" style="font-family: 'DM Sans', sans-serif;">Czysty, zbalansowany, odświeżający</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=ocean-petrol" class="launch-btn" style="background: #196f7c;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('ocean-petrol')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 8. Editorial Vogue -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #faf8f5; border-color: #ded7c8; color: #111111;">
+            <div class="mini-badge" style="background: #ffffff; color: #111111; border: 1px solid #111111; border-radius: 2px;">Vogue Wellness</div>
+            <div class="mini-h1" style="font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 0.04em;">POCZUJ ULGĘ I ZAUFANIE DO CIAŁA</div>
+            <div class="mini-p" style="color: #4a4a4a; font-family: 'Inter', sans-serif;">Prywatne konsultacje i indywidualne plany rehabilitacyjne.</div>
+            <div class="mini-btn" style="background: #111111; color: #ffffff; border-radius: 2px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">8. Editorial Vogue</div>
+            <div class="variant-desc">Styl prestiżowego magazynu modowego i wellness. Maksymalny kontrast czerni z ciepłym papierem, ostre geometryczne krawędzie.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#faf8f5"></span>#FAF8F5</div>
+              <div class="color-chip"><span class="color-dot" style="background:#111111"></span>#111111</div>
+              <div class="color-chip"><span class="color-dot" style="background:#4a4a4a"></span>#4A4A4A</div>
+              <div class="color-chip"><span class="color-dot" style="background:#ded7c8"></span>#DED7C8</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Cinzel + Inter</div>
+            <div class="font-sample" style="font-family: 'Cinzel', serif;">Wyrazista, dostojna antykwa nagłówków</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=editorial-vogue" class="launch-btn" style="background: #111111;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('editorial-vogue')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 9. Terracotta Craft -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #f7f2eb; border-color: #ded2c2; color: #302018;">
+            <div class="mini-badge" style="background: #f1e3d4; color: #73301c; border: 1px solid #dfc8b2;">Terapia Manualna</div>
+            <div class="mini-h1" style="font-family: 'Fraunces', serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #604d42; font-family: 'Inter', sans-serif;">Mobilizacja blizn, praca mięśniowo-powięziowa, bezpieczny dotyk.</div>
+            <div class="mini-btn" style="background: #9b442a; color: #ffffff; border-radius: 10px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">9. Terracotta Craft</div>
+            <div class="variant-desc">Naturalna glina, surowy len i palone drewno. Podkreśla fizjoterapeutyczne rzemiosło pracy z ciałem, dotyk i uziemienie.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#f7f2eb"></span>#F7F2EB</div>
+              <div class="color-chip"><span class="color-dot" style="background:#9b442a"></span>#9B442A</div>
+              <div class="color-chip"><span class="color-dot" style="background:#302018"></span>#302018</div>
+              <div class="color-chip"><span class="color-dot" style="background:#ded2c2"></span>#DED2C2</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Fraunces + Inter</div>
+            <div class="font-sample" style="font-family: 'Fraunces', serif;">Organiczny, miękki szeryf z duszą</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=terracotta-craft" class="launch-btn" style="background: #9b442a;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('terracotta-craft')">🔗</button>
+        </div>
+      </div>
+
+      <!-- 10. Modern Obsidian Dark -->
+      <div class="variant-card">
+        <div class="card-preview">
+          <div class="mini-hero" style="background: #0c0d10; border-color: #282d38; color: #f3f4f6;">
+            <div class="mini-badge" style="background: #211918; color: #f28e75; border: 1px solid #3d2925;">Studio Treningowe VIP</div>
+            <div class="mini-h1" style="font-family: 'Satoshi', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
+            <div class="mini-p" style="color: #9ca3af; font-family: 'Satoshi', sans-serif;">Prywatne treningi personalne i zaawansowana regeneracja.</div>
+            <div class="mini-btn" style="background: #e07a5f; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+          </div>
+        </div>
+        <div class="card-meta">
+          <div>
+            <div class="variant-title">10. Modern Obsidian Dark</div>
+            <div class="variant-desc">Satynowy, wieczorny dark mode z ciepłymi miedziano-koralowymi akcentami. Bardzo ekskluzywne, prywatne i nowoczesne wrażenie.</div>
+          </div>
+          <div>
+            <div class="chips-label">Paleta Kolorów</div>
+            <div class="color-palette">
+              <div class="color-chip"><span class="color-dot" style="background:#0c0d10"></span>#0C0D10</div>
+              <div class="color-chip"><span class="color-dot" style="background:#e07a5f"></span>#E07A5F</div>
+              <div class="color-chip"><span class="color-dot" style="background:#1a1d24"></span>#1A1D24</div>
+              <div class="color-chip"><span class="color-dot" style="background:#282d38"></span>#282D38</div>
+            </div>
+          </div>
+          <div class="font-info">
+            <div class="font-name">Font: Satoshi</div>
+            <div class="font-sample" style="font-family: 'Satoshi', sans-serif;">Wyrafinowany, nowoczesny sans-serif</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html?theme=obsidian-luxe" class="launch-btn" style="background: #e07a5f;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('obsidian-luxe')">🔗</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function copyLink(themeId) {
+      const url = window.location.origin + window.location.pathname.replace('warianty/', '') + '?theme=' + themeId;
+      navigator.clipboard.writeText(url).then(() => {
+        alert('Skopiowano bezpośredni link do wariantu: ' + themeId);
+      });
+    }
+  </script>
+</body>
+</html>

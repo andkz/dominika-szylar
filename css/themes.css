@@ -1,0 +1,779 @@
+@import url('../fonts/variants.css');
+
+/* ==========================================================================
+   DOMINIKA SZYLAR - 10 DESIGN THEMES SYSTEM
+   Fully local, zero-CDN, responsive token overrides
+   ========================================================================== */
+
+/* --- Base Theme Transitions --- */
+html[data-theme] body,
+html[data-theme] section,
+html[data-theme] footer,
+html[data-theme] div,
+html[data-theme] a,
+html[data-theme] button,
+html[data-theme] h1,
+html[data-theme] h2,
+html[data-theme] h3,
+html[data-theme] p {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* ==========================================================================
+   THEME 1: SAGE & CLEAN WELLNESS (Nowoczesna Fizjoterapia Eko)
+   ========================================================================== */
+html[data-theme="sage-wellness"] {
+  --ds-page-bg: #f8faf8;
+  --ds-section-bg: #eef3ee;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #dfe7df;
+  --ds-card-shadow: 0 4px 20px -2px rgba(46, 90, 68, 0.06);
+  --ds-text-primary: #182e22;
+  --ds-text-secondary: #45584d;
+  --ds-text-muted: #738a7c;
+  --ds-accent: #2e684d;
+  --ds-accent-hover: #24533d;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #ccd8cd;
+  --ds-secondary-btn-text: #182e22;
+  --ds-badge-bg: #e3ede5;
+  --ds-badge-border: #c4d7c8;
+  --ds-badge-text: #214f3a;
+  --ds-cta-bg: #1c3b2d;
+  --ds-cta-text: #ffffff;
+  --ds-cta-muted: #d0ded6;
+  --ds-nav-bg: rgba(248, 250, 248, 0.92);
+  --ds-font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ds-font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ds-card-radius: 16px;
+  --ds-btn-radius: 999px;
+  --ds-badge-radius: 999px;
+  --ds-heading-weight: 700;
+  --ds-letter-spacing-heading: -0.03em;
+}
+
+/* ==========================================================================
+   THEME 2: WARM SAND & EARTH (Ciepły Piaskowy Beż / Holistyczny)
+   ========================================================================== */
+html[data-theme="warm-earth"] {
+  --ds-page-bg: #faf6f0;
+  --ds-section-bg: #f2ebe1;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #e6dacb;
+  --ds-card-shadow: 0 4px 24px -4px rgba(138, 90, 56, 0.07);
+  --ds-text-primary: #38271d;
+  --ds-text-secondary: #6b5647;
+  --ds-text-muted: #968172;
+  --ds-accent: #bf6640;
+  --ds-accent-hover: #a6532f;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #ded0bf;
+  --ds-secondary-btn-text: #38271d;
+  --ds-badge-bg: #f4e8dc;
+  --ds-badge-border: #e5d1bf;
+  --ds-badge-text: #7d3c22;
+  --ds-cta-bg: #3d291e;
+  --ds-cta-text: #faf6f0;
+  --ds-cta-muted: #ddcfc2;
+  --ds-nav-bg: rgba(250, 246, 240, 0.92);
+  --ds-font-heading: 'Playfair Display', Georgia, serif;
+  --ds-font-body: 'Inter', system-ui, sans-serif;
+  --ds-card-radius: 18px;
+  --ds-btn-radius: 10px;
+  --ds-badge-radius: 999px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: -0.01em;
+}
+
+/* ==========================================================================
+   THEME 3: NORDIC MINIMALIST (Skandynawski / Czysta Precyzja)
+   ========================================================================== */
+html[data-theme="nordic-pure"] {
+  --ds-page-bg: #ffffff;
+  --ds-section-bg: #f8fafc;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #e2e8f0;
+  --ds-card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  --ds-text-primary: #0f172a;
+  --ds-text-secondary: #475569;
+  --ds-text-muted: #94a3b8;
+  --ds-accent: #0f172a;
+  --ds-accent-hover: #1e293b;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #f8fafc;
+  --ds-secondary-btn-border: #cbd5e1;
+  --ds-secondary-btn-text: #0f172a;
+  --ds-badge-bg: #f1f5f9;
+  --ds-badge-border: #e2e8f0;
+  --ds-badge-text: #334155;
+  --ds-cta-bg: #0f172a;
+  --ds-cta-text: #ffffff;
+  --ds-cta-muted: #94a3b8;
+  --ds-nav-bg: rgba(255, 255, 255, 0.92);
+  --ds-font-heading: 'Geist', system-ui, sans-serif;
+  --ds-font-body: 'Geist', system-ui, sans-serif;
+  --ds-card-radius: 10px;
+  --ds-btn-radius: 8px;
+  --ds-badge-radius: 8px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: -0.04em;
+}
+
+/* ==========================================================================
+   THEME 4: FOREST DEEP & GOLD (Luksusowa Klinika VIP)
+   ========================================================================== */
+html[data-theme="forest-gold"] {
+  --ds-page-bg: #fbfbf9;
+  --ds-section-bg: #f3f5ee;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #e0e4d7;
+  --ds-card-shadow: 0 8px 30px -4px rgba(20, 43, 31, 0.08);
+  --ds-text-primary: #12281d;
+  --ds-text-secondary: #3f5247;
+  --ds-text-muted: #6f8277;
+  --ds-accent: #153727;
+  --ds-accent-hover: #0e271b;
+  --ds-accent-text: #f5eed9;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #c9b788;
+  --ds-secondary-btn-text: #12281d;
+  --ds-badge-bg: #edf2eb;
+  --ds-badge-border: #cdd9cb;
+  --ds-badge-text: #153727;
+  --ds-cta-bg: #11281c;
+  --ds-cta-text: #f5eed9;
+  --ds-cta-muted: #c9b788;
+  --ds-nav-bg: rgba(251, 251, 249, 0.92);
+  --ds-font-heading: 'Cormorant Garamond', Georgia, serif;
+  --ds-font-body: 'Inter', system-ui, sans-serif;
+  --ds-card-radius: 14px;
+  --ds-btn-radius: 6px;
+  --ds-badge-radius: 6px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: -0.01em;
+}
+
+/* ==========================================================================
+   THEME 5: SOFT BLUSH & POWER (Kobieca Siła & Regeneracja Poporodowa)
+   ========================================================================== */
+html[data-theme="soft-blush"] {
+  --ds-page-bg: #fdf9f8;
+  --ds-section-bg: #f7eded;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #eedadb;
+  --ds-card-shadow: 0 6px 24px -2px rgba(168, 90, 107, 0.07);
+  --ds-text-primary: #302023;
+  --ds-text-secondary: #665054;
+  --ds-text-muted: #9c8085;
+  --ds-accent: #a35667;
+  --ds-accent-hover: #8e4757;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #e3c4c9;
+  --ds-secondary-btn-text: #302023;
+  --ds-badge-bg: #f6e5e8;
+  --ds-badge-border: #e9ccd2;
+  --ds-badge-text: #7b3242;
+  --ds-cta-bg: #351c22;
+  --ds-cta-text: #fdf9f8;
+  --ds-cta-muted: #e7ccd1;
+  --ds-nav-bg: rgba(253, 249, 248, 0.92);
+  --ds-font-heading: 'Outfit', system-ui, sans-serif;
+  --ds-font-body: 'Outfit', system-ui, sans-serif;
+  --ds-card-radius: 20px;
+  --ds-btn-radius: 999px;
+  --ds-badge-radius: 999px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: -0.02em;
+}
+
+/* ==========================================================================
+   THEME 6: ATHLETIC ENERGY (Sport Performance & Siła / Ciemny Kontrast)
+   ========================================================================== */
+html[data-theme="athletic-energy"] {
+  --ds-page-bg: #0f1216;
+  --ds-section-bg: #171b21;
+  --ds-card-bg: #1e232b;
+  --ds-card-border: #2c333e;
+  --ds-card-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+  --ds-text-primary: #f8fafc;
+  --ds-text-secondary: #94a3b8;
+  --ds-text-muted: #64748b;
+  --ds-accent: #10b981;
+  --ds-accent-hover: #059669;
+  --ds-accent-text: #052216;
+  --ds-secondary-btn-bg: #171b21;
+  --ds-secondary-btn-border: #334155;
+  --ds-secondary-btn-text: #f8fafc;
+  --ds-badge-bg: #132820;
+  --ds-badge-border: #1a4231;
+  --ds-badge-text: #34d399;
+  --ds-cta-bg: #1a2028;
+  --ds-cta-text: #ffffff;
+  --ds-cta-muted: #94a3b8;
+  --ds-nav-bg: rgba(15, 18, 22, 0.94);
+  --ds-font-heading: 'Syne', system-ui, sans-serif;
+  --ds-font-body: 'Inter', system-ui, sans-serif;
+  --ds-card-radius: 12px;
+  --ds-btn-radius: 8px;
+  --ds-badge-radius: 6px;
+  --ds-heading-weight: 700;
+  --ds-letter-spacing-heading: -0.03em;
+}
+
+/* ==========================================================================
+   THEME 7: OCEAN PETROL & ICE (Terapia Bólu & Oddech)
+   ========================================================================== */
+html[data-theme="ocean-petrol"] {
+  --ds-page-bg: #f4f8f9;
+  --ds-section-bg: #e7eff2;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #d0e0e5;
+  --ds-card-shadow: 0 4px 20px -2px rgba(18, 68, 77, 0.06);
+  --ds-text-primary: #0e2a30;
+  --ds-text-secondary: #3b565d;
+  --ds-text-muted: #6b858c;
+  --ds-accent: #196f7c;
+  --ds-accent-hover: #125762;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #bfd8df;
+  --ds-secondary-btn-text: #0e2a30;
+  --ds-badge-bg: #dbedf1;
+  --ds-badge-border: #bdd9e1;
+  --ds-badge-text: #11535d;
+  --ds-cta-bg: #10343c;
+  --ds-cta-text: #ffffff;
+  --ds-cta-muted: #cae3e8;
+  --ds-nav-bg: rgba(244, 248, 249, 0.92);
+  --ds-font-heading: 'DM Sans', system-ui, sans-serif;
+  --ds-font-body: 'DM Sans', system-ui, sans-serif;
+  --ds-card-radius: 16px;
+  --ds-btn-radius: 999px;
+  --ds-badge-radius: 999px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: -0.02em;
+}
+
+/* ==========================================================================
+   THEME 8: EDITORIAL VOGUE (Magazyn o Zdrowiu / High Contrast Editorial)
+   ========================================================================== */
+html[data-theme="editorial-vogue"] {
+  --ds-page-bg: #faf8f5;
+  --ds-section-bg: #f0ece3;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #ded7c8;
+  --ds-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --ds-text-primary: #111111;
+  --ds-text-secondary: #4a4a4a;
+  --ds-text-muted: #7e7e7e;
+  --ds-accent: #111111;
+  --ds-accent-hover: #333333;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #111111;
+  --ds-secondary-btn-text: #111111;
+  --ds-badge-bg: #ffffff;
+  --ds-badge-border: #111111;
+  --ds-badge-text: #111111;
+  --ds-cta-bg: #111111;
+  --ds-cta-text: #faf8f5;
+  --ds-cta-muted: #b3b3b3;
+  --ds-nav-bg: rgba(250, 248, 245, 0.94);
+  --ds-font-heading: 'Cinzel', Georgia, serif;
+  --ds-font-body: 'Inter', system-ui, sans-serif;
+  --ds-card-radius: 4px;
+  --ds-btn-radius: 2px;
+  --ds-badge-radius: 2px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: 0.02em;
+}
+
+/* ==========================================================================
+   THEME 9: TERRACOTTA CRAFT (Terapia Manualna / Naturalna Glina & Drewno)
+   ========================================================================== */
+html[data-theme="terracotta-craft"] {
+  --ds-page-bg: #f7f2eb;
+  --ds-section-bg: #eee5d8;
+  --ds-card-bg: #ffffff;
+  --ds-card-border: #ded2c2;
+  --ds-card-shadow: 0 6px 20px -2px rgba(155, 68, 42, 0.06);
+  --ds-text-primary: #302018;
+  --ds-text-secondary: #604d42;
+  --ds-text-muted: #8f796e;
+  --ds-accent: #9b442a;
+  --ds-accent-hover: #833720;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #ffffff;
+  --ds-secondary-btn-border: #d4c0ab;
+  --ds-secondary-btn-text: #302018;
+  --ds-badge-bg: #f1e3d4;
+  --ds-badge-border: #dfc8b2;
+  --ds-badge-text: #73301c;
+  --ds-cta-bg: #351c14;
+  --ds-cta-text: #f7f2eb;
+  --ds-cta-muted: #d9c4b2;
+  --ds-nav-bg: rgba(247, 242, 235, 0.92);
+  --ds-font-heading: 'Fraunces', Georgia, serif;
+  --ds-font-body: 'Inter', system-ui, sans-serif;
+  --ds-card-radius: 16px;
+  --ds-btn-radius: 12px;
+  --ds-badge-radius: 999px;
+  --ds-heading-weight: 600;
+  --ds-letter-spacing-heading: -0.01em;
+}
+
+/* ==========================================================================
+   THEME 10: MODERN OBSIDIAN DARK (Satynowy Luksus & Miedziany Akcent)
+   ========================================================================== */
+html[data-theme="obsidian-luxe"] {
+  --ds-page-bg: #0c0d10;
+  --ds-section-bg: #14161c;
+  --ds-card-bg: #1a1d24;
+  --ds-card-border: #282d38;
+  --ds-card-shadow: 0 12px 36px -6px rgba(0, 0, 0, 0.5);
+  --ds-text-primary: #f3f4f6;
+  --ds-text-secondary: #9ca3af;
+  --ds-text-muted: #6b7280;
+  --ds-accent: #e07a5f;
+  --ds-accent-hover: #cf694e;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #14161c;
+  --ds-secondary-btn-border: #323846;
+  --ds-secondary-btn-text: #f3f4f6;
+  --ds-badge-bg: #211918;
+  --ds-badge-border: #3d2925;
+  --ds-badge-text: #f28e75;
+  --ds-cta-bg: #161820;
+  --ds-cta-text: #f3f4f6;
+  --ds-cta-muted: #9ca3af;
+  --ds-nav-bg: rgba(12, 13, 16, 0.94);
+  --ds-font-heading: 'Satoshi', system-ui, sans-serif;
+  --ds-font-body: 'Satoshi', system-ui, sans-serif;
+  --ds-card-radius: 16px;
+  --ds-btn-radius: 10px;
+  --ds-badge-radius: 8px;
+  --ds-heading-weight: 700;
+  --ds-letter-spacing-heading: -0.03em;
+}
+
+/* ==========================================================================
+   GLOBAL TARGETED OVERRIDES WHEN DATA-THEME IS ACTIVE
+   ========================================================================== */
+
+/* 1. Page Background & Base Text */
+html[data-theme],
+html[data-theme] body,
+html[data-theme] #main,
+html[data-theme] .framer-cWFbg,
+html[data-theme] .framer-zqDo3,
+html[data-theme] .framer-olpvqv {
+  background-color: var(--ds-page-bg) !important;
+  color: var(--ds-text-primary) !important;
+  font-family: var(--ds-font-body) !important;
+}
+
+/* 2. Alternated Sections (Comparison, FAQs, etc.) */
+html[data-theme] .framer-8tekcf,
+html[data-theme] .framer-cov1xy {
+  background-color: var(--ds-section-bg) !important;
+}
+
+/* 3. Section Dividers */
+html[data-theme] [data-framer-name="divider"],
+html[data-theme] .framer-iiv745,
+html[data-theme] .framer-1355r18,
+html[data-theme] .framer-9j74ux,
+html[data-theme] .framer-1ebq8wo {
+  background-color: var(--ds-card-border) !important;
+  opacity: 0.7 !important;
+}
+
+/* 4. Headings */
+html[data-theme] h1,
+html[data-theme] h2,
+html[data-theme] h3,
+html[data-theme] h4 {
+  font-family: var(--ds-font-heading) !important;
+  color: var(--ds-text-primary) !important;
+  font-weight: var(--ds-heading-weight, 600) !important;
+  letter-spacing: var(--ds-letter-spacing-heading, -0.02em) !important;
+}
+html[data-theme] h1 *,
+html[data-theme] h2 *,
+html[data-theme] h3 *,
+html[data-theme] h4 * {
+  font-family: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+  letter-spacing: inherit !important;
+}
+
+/* 5. Paragraphs & Secondary Text */
+html[data-theme] p.framer-text {
+  font-family: var(--ds-font-body) !important;
+  color: var(--ds-text-secondary) !important;
+}
+
+/* 6. Cards (Offer grid, Comparison cards, Testimonials, FAQ) */
+html[data-theme] .framer-pdt5y6,
+html[data-theme] .framer-e8j9a1,
+html[data-theme] .framer-19bricz > div,
+html[data-theme] .framer-158kfqd,
+html[data-theme] .framer-15xlo9f,
+html[data-theme] .framer-1o1w9us,
+html[data-theme] .framer-e78txs,
+html[data-theme] .framer-sh17ld,
+html[data-theme] .framer-1qm3gp0,
+html[data-theme] .framer-18tr0e7,
+html[data-theme] .framer-101ix0d,
+html[data-theme] .framer-107o4e1,
+html[data-theme] .framer-kasu0y,
+html[data-theme] .framer-qompb8,
+html[data-theme] .framer-1gp8po5,
+html[data-theme] .framer-1ix845k [data-framer-name="Closed"],
+html[data-theme] .framer-1ix845k [data-framer-name="Open"],
+html[data-theme] .framer-1ix845k .framer-pdzzun {
+  background-color: var(--ds-card-bg) !important;
+  background: var(--ds-card-bg) !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+  box-shadow: var(--ds-card-shadow) !important;
+}
+
+/* Specific elements inside cards */
+html[data-theme] .framer-c5e0tw p,
+html[data-theme] .framer-1h30d63 p,
+html[data-theme] .framer-1cqluv8 h3,
+html[data-theme] .framer-16s7b5a h3,
+html[data-theme] .framer-pzmkjy h3,
+html[data-theme] .framer-14v0op2 h3,
+html[data-theme] .framer-ouv132 h3,
+html[data-theme] .framer-1b0z42 h3 {
+  color: var(--ds-text-primary) !important;
+  font-family: var(--ds-font-heading) !important;
+}
+
+/* Comparison badge checkmark pill */
+html[data-theme] .framer-litcfs {
+  background-color: var(--ds-accent) !important;
+}
+
+/* Card internal dividers */
+html[data-theme] .framer-tu7kmw,
+html[data-theme] .framer-ze08om {
+  border-color: var(--ds-card-border) !important;
+}
+
+/* 7. Category Pills & Badges (e.g. "mgr Dominika Szylar", "Dlaczego warto?", "FAQ") */
+html[data-theme] .framer-AwuL6,
+html[data-theme] .framer-RypRx,
+html[data-theme] .framer-CZ0F5,
+html[data-theme] [data-framer-name="Primary / L"] {
+  background: var(--ds-badge-bg) !important;
+  background-color: var(--ds-badge-bg) !important;
+  border: 1px solid var(--ds-badge-border) !important;
+  border-radius: var(--ds-badge-radius) !important;
+}
+html[data-theme] .framer-AwuL6 *,
+html[data-theme] .framer-RypRx *,
+html[data-theme] .framer-CZ0F5 *,
+html[data-theme] [data-framer-name="Primary / L"] * {
+  color: var(--ds-badge-text) !important;
+  font-family: var(--ds-font-body) !important;
+}
+
+/* 8. Primary Action Buttons (e.g. "Umów wizytę") */
+html[data-theme] .framer-SGVm4,
+html[data-theme] a[href*="kontakt"].framer-SGVm4,
+html[data-theme] button.framer-btn-primary {
+  background: var(--ds-accent) !important;
+  background-color: var(--ds-accent) !important;
+  border-radius: var(--ds-btn-radius) !important;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
+}
+html[data-theme] .framer-SGVm4:hover {
+  background: var(--ds-accent-hover) !important;
+  background-color: var(--ds-accent-hover) !important;
+}
+html[data-theme] .framer-SGVm4 * {
+  color: var(--ds-accent-text) !important;
+  font-family: var(--ds-font-body) !important;
+  font-weight: 600 !important;
+}
+
+/* 9. Secondary Buttons (e.g. "O mnie i gabinecie") */
+html[data-theme] .framer-mR9ne,
+html[data-theme] a[href*="o-mnie"].framer-mR9ne {
+  background: var(--ds-secondary-btn-bg) !important;
+  background-color: var(--ds-secondary-btn-bg) !important;
+  border: 1px solid var(--ds-secondary-btn-border) !important;
+  border-radius: var(--ds-btn-radius) !important;
+}
+html[data-theme] .framer-mR9ne * {
+  color: var(--ds-secondary-btn-text) !important;
+  font-family: var(--ds-font-body) !important;
+}
+
+/* 10. CTA Card Banner */
+html[data-theme] .framer-l8skex,
+html[data-theme] [data-framer-name="CTA Card"] {
+  background: var(--ds-cta-bg, var(--ds-card-bg)) !important;
+  background-color: var(--ds-cta-bg, var(--ds-card-bg)) !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+}
+html[data-theme] .framer-l8skex h2,
+html[data-theme] [data-framer-name="CTA Card"] h2 {
+  color: var(--ds-cta-text, var(--ds-text-primary)) !important;
+  font-family: var(--ds-font-heading) !important;
+}
+html[data-theme] .framer-l8skex p,
+html[data-theme] [data-framer-name="CTA Card"] p {
+  color: var(--ds-cta-muted, var(--ds-text-secondary)) !important;
+  font-family: var(--ds-font-body) !important;
+}
+
+/* 11. Testimonials rating stars */
+html[data-theme] [data-framer-name="star"] svg path,
+html[data-theme] [data-framer-name="Stars"] svg path {
+  fill: var(--ds-accent) !important;
+}
+
+/* 12. Fixed Header Navbar */
+html[data-theme] .framer-wp0bcl-container > div,
+html[data-theme] .framer-wp0bcl-container nav {
+  background: var(--ds-nav-bg) !important;
+  background-color: var(--ds-nav-bg) !important;
+  border-bottom: 1px solid var(--ds-card-border) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+}
+html[data-theme] .framer-wp0bcl-container a {
+  color: var(--ds-text-primary) !important;
+  font-family: var(--ds-font-body) !important;
+}
+
+/* 13. Footer Styling */
+html[data-theme] footer,
+html[data-theme] .framer-l9ghc {
+  background-color: var(--ds-page-bg) !important;
+  background: var(--ds-page-bg) !important;
+  border-top: 1px solid var(--ds-card-border) !important;
+}
+html[data-theme] footer a {
+  color: var(--ds-text-secondary) !important;
+  font-family: var(--ds-font-body) !important;
+}
+html[data-theme] footer a:hover {
+  color: var(--ds-text-primary) !important;
+}
+html[data-theme] footer p {
+  color: var(--ds-text-muted) !important;
+  font-family: var(--ds-font-body) !important;
+}
+
+/* 14. Dark theme SVGs adjustments */
+html[data-theme="athletic-energy"] svg path[stroke="rgb(0,0,0)"],
+html[data-theme="obsidian-luxe"] svg path[stroke="rgb(0,0,0)"] {
+  stroke: var(--ds-text-primary) !important;
+}
+html[data-theme="athletic-energy"] svg path[fill="rgb(0,0,0)"],
+html[data-theme="obsidian-luxe"] svg path[fill="rgb(0,0,0)"] {
+  fill: var(--ds-text-primary) !important;
+}
+html[data-theme="athletic-energy"] svg line[stroke="#9ca3af"],
+html[data-theme="obsidian-luxe"] svg line[stroke="#9ca3af"] {
+  stroke: #64748b !important;
+}
+
+/* ==========================================================================
+   FLOATING THEME SWITCHER TOOLBAR
+   Non-intrusive, sleek, responsive variant selector widget
+   ========================================================================== */
+#theme-switcher-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+#theme-switcher-widget * {
+  box-sizing: border-box;
+}
+
+.tsw-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #111827;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.35), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tsw-toggle-btn:hover {
+  transform: translateY(-2px);
+  background: #1f2937;
+  box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.45);
+}
+
+.tsw-panel {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #111827;
+  color: #f3f4f6;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.tsw-panel.is-open {
+  display: block;
+  animation: tswSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tswSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tsw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tsw-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tsw-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tsw-close-btn,
+.tsw-copy-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #9ca3af;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tsw-close-btn:hover,
+.tsw-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.tsw-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tsw-theme-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+  width: 100%;
+}
+
+.tsw-theme-item:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.tsw-theme-item.active {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: #3b82f6;
+}
+
+.tsw-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tsw-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tsw-item-desc {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.tsw-palette-preview {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.tsw-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tsw-toast {
+  display: none;
+  font-size: 11px;
+  color: #10b981;
+  text-align: center;
+  margin-top: 8px;
+}
