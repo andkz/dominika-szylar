@@ -1,868 +1,725 @@
 @import url('../fonts/variants.css');
 
 /* ==========================================================================
-   DOMINIKA SZYLAR - HARMONIC TONAL ZEBRA SYSTEM
-   Subtle alternating sections within the SAME color family.
-   Tone-on-tone cards (no stark white), Merriweather Light typography everywhere.
+   DOMINIKA SZYLAR - PURE TONAL ZEBRA SYSTEM
+   Strictly alternating between two subtle sister tints of the SAME color family:
+   Kolor 1 <-> Kolor 2 (like #ffffff and #f8f8f8, but in full harmonic colorways)
+   Zero stark white voids, zero harsh contrast, 100% serene medical-aesthetic elegance.
    ========================================================================== */
 
-/* --- Smooth Transitions --- */
-html[data-theme] body,
-html[data-theme] section,
-html[data-theme] footer,
-html[data-theme] div,
-html[data-theme] a,
-html[data-theme] button,
-html[data-theme] h1,
-html[data-theme] h2,
-html[data-theme] h3,
-html[data-theme] p {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+/* --- Universal Typography Override (Merriweather Light 300) --- */
+h1, h2, h3, h4,
+[data-framer-component-type="RichTextContainer"] h1,
+[data-framer-component-type="RichTextContainer"] h2,
+[data-framer-component-type="RichTextContainer"] h3,
+[data-framer-component-type="RichTextContainer"] h4 {
+  font-family: 'Merriweather', Georgia, serif !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.015em !important;
 }
 
-/* ==========================================================================
-   WARIANT 1: CIEPŁY KASZMIR & PIASEK (Harmonic Beige Zebra)
-   ========================================================================== */
-html[data-theme="kaszmir-piasek"] {
-  --ds-page-bg: #f6f0ec;      /* Odcień A: Jasny kaszmir */
-  --ds-section-bg: #ece3db;   /* Odcień B: Kaszmir głębszy o 3% (ten sam kolor) */
-  --ds-card-bg: #ece4dc;      /* Karty w sekcji A */
-  --ds-card-bg-alt: #f5efeb;  /* Karty w sekcji B */
-  --ds-card-border: #dcd0c2;
-  --ds-card-shadow: 0 8px 24px -4px rgba(80, 50, 30, 0.06);
-  --ds-text-primary: #2d211a;
-  --ds-text-secondary: #5e4d43;
-  --ds-text-muted: #8c776c;
+/* Subtle transitions when switching themes */
+html body,
+html section,
+html footer,
+html div,
+html a,
+html button,
+html h1,
+html h2,
+html h3,
+html p {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Default Theme Applied on :root so there is NEVER an unstyled flash */
+:root {
+  --ds-color-1: #faf8f5;
+  --ds-color-2: #f3efe8;
+  --ds-card-in-1: #f3efe8;
+  --ds-card-in-2: #faf8f5;
+  --ds-card-border: #e6decb;
+  --ds-card-shadow: 0 8px 24px -6px rgba(60, 40, 25, 0.05);
+  --ds-text-primary: #2c231e;
+  --ds-text-secondary: #5c4e43;
+  --ds-text-muted: #8a796e;
   --ds-accent: #b06543;
-  --ds-accent-hover: #985132;
-  --ds-accent-text: #fffdfb;
-  --ds-secondary-btn-bg: #ece4dc;
-  --ds-secondary-btn-border: #d2c3b2;
-  --ds-secondary-btn-text: #2d211a;
-  --ds-badge-bg: #e4d7cb;
-  --ds-badge-border: #d0c0b0;
-  --ds-badge-text: #5a3320;
-  --ds-cta-bg: #32231b;
-  --ds-cta-text: #f6f0ec;
-  --ds-cta-muted: #cbbbae;
-  --ds-nav-bg: rgba(246, 240, 236, 0.94);
+  --ds-accent-hover: #965233;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #f3efe8;
+  --ds-secondary-btn-border: #dacfc0;
+  --ds-secondary-btn-text: #2c231e;
+  --ds-badge-bg: #ede4d8;
+  --ds-badge-border: #ded1c0;
+  --ds-badge-text: #5a3421;
+  --ds-cta-bg: #2d221c;
+  --ds-cta-text: #faf8f5;
+  --ds-cta-muted: #c8baa9;
+  --ds-nav-bg: rgba(250, 248, 245, 0.95);
   --ds-card-radius: 16px;
   --ds-btn-radius: 8px;
   --ds-badge-radius: 999px;
+
+  /* Overwrite internal Framer color tokens */
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 2: SZAŁWIOWA HARMONIA (Harmonic Sage Zebra)
+   THEME: 1. Ciepły Kaszmir & Piasek (Domyślny)
+   ========================================================================== */
+html[data-theme="kaszmir-piasek"] {
+  --ds-color-1: #faf8f5;
+  --ds-color-2: #f3efe8;
+  --ds-card-in-1: #f3efe8;
+  --ds-card-in-2: #faf8f5;
+  --ds-card-border: #e6decb;
+  --ds-card-shadow: 0 8px 24px -6px rgba(60, 40, 25, 0.05);
+  --ds-text-primary: #2c231e;
+  --ds-text-secondary: #5c4e43;
+  --ds-text-muted: #8a796e;
+  --ds-accent: #b06543;
+  --ds-accent-hover: #965233;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #f3efe8;
+  --ds-secondary-btn-border: #dacfc0;
+  --ds-secondary-btn-text: #2c231e;
+  --ds-badge-bg: #ede4d8;
+  --ds-badge-border: #ded1c0;
+  --ds-badge-text: #5a3421;
+  --ds-cta-bg: #2d221c;
+  --ds-cta-text: #faf8f5;
+  --ds-cta-muted: #c8baa9;
+  --ds-nav-bg: rgba(250, 248, 245, 0.95);
+  --ds-card-radius: 16px;
+  --ds-btn-radius: 8px;
+  --ds-badge-radius: 999px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
+}
+
+/* ==========================================================================
+   THEME: 2. Szałwiowa Harmonia
    ========================================================================== */
 html[data-theme="szalwiowy-spokoj"] {
-  --ds-page-bg: #eef4ef;      /* Odcień A: Jasna szałwia */
-  --ds-section-bg: #e2ede4;   /* Odcień B: Szałwia głębsza o 3% */
-  --ds-card-bg: #dfece2;
-  --ds-card-bg-alt: #eef5f0;
-  --ds-card-border: #cbddcf;
-  --ds-card-shadow: 0 8px 24px -4px rgba(35, 65, 45, 0.06);
-  --ds-text-primary: #1a3024;
-  --ds-text-secondary: #41574b;
-  --ds-text-muted: #6a8274;
-  --ds-accent: #2c6148;
-  --ds-accent-hover: #214b37;
+  --ds-color-1: #f5f8f5;
+  --ds-color-2: #edf3ed;
+  --ds-card-in-1: #edf3ed;
+  --ds-card-in-2: #f5f8f5;
+  --ds-card-border: #dce6dd;
+  --ds-card-shadow: 0 8px 24px -6px rgba(30, 55, 40, 0.05);
+  --ds-text-primary: #1b2d22;
+  --ds-text-secondary: #455c4e;
+  --ds-text-muted: #6e8677;
+  --ds-accent: #2d654a;
+  --ds-accent-hover: #23503a;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #dfece2;
-  --ds-secondary-btn-border: #bed2c2;
-  --ds-secondary-btn-text: #1a3024;
-  --ds-badge-bg: #d4e5d8;
-  --ds-badge-border: #bbd3bf;
-  --ds-badge-text: #1e4733;
-  --ds-cta-bg: #1c3527;
-  --ds-cta-text: #eef4ef;
-  --ds-cta-muted: #bdd0c3;
-  --ds-nav-bg: rgba(238, 244, 239, 0.94);
+  --ds-secondary-btn-bg: #edf3ed;
+  --ds-secondary-btn-border: #cadccd;
+  --ds-secondary-btn-text: #1b2d22;
+  --ds-badge-bg: #e0ede2;
+  --ds-badge-border: #cbded0;
+  --ds-badge-text: #1d4734;
+  --ds-cta-bg: #1a2c21;
+  --ds-cta-text: #f5f8f5;
+  --ds-cta-muted: #b8cfc0;
+  --ds-nav-bg: rgba(245, 248, 245, 0.95);
   --ds-card-radius: 16px;
   --ds-btn-radius: 999px;
   --ds-badge-radius: 999px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 3: KREMOWY ALABASTER (Harmonic Ivory Zebra)
+   THEME: 3. Kremowy Alabaster
    ========================================================================== */
 html[data-theme="alabaster-krem"] {
-  --ds-page-bg: #faf8f5;      /* Odcień A: Ciepła perła */
-  --ds-section-bg: #efebe3;   /* Odcień B: Alabaster głębszy o 3% */
-  --ds-card-bg: #efece4;
-  --ds-card-bg-alt: #f7f4ee;
-  --ds-card-border: #ddd7ca;
-  --ds-card-shadow: 0 6px 20px -3px rgba(60, 50, 40, 0.05);
-  --ds-text-primary: #232528;
-  --ds-text-secondary: #555960;
-  --ds-text-muted: #838891;
-  --ds-accent: #232528;
-  --ds-accent-hover: #3b3d42;
-  --ds-accent-text: #faf8f5;
-  --ds-secondary-btn-bg: #efece4;
-  --ds-secondary-btn-border: #d0c8b9;
-  --ds-secondary-btn-text: #232528;
-  --ds-badge-bg: #e8e2d7;
-  --ds-badge-border: #d6cdbe;
-  --ds-badge-text: #35383d;
-  --ds-cta-bg: #232528;
-  --ds-cta-text: #faf8f5;
-  --ds-cta-muted: #adb2ba;
-  --ds-nav-bg: rgba(250, 248, 245, 0.94);
+  --ds-color-1: #faf9f7;
+  --ds-color-2: #f2efe9;
+  --ds-card-in-1: #f2efe9;
+  --ds-card-in-2: #faf9f7;
+  --ds-card-border: #dedad1;
+  --ds-card-shadow: 0 6px 20px -4px rgba(40, 40, 45, 0.05);
+  --ds-text-primary: #232427;
+  --ds-text-secondary: #52555e;
+  --ds-text-muted: #80848f;
+  --ds-accent: #32353c;
+  --ds-accent-hover: #1d1f23;
+  --ds-accent-text: #faf9f7;
+  --ds-secondary-btn-bg: #f2efe9;
+  --ds-secondary-btn-border: #d2cebf;
+  --ds-secondary-btn-text: #232427;
+  --ds-badge-bg: #e9e5db;
+  --ds-badge-border: #d7d2c3;
+  --ds-badge-text: #32353c;
+  --ds-cta-bg: #232427;
+  --ds-cta-text: #faf9f7;
+  --ds-cta-muted: #abaeb9;
+  --ds-nav-bg: rgba(250, 249, 247, 0.95);
   --ds-card-radius: 12px;
   --ds-btn-radius: 6px;
   --ds-badge-radius: 6px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 4: GŁĘBOKI MECH & ZŁOTO (Harmonic Forest Zebra)
+   THEME: 4. Głęboki Mech & Złoto
    ========================================================================== */
 html[data-theme="gleboki-mech"] {
-  --ds-page-bg: #f2f5ef;      /* Odcień A: Jasny mech */
-  --ds-section-bg: #e3eae0;   /* Odcień B: Leśna oliwka */
-  --ds-card-bg: #e2e9de;
-  --ds-card-bg-alt: #eef3ec;
-  --ds-card-border: #ccd8c7;
-  --ds-card-shadow: 0 8px 24px -4px rgba(25, 45, 30, 0.07);
-  --ds-text-primary: #13261c;
-  --ds-text-secondary: #3a4e43;
-  --ds-text-muted: #657b6f;
-  --ds-accent: #193627;
-  --ds-accent-hover: #10241a;
-  --ds-accent-text: #f5eedb;
-  --ds-secondary-btn-bg: #e2e9de;
-  --ds-secondary-btn-border: #bfcfb8;
-  --ds-secondary-btn-text: #13261c;
-  --ds-badge-bg: #d7e3d1;
-  --ds-badge-border: #bfd3b7;
-  --ds-badge-text: #163323;
-  --ds-cta-bg: #142a1f;
-  --ds-cta-text: #f5eedb;
-  --ds-cta-muted: #b8c7b8;
-  --ds-nav-bg: rgba(242, 245, 239, 0.94);
+  --ds-color-1: #f4f7f3;
+  --ds-color-2: #edf2eb;
+  --ds-card-in-1: #edf2eb;
+  --ds-card-in-2: #f4f7f3;
+  --ds-card-border: #d8e3d6;
+  --ds-card-shadow: 0 8px 24px -6px rgba(25, 45, 30, 0.06);
+  --ds-text-primary: #17271c;
+  --ds-text-secondary: #3d5345;
+  --ds-text-muted: #688070;
+  --ds-accent: #1f412c;
+  --ds-accent-hover: #152e1e;
+  --ds-accent-text: #ffffff;
+  --ds-secondary-btn-bg: #edf2eb;
+  --ds-secondary-btn-border: #cad9c6;
+  --ds-secondary-btn-text: #17271c;
+  --ds-badge-bg: #dfeade;
+  --ds-badge-border: #c8dbca;
+  --ds-badge-text: #173423;
+  --ds-cta-bg: #16271c;
+  --ds-cta-text: #f4f7f3;
+  --ds-cta-muted: #b4c9b9;
+  --ds-nav-bg: rgba(244, 247, 243, 0.95);
   --ds-card-radius: 14px;
   --ds-btn-radius: 6px;
   --ds-badge-radius: 6px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 5: PUDROWY KWIAT & JEDWAB (Harmonic Blush Zebra)
+   THEME: 5. Puder & Jedwab
    ========================================================================== */
 html[data-theme="pudrowy-kwiat"] {
-  --ds-page-bg: #f9f1ee;      /* Odcień A: Jasny pudrowy nude */
-  --ds-section-bg: #efe3df;   /* Odcień B: Różany beż */
-  --ds-card-bg: #ece0dc;
-  --ds-card-bg-alt: #f8eeea;
-  --ds-card-border: #dfcec9;
-  --ds-card-shadow: 0 8px 24px -4px rgba(120, 60, 70, 0.06);
-  --ds-text-primary: #352024;
-  --ds-text-secondary: #664e53;
-  --ds-text-muted: #94777d;
-  --ds-accent: #9a4f5f;
-  --ds-accent-hover: #823e4d;
+  --ds-color-1: #faf5f3;
+  --ds-color-2: #f4ece9;
+  --ds-card-in-1: #f4ece9;
+  --ds-card-in-2: #faf5f3;
+  --ds-card-border: #e7dbd7;
+  --ds-card-shadow: 0 8px 24px -6px rgba(90, 45, 55, 0.05);
+  --ds-text-primary: #342226;
+  --ds-text-secondary: #634c52;
+  --ds-text-muted: #8f737a;
+  --ds-accent: #9c5364;
+  --ds-accent-hover: #824050;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #ece0dc;
-  --ds-secondary-btn-border: #d8c0b9;
-  --ds-secondary-btn-text: #352024;
-  --ds-badge-bg: #e6d4cf;
-  --ds-badge-border: #d4bfb8;
-  --ds-badge-text: #6f2e3c;
-  --ds-cta-bg: #381f25;
-  --ds-cta-text: #f9f1ee;
-  --ds-cta-muted: #d6bebe;
-  --ds-nav-bg: rgba(249, 241, 238, 0.94);
+  --ds-secondary-btn-bg: #f4ece9;
+  --ds-secondary-btn-border: #ddcbc6;
+  --ds-secondary-btn-text: #342226;
+  --ds-badge-bg: #ebdcd7;
+  --ds-badge-border: #dcbeb5;
+  --ds-badge-text: #6b2c3a;
+  --ds-cta-bg: #342024;
+  --ds-cta-text: #faf5f3;
+  --ds-cta-muted: #cfb9be;
+  --ds-nav-bg: rgba(250, 245, 243, 0.95);
   --ds-card-radius: 20px;
   --ds-btn-radius: 999px;
   --ds-badge-radius: 999px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 6: TERAKOTA & GLINKA (Harmonic Clay Zebra)
+   THEME: 6. Terakota & Glinka
    ========================================================================== */
 html[data-theme="terakota-ziemia"] {
-  --ds-page-bg: #f5ece4;      /* Odcień A: Jasna glinka */
-  --ds-section-bg: #e8dcd1;   /* Odcień B: Ciepły piaskowiec */
-  --ds-card-bg: #e4d7cb;
-  --ds-card-bg-alt: #f3e9e0;
-  --ds-card-border: #d7c5b5;
-  --ds-card-shadow: 0 8px 24px -4px rgba(110, 50, 30, 0.07);
-  --ds-text-primary: #331e15;
-  --ds-text-secondary: #5f483d;
-  --ds-text-muted: #8c7164;
-  --ds-accent: #964227;
-  --ds-accent-hover: #7e341c;
+  --ds-color-1: #fbf6f2;
+  --ds-color-2: #f4ede6;
+  --ds-card-in-1: #f4ede6;
+  --ds-card-in-2: #fbf6f2;
+  --ds-card-border: #e6dad0;
+  --ds-card-shadow: 0 8px 24px -6px rgba(90, 40, 25, 0.06);
+  --ds-text-primary: #33221b;
+  --ds-text-secondary: #604a40;
+  --ds-text-muted: #8e756a;
+  --ds-accent: #a85536;
+  --ds-accent-hover: #8f4429;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #e4d7cb;
-  --ds-secondary-btn-border: #cbb6a1;
-  --ds-secondary-btn-text: #331e15;
-  --ds-badge-bg: #dfcebf;
-  --ds-badge-border: #ccb7a4;
-  --ds-badge-text: #6c2a15;
-  --ds-cta-bg: #351a10;
-  --ds-cta-text: #f5ece4;
-  --ds-cta-muted: #c8b4a5;
-  --ds-nav-bg: rgba(245, 236, 228, 0.94);
+  --ds-secondary-btn-bg: #f4ede6;
+  --ds-secondary-btn-border: #dbcabf;
+  --ds-secondary-btn-text: #33221b;
+  --ds-badge-bg: #e9dcd2;
+  --ds-badge-border: #dbc5b5;
+  --ds-badge-text: #743018;
+  --ds-cta-bg: #322019;
+  --ds-cta-text: #fbf6f2;
+  --ds-cta-muted: #ccb8ae;
+  --ds-nav-bg: rgba(251, 246, 242, 0.95);
   --ds-card-radius: 16px;
   --ds-btn-radius: 10px;
   --ds-badge-radius: 999px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 7: MORSKA BRYZA & MIĘTA (Harmonic Mist Zebra)
+   THEME: 7. Morska Bryza & Mięta
    ========================================================================== */
 html[data-theme="morska-bryza"] {
-  --ds-page-bg: #ecf3f4;      /* Odcień A: Jasna bryza */
-  --ds-section-bg: #dde9eb;   /* Odcień B: Miętowa laguna */
-  --ds-card-bg: #d8e5e7;
-  --ds-card-bg-alt: #e8f1f2;
-  --ds-card-border: #c4d7da;
-  --ds-card-shadow: 0 8px 24px -4px rgba(20, 60, 65, 0.06);
-  --ds-text-primary: #102b30;
-  --ds-text-secondary: #385257;
-  --ds-text-muted: #627e84;
-  --ds-accent: #18606b;
-  --ds-accent-hover: #114a53;
+  --ds-color-1: #f4f8f8;
+  --ds-color-2: #ebf2f2;
+  --ds-card-in-1: #ebf2f2;
+  --ds-card-in-2: #f4f8f8;
+  --ds-card-border: #d4e3e3;
+  --ds-card-shadow: 0 8px 24px -6px rgba(20, 50, 55, 0.05);
+  --ds-text-primary: #13272b;
+  --ds-text-secondary: #3e575b;
+  --ds-text-muted: #688488;
+  --ds-accent: #19646e;
+  --ds-accent-hover: #114c54;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #d8e5e7;
-  --ds-secondary-btn-border: #b5cbcf;
-  --ds-secondary-btn-text: #102b30;
-  --ds-badge-bg: #cedeeb;
-  --ds-badge-border: #b2cbd3;
-  --ds-badge-text: #12464e;
-  --ds-cta-bg: #112d33;
-  --ds-cta-text: #ecf3f4;
-  --ds-cta-muted: #b4cbcf;
-  --ds-nav-bg: rgba(236, 243, 244, 0.94);
+  --ds-secondary-btn-bg: #ebf2f2;
+  --ds-secondary-btn-border: #c3d7d8;
+  --ds-secondary-btn-text: #13272b;
+  --ds-badge-bg: #dce8e8;
+  --ds-badge-border: #c4d8d9;
+  --ds-badge-text: #134850;
+  --ds-cta-bg: #12262a;
+  --ds-cta-text: #f4f8f8;
+  --ds-cta-muted: #b4c9cc;
+  --ds-nav-bg: rgba(244, 248, 248, 0.95);
   --ds-card-radius: 16px;
   --ds-btn-radius: 999px;
   --ds-badge-radius: 999px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 8: STARY PERGAMIN & ANTYKWA (Harmonic Parchment Zebra)
+   THEME: 8. Stary Pergamin & Antykwa
    ========================================================================== */
 html[data-theme="stary-pergamin"] {
-  --ds-page-bg: #f7f3e9;      /* Odcień A: Jasny pergamin */
-  --ds-section-bg: #ece4d4;   /* Odcień B: Papier biblioteczny */
-  --ds-card-bg: #e7dfce;
-  --ds-card-bg-alt: #f5efe3;
-  --ds-card-border: #ddd3bf;
-  --ds-card-shadow: 0 6px 20px -3px rgba(50, 45, 35, 0.06);
-  --ds-text-primary: #1f1c18;
-  --ds-text-secondary: #4d473e;
-  --ds-text-muted: #797165;
-  --ds-accent: #2c261f;
-  --ds-accent-hover: #40382f;
-  --ds-accent-text: #f7f3e9;
-  --ds-secondary-btn-bg: #e7dfce;
-  --ds-secondary-btn-border: #cec2a8;
-  --ds-secondary-btn-text: #1f1c18;
-  --ds-badge-bg: #e3d9c5;
-  --ds-badge-border: #cfc2a8;
-  --ds-badge-text: #2c261f;
-  --ds-cta-bg: #231f19;
-  --ds-cta-text: #f7f3e9;
-  --ds-cta-muted: #b8af9e;
-  --ds-nav-bg: rgba(247, 243, 233, 0.94);
+  --ds-color-1: #f9f6ef;
+  --ds-color-2: #f1ece2;
+  --ds-card-in-1: #f1ece2;
+  --ds-card-in-2: #f9f6ef;
+  --ds-card-border: #e0d7c6;
+  --ds-card-shadow: 0 6px 20px -4px rgba(45, 40, 30, 0.05);
+  --ds-text-primary: #211d19;
+  --ds-text-secondary: #4f483f;
+  --ds-text-muted: #7a7164;
+  --ds-accent: #2c2620;
+  --ds-accent-hover: #403830;
+  --ds-accent-text: #f9f6ef;
+  --ds-secondary-btn-bg: #f1ece2;
+  --ds-secondary-btn-border: #d4c8af;
+  --ds-secondary-btn-text: #211d19;
+  --ds-badge-bg: #e7dec9;
+  --ds-badge-border: #d4c6a9;
+  --ds-badge-text: #2c2620;
+  --ds-cta-bg: #221d18;
+  --ds-cta-text: #f9f6ef;
+  --ds-cta-muted: #b8af9c;
+  --ds-nav-bg: rgba(249, 246, 239, 0.95);
   --ds-card-radius: 4px;
   --ds-btn-radius: 4px;
   --ds-badge-radius: 4px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 9: SŁONECZNY BURSZTYN & WANILIA (Harmonic Amber Zebra)
+   THEME: 9. Słoneczny Bursztyn
    ========================================================================== */
 html[data-theme="sloneczny-bursztyn"] {
-  --ds-page-bg: #f8f4ea;      /* Odcień A: Jasna wanilia */
-  --ds-section-bg: #eee5d2;   /* Odcień B: Miodowy krem */
-  --ds-card-bg: #eae0cb;
-  --ds-card-bg-alt: #f6f0e3;
-  --ds-card-border: #dfd3b9;
-  --ds-card-shadow: 0 8px 24px -4px rgba(100, 70, 20, 0.06);
-  --ds-text-primary: #302613;
-  --ds-text-secondary: #5c4e33;
-  --ds-text-muted: #877656;
-  --ds-accent: #a66b24;
-  --ds-accent-hover: #8c5719;
+  --ds-color-1: #faf6ee;
+  --ds-color-2: #f3ede2;
+  --ds-card-in-1: #f3ede2;
+  --ds-card-in-2: #faf6ee;
+  --ds-card-border: #e4dac4;
+  --ds-card-shadow: 0 8px 24px -6px rgba(80, 55, 15, 0.05);
+  --ds-text-primary: #302514;
+  --ds-text-secondary: #5d4d35;
+  --ds-text-muted: #897658;
+  --ds-accent: #a86c23;
+  --ds-accent-hover: #8c5617;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #eae0cb;
-  --ds-secondary-btn-border: #d4bf9c;
-  --ds-secondary-btn-text: #302613;
-  --ds-badge-bg: #e6dac1;
-  --ds-badge-border: #d4c29f;
-  --ds-badge-text: #6b4312;
-  --ds-cta-bg: #2e230f;
-  --ds-cta-text: #f8f4ea;
+  --ds-secondary-btn-bg: #f3ede2;
+  --ds-secondary-btn-border: #dbc8a4;
+  --ds-secondary-btn-text: #302514;
+  --ds-badge-bg: #e9deca;
+  --ds-badge-border: #d9c5a1;
+  --ds-badge-text: #6e4212;
+  --ds-cta-bg: #2d2211;
+  --ds-cta-text: #faf6ee;
   --ds-cta-muted: #ccbc9d;
-  --ds-nav-bg: rgba(248, 244, 234, 0.94);
+  --ds-nav-bg: rgba(250, 246, 238, 0.95);
   --ds-card-radius: 16px;
   --ds-btn-radius: 10px;
   --ds-badge-radius: 999px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   WARIANT 10: CIEMNY AKSAMIT & MIEDŹ (Harmonic Dark Velvet Zebra)
+   THEME: 10. Ciemny Aksamit & Miedź
    ========================================================================== */
 html[data-theme="ciemny-aksamit"] {
-  --ds-page-bg: #121116;      /* Odcień A: Aksamitna ciemność */
-  --ds-section-bg: #191820;   /* Odcień B: Grafit z tej samej palety (+3% jaśniejszy) */
-  --ds-card-bg: #1f1e28;
-  --ds-card-bg-alt: #171620;
-  --ds-card-border: #2e2c3d;
-  --ds-card-shadow: 0 12px 36px -6px rgba(0, 0, 0, 0.55);
-  --ds-text-primary: #f3eff5;
-  --ds-text-secondary: #a29db0;
-  --ds-text-muted: #736d82;
-  --ds-accent: #d9795f;
-  --ds-accent-hover: #c4674e;
+  --ds-color-1: #141318;
+  --ds-color-2: #1a1920;
+  --ds-card-in-1: #1e1d26;
+  --ds-card-in-2: #15141c;
+  --ds-card-border: #2d2b3a;
+  --ds-card-shadow: 0 12px 36px -6px rgba(0, 0, 0, 0.6);
+  --ds-text-primary: #f4f1f7;
+  --ds-text-secondary: #9f99ab;
+  --ds-text-muted: #726d80;
+  --ds-accent: #d97a5f;
+  --ds-accent-hover: #c3674d;
   --ds-accent-text: #ffffff;
-  --ds-secondary-btn-bg: #1f1e28;
-  --ds-secondary-btn-border: #383547;
-  --ds-secondary-btn-text: #f3eff5;
-  --ds-badge-bg: #262330;
-  --ds-badge-border: #3d374f;
+  --ds-secondary-btn-bg: #1e1d26;
+  --ds-secondary-btn-border: #393549;
+  --ds-secondary-btn-text: #f4f1f7;
+  --ds-badge-bg: #262331;
+  --ds-badge-border: #3f3851;
   --ds-badge-text: #f09b84;
-  --ds-cta-bg: #191821;
-  --ds-cta-text: #f3eff5;
-  --ds-cta-muted: #a29db0;
-  --ds-nav-bg: rgba(18, 17, 22, 0.94);
+  --ds-cta-bg: #191822;
+  --ds-cta-text: #f4f1f7;
+  --ds-cta-muted: #a09aac;
+  --ds-nav-bg: rgba(20, 19, 24, 0.95);
   --ds-card-radius: 16px;
   --ds-btn-radius: 10px;
   --ds-badge-radius: 8px;
+
+  --token-80553515-7ab0-44ac-b981-96d7680674fd: var(--ds-color-1) !important;
+  --token-eb1c2ac0-df61-44fa-bf47-8b8b7fb5abe3: var(--ds-color-1) !important;
+  --token-b49742a2-2f0a-4232-bcea-05d31a19a70e: var(--ds-card-in-1) !important;
+  --token-1e4de996-fe4b-4667-88fc-284e9577f815: var(--ds-card-in-1) !important;
+  --token-ee7ff27e-bc2d-40a1-8a1f-b3d025af745d: var(--ds-color-2) !important;
 }
 
 /* ==========================================================================
-   APPLYING THE TONAL ZEBRA RHYTHM ACROSS SECTIONS
+   GLOBAL CONTAINERS & BODY
    ========================================================================== */
-
-/* Root & Global Container Defaults */
-html[data-theme],
-html[data-theme] body,
-html[data-theme] #main,
-html[data-theme] .framer-cWFbg,
-html[data-theme] .framer-zqDo3 {
-  background-color: var(--ds-page-bg) !important;
+html,
+body,
+#main,
+.framer-cWFbg,
+.framer-zqDo3 {
+  background-color: var(--ds-color-1) !important;
+  background: var(--ds-color-1) !important;
   color: var(--ds-text-primary) !important;
 }
 
-/* 1. SEKCJA HERO: Odcień A (page-bg) */
-html[data-theme] .framer-olpvqv {
-  background-color: var(--ds-page-bg) !important;
-  background: var(--ds-page-bg) !important;
+/* Neutralize all Framer wrapper backgrounds so only sections paint */
+.framer-19kmjdb,
+.framer-12bfmsn,
+.framer-1bezxh4,
+.framer-rjdtjn,
+.framer-1olcsf0,
+.framer-139dgwz,
+.framer-1yn9zpk {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-/* 2. SEKCJA PORÓWNANIE (Dlaczego warto?): Odcień B (section-bg) - w tej samej tonacji! */
-html[data-theme] .framer-8tekcf {
-  background-color: var(--ds-section-bg) !important;
-  background: var(--ds-section-bg) !important;
+/* ==========================================================================
+   TONAL ZEBRA RHYTHM: Pure Sister Tints (Kolor 1 <-> Kolor 2)
+   ========================================================================== */
+
+/* SEKCJA 1: HERO -> Kolor 1 */
+.framer-olpvqv,
+section[data-framer-name="Hero / Horizontal-01"] {
+  background-color: var(--ds-color-1) !important;
+  background: var(--ds-color-1) !important;
 }
 
-/* 3. SEKCJA OFERTA (6 kafelków): Odcień A (page-bg) */
-html[data-theme] .framer-cov1xy,
-html[data-theme] .framer-12bfmsn {
-  background-color: var(--ds-page-bg) !important;
-  background: var(--ds-page-bg) !important;
+/* SEKCJA 2: PORÓWNANIE (Dlaczego warto?) -> Kolor 2 */
+.framer-8tekcf,
+div[data-framer-name="Comparison v6"] {
+  background-color: var(--ds-color-2) !important;
+  background: var(--ds-color-2) !important;
 }
 
-/* 4. SEKCJA OPINIE (Karuzela): Odcień B (section-bg) - w tej samej tonacji! */
-html[data-theme] .framer-w3d9lw,
-html[data-theme] .framer-1olcsf0 {
-  background-color: var(--ds-section-bg) !important;
-  background: var(--ds-section-bg) !important;
+/* SEKCJA 3: INDIBA (Desktop, Tablet, Phone) -> Kolor 1 (ABSOLUTELY NO WHITE VOID!) */
+.framer-dU8K6,
+.framer-1t4i2rs-container,
+div[data-framer-name="Desktop"].framer-dU8K6,
+div[data-framer-name="Tablet"].framer-dU8K6,
+div[data-framer-name="Phone"].framer-dU8K6 {
+  background-color: var(--ds-color-1) !important;
+  background: var(--ds-color-1) !important;
 }
 
-/* 5. SEKCJA FAQ: Odcień A (page-bg) */
-html[data-theme] .framer-1ix845k {
-  background-color: var(--ds-page-bg) !important;
-  background: var(--ds-page-bg) !important;
+/* SEKCJA 4: OFERTA (6 kafelków) -> Kolor 2 */
+.framer-cov1xy,
+section[data-framer-name="Feature / Cards-04 2"] {
+  background-color: var(--ds-color-2) !important;
+  background: var(--ds-color-2) !important;
 }
 
-/* 6. FOOTER: Odcień B (section-bg) */
-html[data-theme] footer,
-html[data-theme] .framer-l9ghc {
-  background-color: var(--ds-section-bg) !important;
-  background: var(--ds-section-bg) !important;
+/* SEKCJA 5: OPINIE PACJENTEK (Karuzela) -> Kolor 1 */
+.framer-w3d9lw,
+section[data-framer-name="Testimonial / Carousel-03"] {
+  background-color: var(--ds-color-1) !important;
+  background: var(--ds-color-1) !important;
+}
+
+/* SEKCJA 6: FAQ (Akordeon pytań) -> Kolor 2 */
+.framer-1ix845k,
+section[data-framer-name="FAQ / Accordion-03"] {
+  background-color: var(--ds-color-2) !important;
+  background: var(--ds-color-2) !important;
+}
+
+/* SEKCJA 7: CTA BANNER WRAPPER -> Kolor 1 */
+.framer-lhTDQ,
+.framer-MW4wf,
+section[data-framer-name="Desktop"].framer-lhTDQ,
+section[data-framer-name="Tablet"].framer-lhTDQ,
+section[data-framer-name="Phone"].framer-lhTDQ,
+div[data-framer-name="Desktop"].framer-MW4wf,
+div[data-framer-name="Tablet"].framer-MW4wf,
+div[data-framer-name="Phone"].framer-MW4wf {
+  background-color: var(--ds-color-1) !important;
+  background: var(--ds-color-1) !important;
+}
+
+/* SEKCJA 8: FOOTER -> Kolor 2 */
+footer,
+.framer-l9ghc,
+footer[data-framer-name="Desktop"],
+footer[data-framer-name="Tablet"],
+footer[data-framer-name="Phone"] {
+  background-color: var(--ds-color-2) !important;
+  background: var(--ds-color-2) !important;
   border-top: 1px solid var(--ds-card-border) !important;
 }
 
-/* Delikatne, miękkie linie podziału między sekcjami */
-html[data-theme] [data-framer-name="divider"],
-html[data-theme] .framer-iiv745,
-html[data-theme] .framer-1355r18,
-html[data-theme] .framer-9j74ux,
-html[data-theme] .framer-1ebq8wo {
-  background-color: var(--ds-card-border) !important;
-  opacity: 0.6 !important;
-  height: 1px !important;
+/* Delikatne, niemal niewidoczne przejścia między sekcjami (zero grubych kresek) */
+[data-framer-name="divider"],
+.framer-1ebq8wo,
+.framer-iiv745,
+.framer-1355r18,
+.framer-9j74ux {
+  display: none !important;
 }
 
 /* ==========================================================================
-   TONE-ON-TONE CARDS (Never harsh stark white!)
+   TONE-ON-TONE CARDS (Never stark white cards on beige!)
+   Cards in Section 1 take Color 2.
+   Cards in Section 2 take Color 1.
    ========================================================================== */
 
-/* Karty w sekcji Porównanie (Sekcja B) */
-html[data-theme] .framer-8tekcf .framer-pdt5y6,
-html[data-theme] .framer-8tekcf .framer-e8j9a1 {
-  background: var(--ds-card-bg-alt) !important;
-  background-color: var(--ds-card-bg-alt) !important;
+/* Karty w Porównaniu (Sekcja 2 -> Kolor 2) -> Karta ma Kolor 1 */
+.framer-8tekcf .framer-pdt5y6 {
+  background: var(--ds-card-in-2) !important;
+  background-color: var(--ds-card-in-2) !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+  box-shadow: var(--ds-card-shadow) !important;
+}
+.framer-8tekcf .framer-e8j9a1 {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1px solid var(--ds-card-border) !important;
+  border-radius: var(--ds-card-radius) !important;
+}
+
+/* Kafelki w sekcji INDIBA (Sekcja 3 -> Kolor 1) -> Kafelki mają Kolor 2 */
+.framer-dU8K6 .framer-gus4pc,
+.framer-dU8K6 .framer-ehsz3n,
+.framer-dU8K6 .framer-pld69b,
+.framer-dU8K6 .framer-ck451j,
+.framer-dU8K6 [data-framer-name="Card"] {
+  background: var(--ds-card-in-1) !important;
+  background-color: var(--ds-card-in-1) !important;
   border: 1px solid var(--ds-card-border) !important;
   border-radius: var(--ds-card-radius) !important;
   box-shadow: var(--ds-card-shadow) !important;
 }
 
-/* Karty w sekcji Oferta (Sekcja A) */
-html[data-theme] .framer-19bricz > div,
-html[data-theme] .framer-158kfqd,
-html[data-theme] .framer-15xlo9f,
-html[data-theme] .framer-1o1w9us,
-html[data-theme] .framer-e78txs,
-html[data-theme] .framer-sh17ld,
-html[data-theme] .framer-1qm3gp0 {
-  background: var(--ds-card-bg) !important;
-  background-color: var(--ds-card-bg) !important;
+/* Karty Oferty (Sekcja 4 -> Kolor 2) -> Karty mają Kolor 1 */
+.framer-cov1xy .framer-19bricz > div,
+.framer-cov1xy .framer-158kfqd,
+.framer-cov1xy .framer-15xlo9f,
+.framer-cov1xy .framer-1o1w9us,
+.framer-cov1xy .framer-e78txs,
+.framer-cov1xy .framer-sh17ld,
+.framer-cov1xy .framer-1qm3gp0 {
+  background: var(--ds-card-in-2) !important;
+  background-color: var(--ds-card-in-2) !important;
   border: 1px solid var(--ds-card-border) !important;
   border-radius: var(--ds-card-radius) !important;
   box-shadow: var(--ds-card-shadow) !important;
 }
 
-/* Karty w sekcji Opinie (Sekcja B) */
-html[data-theme] .framer-1olcsf0 .framer-18tr0e7,
-html[data-theme] .framer-1olcsf0 .framer-101ix0d,
-html[data-theme] .framer-1olcsf0 .framer-107o4e1,
-html[data-theme] .framer-1olcsf0 .framer-kasu0y,
-html[data-theme] .framer-1olcsf0 .framer-qompb8,
-html[data-theme] .framer-1olcsf0 .framer-1gp8po5 {
-  background: var(--ds-card-bg-alt) !important;
-  background-color: var(--ds-card-bg-alt) !important;
+/* Karty Opinii (Sekcja 5 -> Kolor 1) -> Karty mają Kolor 2 */
+.framer-w3d9lw .framer-12bfmsn,
+.framer-w3d9lw [data-framer-name="Card"] {
+  background: var(--ds-card-in-1) !important;
+  background-color: var(--ds-card-in-1) !important;
   border: 1px solid var(--ds-card-border) !important;
   border-radius: var(--ds-card-radius) !important;
   box-shadow: var(--ds-card-shadow) !important;
 }
 
-/* Elementy akordeonu FAQ (Sekcja A) */
-html[data-theme] .framer-1ix845k [data-framer-name="Closed"],
-html[data-theme] .framer-1ix845k [data-framer-name="Open"],
-html[data-theme] .framer-1ix845k .framer-pdzzun {
-  background: var(--ds-card-bg) !important;
-  background-color: var(--ds-card-bg) !important;
+/* Karty FAQ (Sekcja 6 -> Kolor 2) -> Akordeon ma Kolor 1 */
+.framer-1ix845k .framer-13p516z,
+.framer-1ix845k [data-framer-name="Question"] {
+  background: var(--ds-card-in-2) !important;
+  background-color: var(--ds-card-in-2) !important;
   border: 1px solid var(--ds-card-border) !important;
   border-radius: var(--ds-card-radius) !important;
-  box-shadow: var(--ds-card-shadow) !important;
 }
 
-/* Card hover micro-interaction */
-html[data-theme] .framer-19bricz > div:hover,
-html[data-theme] .framer-18tr0e7:hover,
-html[data-theme] .framer-101ix0d:hover,
-html[data-theme] .framer-1ix845k [data-framer-name="Closed"]:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.1) !important;
+/* Karta CTA (Wielka karta w sekcji 7) */
+.framer-l8skex,
+div[data-framer-name="CTA Card"] {
+  background-color: var(--ds-cta-bg) !important;
+  background: var(--ds-cta-bg) !important;
+  border-radius: var(--ds-card-radius) !important;
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.25) !important;
+}
+.framer-l8skex h2,
+.framer-l8skex h3,
+div[data-framer-name="CTA Card"] h2,
+div[data-framer-name="CTA Card"] h3 {
+  color: var(--ds-cta-text) !important;
+}
+.framer-l8skex p,
+div[data-framer-name="CTA Card"] p {
+  color: var(--ds-cta-muted) !important;
+}
+
+/* ==========================================================================
+   PRZYCISKI, BADGE, NAWIGACJA
+   ========================================================================== */
+
+/* Główny przycisk akcji (CTA / Umów wizytę) */
+.framer-116h1p3,
+.framer-122e2u9,
+.framer-o6qfqy,
+[data-framer-name="Primary / L"],
+[data-framer-name="Primary / M"] {
+  background: var(--ds-accent) !important;
+  background-color: var(--ds-accent) !important;
   border-color: var(--ds-accent) !important;
+  color: var(--ds-accent-text) !important;
+  border-radius: var(--ds-btn-radius) !important;
+}
+.framer-116h1p3:hover,
+.framer-122e2u9:hover,
+.framer-o6qfqy:hover {
+  background: var(--ds-accent-hover) !important;
+  background-color: var(--ds-accent-hover) !important;
+}
+.framer-116h1p3 p,
+.framer-122e2u9 p,
+.framer-o6qfqy p {
+  color: var(--ds-accent-text) !important;
 }
 
-/* Internal card lines and dividers */
-html[data-theme] .framer-tu7kmw,
-html[data-theme] .framer-ze08om {
-  border-color: var(--ds-card-border) !important;
+/* Wtórne przyciski (Secondary buttons) */
+.framer-1d9keem,
+[data-framer-name="L / Default"],
+[data-framer-name="M / Default"] {
+  background: var(--ds-secondary-btn-bg) !important;
+  background-color: var(--ds-secondary-btn-bg) !important;
+  border: 1px solid var(--ds-secondary-btn-border) !important;
+  color: var(--ds-secondary-btn-text) !important;
+  border-radius: var(--ds-btn-radius) !important;
+}
+.framer-1d9keem p,
+[data-framer-name="L / Default"] p {
+  color: var(--ds-secondary-btn-text) !important;
 }
 
-/* ==========================================================================
-   HEADINGS: MERRIWEATHER LIGHT (300) EVERYWHERE
-   ========================================================================== */
-html[data-theme] h1,
-html[data-theme] h2,
-html[data-theme] h3,
-html[data-theme] h4,
-html[data-theme] .framer-o0mgjp h1,
-html[data-theme] .framer-ihlnxx h2,
-html[data-theme] .framer-1din01n h2 {
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-weight: 300 !important; /* Elegant, airy Light serif */
-  color: var(--ds-text-primary) !important;
-  letter-spacing: -0.015em !important;
-  line-height: 1.25em !important;
-}
-
-html[data-theme] h1 *,
-html[data-theme] h2 *,
-html[data-theme] h3 *,
-html[data-theme] h4 * {
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-weight: inherit !important;
-  color: inherit !important;
-  letter-spacing: inherit !important;
-}
-
-/* Card Titles */
-html[data-theme] .framer-c5e0tw p,
-html[data-theme] .framer-1h30d63 p,
-html[data-theme] .framer-ab11op p,
-html[data-theme] .framer-193gdp2 p,
-html[data-theme] .framer-153z2t0 p,
-html[data-theme] .framer-unlkxu p,
-html[data-theme] .framer-1cqluv8 h3,
-html[data-theme] .framer-16s7b5a h3,
-html[data-theme] .framer-pzmkjy h3,
-html[data-theme] .framer-14v0op2 h3,
-html[data-theme] .framer-ouv132 h3,
-html[data-theme] .framer-1b0z42 h3,
-html[data-theme] .framer-1ix845k [data-framer-name="Question"] p {
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-weight: 400 !important;
-  color: var(--ds-text-primary) !important;
-}
-
-/* Paragraphs & Secondary Text */
-html[data-theme] p.framer-text,
-html[data-theme] .framer-tqpn7m p,
-html[data-theme] .framer-1rg1he4 p,
-html[data-theme] .framer-1vobr7r p {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-  color: var(--ds-text-secondary) !important;
-  font-weight: 400 !important;
-  line-height: 1.6em !important;
-}
-
-/* Testimonial Quotes: Literary Serif Italic */
-html[data-theme] .framer-snd0k5 p,
-html[data-theme] .framer-jyvuhg p,
-html[data-theme] .framer-1s9h2ib p,
-html[data-theme] .framer-j0309i p,
-html[data-theme] .framer-17t2dpd p,
-html[data-theme] .framer-pk6y63 p {
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-style: italic !important;
-  font-weight: 300 !important;
-  font-size: 15px !important;
-  line-height: 1.65em !important;
-  color: var(--ds-text-primary) !important;
-}
-
-/* Rating Stars */
-html[data-theme] [data-framer-name="star"] svg path,
-html[data-theme] [data-framer-name="Stars"] svg path {
-  fill: var(--ds-accent) !important;
-}
-
-/* ==========================================================================
-   BUTTONS, BADGES, CTA & NAV
-   ========================================================================== */
-
-/* Category Badges */
-html[data-theme] .framer-AwuL6,
-html[data-theme] .framer-RypRx,
-html[data-theme] .framer-CZ0F5,
-html[data-theme] [data-framer-name="Primary / L"] {
+/* Odznaki i etykietki (Badges / Nowość w gabinecie / Terapia) */
+.framer-19d79z7,
+.framer-l6r7d3,
+[data-framer-name="Sec Btn"],
+[data-framer-name="Badge"] {
   background: var(--ds-badge-bg) !important;
   background-color: var(--ds-badge-bg) !important;
   border: 1px solid var(--ds-badge-border) !important;
   border-radius: var(--ds-badge-radius) !important;
 }
-html[data-theme] .framer-AwuL6 *,
-html[data-theme] .framer-RypRx *,
-html[data-theme] .framer-CZ0F5 *,
-html[data-theme] [data-framer-name="Primary / L"] * {
+.framer-19d79z7 p,
+.framer-l6r7d3 p,
+[data-framer-name="Sec Btn"] p {
   color: var(--ds-badge-text) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
 }
-html[data-theme] .framer-1yca21i {
-  background-color: var(--ds-card-bg-alt) !important;
+.framer-1yca21i {
+  background-color: var(--ds-color-1) !important;
   border-color: var(--ds-badge-border) !important;
 }
-html[data-theme] .framer-1yca21i * {
-  color: var(--ds-badge-text) !important;
-}
 
-/* Primary CTA Button */
-html[data-theme] .framer-SGVm4,
-html[data-theme] a[href*="kontakt"].framer-SGVm4,
-html[data-theme] button.framer-btn-primary {
-  background: var(--ds-accent) !important;
-  background-color: var(--ds-accent) !important;
-  border-radius: var(--ds-btn-radius) !important;
-  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.18) !important;
-  border: none !important;
-}
-html[data-theme] .framer-SGVm4:hover {
-  background: var(--ds-accent-hover) !important;
-  background-color: var(--ds-accent-hover) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 22px -3px rgba(0, 0, 0, 0.25) !important;
-}
-html[data-theme] .framer-SGVm4 * {
-  color: var(--ds-accent-text) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-  font-weight: 600 !important;
-}
-
-/* Secondary Button */
-html[data-theme] .framer-mR9ne,
-html[data-theme] a[href*="o-mnie"].framer-mR9ne {
-  background: var(--ds-secondary-btn-bg) !important;
-  background-color: var(--ds-secondary-btn-bg) !important;
-  border: 1px solid var(--ds-secondary-btn-border) !important;
-  border-radius: var(--ds-btn-radius) !important;
-}
-html[data-theme] .framer-mR9ne:hover {
-  border-color: var(--ds-text-primary) !important;
-  transform: translateY(-1px) !important;
-}
-html[data-theme] .framer-mR9ne * {
-  color: var(--ds-secondary-btn-text) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-  font-weight: 500 !important;
-}
-
-/* CTA Banner */
-html[data-theme] .framer-l8skex,
-html[data-theme] [data-framer-name="CTA Card"] {
-  background: var(--ds-cta-bg) !important;
-  background-color: var(--ds-cta-bg) !important;
-  border: 1px solid var(--ds-card-border) !important;
-  border-radius: var(--ds-card-radius) !important;
-  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.25) !important;
-}
-html[data-theme] .framer-l8skex h2,
-html[data-theme] [data-framer-name="CTA Card"] h2 {
-  color: var(--ds-cta-text) !important;
-  font-family: 'Merriweather', Georgia, serif !important;
-  font-weight: 300 !important;
-}
-html[data-theme] .framer-l8skex p,
-html[data-theme] [data-framer-name="CTA Card"] p {
-  color: var(--ds-cta-muted) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
-}
-
-/* Comparison badges */
-html[data-theme] .framer-litcfs {
-  background-color: var(--ds-accent) !important;
-}
-html[data-theme] .framer-13e0z7j {
-  background-color: var(--ds-card-bg-alt) !important;
-  border: 1px solid var(--ds-card-border) !important;
-}
-
-/* Fixed Header Navbar */
-html[data-theme] .framer-wp0bcl-container > div,
-html[data-theme] .framer-wp0bcl-container nav {
+/* Pasek nawigacji u góry (Header / Navbar) */
+.framer-olpvqv nav,
+.framer-SGVm4,
+[data-framer-name="Navbar"] {
   background: var(--ds-nav-bg) !important;
   background-color: var(--ds-nav-bg) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   border-bottom: 1px solid var(--ds-card-border) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-}
-html[data-theme] .framer-wp0bcl-container a {
-  color: var(--ds-text-primary) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
 }
 
-/* Footer Links & Text */
-html[data-theme] footer a {
-  color: var(--ds-text-secondary) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+/* Kolory ikon w stopce */
+.framer-1ub1g5t,
+.framer-2j2nm0 {
+  background-color: var(--ds-card-in-1) !important;
+  border: 1px solid var(--ds-card-border) !important;
 }
-html[data-theme] footer a:hover {
+
+/* Kolory tekstu */
+h1, h2, h3, h4 {
   color: var(--ds-text-primary) !important;
 }
-html[data-theme] footer p {
-  color: var(--ds-text-muted) !important;
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+p {
+  color: var(--ds-text-secondary);
 }
-
-/* Dark Theme SVGs */
-html[data-theme="ciemny-aksamit"] svg path[stroke="rgb(0,0,0)"] {
-  stroke: var(--ds-text-primary) !important;
-}
-html[data-theme="ciemny-aksamit"] svg path[fill="rgb(0,0,0)"] {
-  fill: var(--ds-text-primary) !important;
-}
-html[data-theme="ciemny-aksamit"] svg line[stroke="#9ca3af"] {
-  stroke: #736d82 !important;
-}
-
-/* ==========================================================================
-   FLOATING THEME SWITCHER TOOLBAR
-   ========================================================================== */
-#theme-switcher-widget {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 999999;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  box-sizing: border-box;
-}
-
-#theme-switcher-widget * {
-  box-sizing: border-box;
-}
-
-.tsw-toggle-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #1c1a22;
-  color: #f7f4fa;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  padding: 12px 22px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 12px 30px -5px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tsw-toggle-btn:hover {
-  transform: translateY(-2px);
-  background: #272530;
-  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.5);
-}
-
-.tsw-panel {
-  display: none;
-  position: absolute;
-  bottom: calc(100% + 14px);
-  right: 0;
-  width: 370px;
-  max-width: calc(100vw - 32px);
-  max-height: 82vh;
-  overflow-y: auto;
-  background: #17151e;
-  color: #f5f2f8;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 20px;
-  padding: 18px;
-  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-}
-
-.tsw-panel.is-open {
-  display: block;
-  animation: tswSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes tswSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.tsw-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 14px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.tsw-header h4 {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.tsw-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.tsw-close-btn,
-.tsw-copy-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #a39cb0;
-  border-radius: 8px;
-  padding: 5px 10px;
-  font-size: 11px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
-
-.tsw-close-btn:hover,
-.tsw-copy-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-}
-
-.tsw-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.tsw-theme-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  cursor: pointer;
-  transition: all 0.18s ease;
-  text-align: left;
-  width: 100%;
-}
-
-.tsw-theme-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateX(2px);
-}
-
-.tsw-theme-item.active {
-  background: rgba(176, 101, 67, 0.25);
-  border-color: #b06543;
-}
-
-.tsw-item-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.tsw-item-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.tsw-item-desc {
-  font-size: 11px;
-  color: #9f97ad;
-}
-
-.tsw-palette-preview {
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
-
-.tsw-swatch {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
-
-.tsw-toast {
-  display: none;
-  font-size: 11px;
-  color: #34d399;
-  text-align: center;
-  margin-top: 10px;
+.framer-text {
+  color: var(--ds-text-secondary);
 }
