@@ -1,6 +1,6 @@
 /**
- * Dominika Szylar - Multi-Variant Theme Switcher Engine
- * Zero remote dependencies, local-first
+ * Dominika Szylar - Artistic Monochromatic Theme Engine
+ * Zero zebra stripes, tone-on-tone card blending, Merriweather Light everywhere.
  */
 
 (function () {
@@ -8,79 +8,68 @@
     {
       id: "original",
       name: "Oryginał Framer",
-      desc: "Pierwotny szablon Framera",
-      font: "Inter / Geist",
-      swatches: ["#ffffff", "#0a0a0a", "#222222"]
+      desc: "Surowy pierwotny szablon",
+      swatches: ["#ffffff", "#222222", "#737373"]
     },
     {
-      id: "sage-wellness",
-      name: "1. Sage & Clean Wellness",
-      desc: "Szałwiowa zieleń, świeży medyczny ład",
-      font: "Plus Jakarta Sans",
-      swatches: ["#f8faf8", "#2e684d", "#182e22"]
+      id: "kaszmir-piasek",
+      name: "1. Ciepły Kaszmir & Piasek",
+      desc: "Spójny beż, len, cynamonowy akcent",
+      swatches: ["#f5efeb", "#ebe2d8", "#b06543"]
     },
     {
-      id: "warm-earth",
-      name: "2. Warm Sand & Earth",
-      desc: "Ciepły beż, cynamon, holistyczny",
-      font: "Playfair Display + Inter",
-      swatches: ["#faf6f0", "#bf6640", "#38271d"]
+      id: "szalwiowy-spokoj",
+      name: "2. Szałwiowa Harmonia",
+      desc: "Uspokajająca zieleń SPA i eukaliptus",
+      swatches: ["#edf3ee", "#e0ece3", "#2c6148"]
     },
     {
-      id: "nordic-pure",
-      name: "3. Nordic Minimalist",
-      desc: "Czysta biel, architektoniczny ład",
-      font: "Geist Pure",
-      swatches: ["#ffffff", "#0f172a", "#e2e8f0"]
+      id: "alabaster-krem",
+      name: "3. Kremowy Alabaster",
+      desc: "Szlachetna perła, miękki grafit, minimalizm",
+      swatches: ["#f9f8f5", "#f0ece5", "#232528"]
     },
     {
-      id: "forest-gold",
-      name: "4. Forest Deep & Gold",
-      desc: "Butelkowa zieleń, złoto, prestiż VIP",
-      font: "Cormorant + Inter",
-      swatches: ["#fbfbf9", "#153727", "#c9b788"]
+      id: "gleboki-mech",
+      name: "4. Głęboki Mech & Złoto",
+      desc: "Leśna oliwka, szampan, prestiż",
+      swatches: ["#f1f4ee", "#e4ebe0", "#193627"]
     },
     {
-      id: "soft-blush",
-      name: "5. Soft Blush & Power",
-      desc: "Pudrowy róż, zgaszony wrzos, kobiety",
-      font: "Outfit Rounded",
-      swatches: ["#fdf9f8", "#a35667", "#302023"]
+      id: "pudrowy-kwiat",
+      name: "5. Puder & Jedwab",
+      desc: "Ciepły różany nude, opieka poporodowa",
+      swatches: ["#f8f0ed", "#efe3df", "#9a4f5f"]
     },
     {
-      id: "athletic-energy",
-      name: "6. Athletic Energy",
-      desc: "Węglowy antracyt, dynamiczna limonka",
-      font: "Syne Grotesk",
-      swatches: ["#0f1216", "#10b981", "#1e232b"]
+      id: "terakota-ziemia",
+      name: "6. Terakota & Glinka",
+      desc: "Naturalna glina, terapia manualna",
+      swatches: ["#f4ece3", "#e8dccf", "#964227"]
     },
     {
-      id: "ocean-petrol",
-      name: "7. Ocean Petrol & Ice",
-      desc: "Morski petrol, mięta, terapia bólu",
-      font: "DM Sans",
-      swatches: ["#f4f8f9", "#196f7c", "#0e2a30"]
+      id: "morska-bryza",
+      name: "7. Morska Bryza & Mięta",
+      desc: "Chłodny błękit, oddech, kojenie bólu",
+      swatches: ["#eaf1f2", "#dbe7e9", "#18606b"]
     },
     {
-      id: "editorial-vogue",
-      name: "8. Editorial Vogue",
-      desc: "Wysoki kontrast, styl luksusowego magazynu",
-      font: "Cinzel + Inter",
-      swatches: ["#faf8f5", "#111111", "#ded7c8"]
+      id: "stary-pergamin",
+      name: "8. Stary Pergamin & Antykwa",
+      desc: "Kremowy papier, klimat paryskiej biblioteki",
+      swatches: ["#f6f2e8", "#ece5d6", "#2c261f"]
     },
     {
-      id: "terracotta-craft",
-      name: "9. Terracotta Craft",
-      desc: "Rdzawa glinka, naturalny len, manualna",
-      font: "Fraunces + Inter",
-      swatches: ["#f7f2eb", "#9b442a", "#302018"]
+      id: "sloneczny-bursztyn",
+      name: "9. Słoneczny Bursztyn",
+      desc: "Ciepła wanilia, złoto, optymistyczna energia",
+      swatches: ["#f7f3e8", "#efe6d4", "#a66b24"]
     },
     {
-      id: "obsidian-luxe",
-      name: "10. Modern Obsidian Dark",
-      desc: "Satynowy ciemny luksus, ciepła miedź",
-      font: "Satoshi",
-      swatches: ["#0c0d10", "#e07a5f", "#1a1d24"]
+      id: "ciemny-aksamit",
+      name: "10. Ciemny Aksamit & Miedź",
+      desc: "Satynowy grafit, miedziany blask, relaks",
+      swatches: ["#131217", "#1d1c24", "#d9795f"]
     }
   ];
 
@@ -102,7 +91,7 @@
 
   function applyTheme(themeId) {
     const validTheme = THEMES.find(t => t.id === themeId);
-    const activeId = validTheme ? validTheme.id : 'original';
+    const activeId = validTheme ? validTheme.id : 'kaszmir-piasek';
 
     if (activeId === 'original') {
       document.documentElement.removeAttribute('data-theme');
@@ -128,7 +117,7 @@
       }
     });
 
-    const activeObj = THEMES.find(t => t.id === activeId) || THEMES[0];
+    const activeObj = THEMES.find(t => t.id === activeId) || THEMES[1];
     const toggleLabel = document.querySelector('.tsw-active-label');
     if (toggleLabel) {
       toggleLabel.textContent = activeObj.name.replace(/^\d+\.\s*/, '');
@@ -151,7 +140,7 @@
         <button type="button" class="tsw-theme-item" data-theme-id="${t.id}">
           <div class="tsw-item-info">
             <span class="tsw-item-title">${t.name}</span>
-            <span class="tsw-item-desc">${t.desc} &bull; <i>${t.font}</i></span>
+            <span class="tsw-item-desc">${t.desc}</span>
           </div>
           <div class="tsw-palette-preview">
             ${swatchesHtml}
@@ -176,14 +165,14 @@
         <div class="tsw-grid">
           ${listHtml}
         </div>
-        <div style="margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center;">
-          <a href="${galleryUrl}" style="color: #60a5fa; text-decoration: none; font-size: 11px; font-weight: 600;">📊 Zobacz zestawienie wszystkich wariantów &rarr;</a>
+        <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center;">
+          <a href="${galleryUrl}" style="color: #d9795f; text-decoration: none; font-size: 11px; font-weight: 600;">📊 Zobacz zestawienie wszystkich 10 wariantów &rarr;</a>
         </div>
         <div class="tsw-toast" id="tsw-toast">Skopiowano link do schowka!</div>
       </div>
       <button type="button" class="tsw-toggle-btn" id="tsw-toggle">
         <span style="font-size:16px;">🎨</span>
-        <span>Wariant: <strong class="tsw-active-label">Wybierz</strong></span>
+        <span>Styl: <strong class="tsw-active-label">Wybierz</strong></span>
       </button>
     `;
 
@@ -212,7 +201,7 @@
           toast.style.display = 'none';
         }, 2200);
       } catch (err) {
-        alert('Skopiuj ten adres URL: ' + window.location.href);
+        prompt('Skopiuj ten link:', window.location.href);
       }
     });
 
@@ -224,7 +213,7 @@
       });
     });
 
-    // Keyboard shortcut (Shift + T to toggle)
+    // Keyboard shortcut (Shift + T)
     window.addEventListener('keydown', (e) => {
       if (e.shiftKey && e.key.toLowerCase() === 't') {
         panel.classList.toggle('is-open');
@@ -242,7 +231,8 @@
       savedTheme = localStorage.getItem('ds_theme');
     } catch (e) {}
 
-    const initialTheme = paramTheme || savedTheme || 'original';
+    // Default to 'kaszmir-piasek' as the primary refined variant!
+    const initialTheme = paramTheme || savedTheme || 'kaszmir-piasek';
     applyTheme(initialTheme);
   });
 })();

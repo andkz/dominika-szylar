@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Przegląd Wariantów Wizualnych | Dominika Szylar Fizjoterapia</title>
+  <title>Artystyczne Warianty Monochromatyczne | Dominika Szylar</title>
   <link rel="stylesheet" href="../fonts/variants.css">
   <style>
     :root {
-      --bg: #0f1216;
-      --card: #181d24;
-      --border: #262e3b;
-      --text: #f1f5f9;
-      --muted: #94a3b8;
-      --accent: #10b981;
+      --bg: #141318;
+      --card: #1d1b24;
+      --border: #2e2a3b;
+      --text: #f5f2f8;
+      --muted: #a097ad;
+      --accent: #b06543;
     }
     * {
       box-sizing: border-box;
@@ -22,63 +22,65 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       line-height: 1.6;
-      padding: 40px 20px 80px;
+      padding: 48px 24px 90px;
     }
     .container {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
     }
     header {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 56px;
     }
     .badge {
       display: inline-block;
-      padding: 6px 16px;
-      background: rgba(16, 185, 129, 0.15);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 6px 18px;
+      background: rgba(176, 101, 67, 0.18);
+      color: #e59373;
+      border: 1px solid rgba(176, 101, 67, 0.35);
       border-radius: 999px;
       font-size: 13px;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      letter-spacing: 0.03em;
     }
     h1 {
-      font-size: 38px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
+      font-family: 'Merriweather', Georgia, serif;
+      font-weight: 300;
+      font-size: 42px;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
       color: #ffffff;
     }
     p.lead {
       font-size: 17px;
       color: var(--muted);
-      max-width: 700px;
-      margin: 0 auto 24px;
+      max-width: 740px;
+      margin: 0 auto 28px;
     }
     .actions-top {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
     }
     .btn-main {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #10b981;
-      color: #042f1f;
+      background: #b06543;
+      color: #fffdfb;
       text-decoration: none;
-      font-weight: 700;
-      padding: 12px 24px;
+      font-weight: 600;
+      padding: 12px 26px;
       border-radius: 10px;
       transition: transform 0.2s, background 0.2s;
     }
     .btn-main:hover {
       transform: translateY(-2px);
-      background: #34d399;
+      background: #c7744f;
     }
     .btn-outline {
       display: inline-flex;
@@ -87,38 +89,38 @@
       background: rgba(255, 255, 255, 0.05);
       color: #ffffff;
       text-decoration: none;
-      font-weight: 600;
-      padding: 12px 20px;
+      font-weight: 500;
+      padding: 12px 22px;
       border-radius: 10px;
       border: 1px solid var(--border);
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
     .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 28px;
+      gap: 32px;
     }
     .variant-card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 10px 30px -5px rgba(0,0,0,0.4);
+      box-shadow: 0 14px 34px -8px rgba(0,0,0,0.5);
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s;
     }
     .variant-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.3);
     }
     .card-preview {
-      padding: 28px 24px 20px;
+      padding: 24px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      position: relative;
     }
     .card-meta {
       padding: 24px;
@@ -128,10 +130,11 @@
       flex: 1;
     }
     .variant-title {
-      font-size: 20px;
-      font-weight: 700;
+      font-family: 'Merriweather', Georgia, serif;
+      font-weight: 300;
+      font-size: 21px;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .variant-desc {
       font-size: 14px;
@@ -142,7 +145,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: #64748b;
+      color: #7d738d;
       font-weight: 700;
       margin-bottom: 6px;
     }
@@ -157,32 +160,35 @@
       gap: 6px;
       padding: 4px 8px;
       border-radius: 6px;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.3);
       border: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 11px;
       font-family: monospace;
     }
     .color-dot {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.3);
       flex-shrink: 0;
     }
     .font-info {
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.25);
       border: 1px solid rgba(255, 255, 255, 0.06);
       padding: 10px 14px;
-      border-radius: 8px;
+      border-radius: 10px;
     }
     .font-name {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      color: #e2e8f0;
+      color: #e59373;
     }
     .font-sample {
-      font-size: 16px;
+      font-family: 'Merriweather', Georgia, serif;
+      font-weight: 300;
+      font-size: 15px;
       margin-top: 4px;
+      color: #f5f2f8;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -190,7 +196,7 @@
     .card-footer {
       padding: 16px 24px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
-      background: rgba(0, 0, 0, 0.15);
+      background: rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -201,65 +207,73 @@
       align-items: center;
       justify-content: center;
       flex: 1;
-      padding: 10px 16px;
+      padding: 11px 16px;
       border-radius: 8px;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       text-decoration: none;
       color: #ffffff;
-      background: #2563eb;
+      background: #b06543;
       transition: background 0.2s, transform 0.15s;
     }
     .launch-btn:hover {
-      background: #1d4ed8;
+      background: #c7744f;
       transform: translateY(-1px);
     }
     .copy-btn {
-      padding: 10px 14px;
+      padding: 11px 14px;
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: #e2e8f0;
       cursor: pointer;
       font-size: 13px;
       transition: background 0.15s;
     }
     .copy-btn:hover {
-      background: rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.18);
     }
 
-    /* Live Mini Preview Box */
-    .mini-hero {
+    /* Live Tone-on-tone Mini Box */
+    .mini-canvas {
+      border-radius: 14px;
+      padding: 22px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .mini-card {
+      padding: 16px;
       border-radius: 12px;
-      padding: 20px;
-      border: 1px solid transparent;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
     }
     .mini-badge {
       display: inline-block;
       font-size: 10px;
       font-weight: 600;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 999px;
       margin-bottom: 8px;
     }
     .mini-h1 {
-      font-size: 17px;
-      line-height: 1.2;
-      font-weight: 700;
+      font-family: 'Merriweather', Georgia, serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.3;
       margin-bottom: 6px;
     }
     .mini-p {
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 12px;
-      line-height: 1.4;
+      line-height: 1.45;
       margin-bottom: 12px;
       opacity: 0.85;
     }
     .mini-btn {
       display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 11px;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 6px;
       text-decoration: none;
     }
@@ -268,366 +282,377 @@
 <body>
   <div class="container">
     <header>
-      <div class="badge">🎨 Studio Wariantów Wizualnych</div>
-      <h1>10 Wariantów Stylistycznych dla Dominiki Szylar</h1>
-      <p class="lead">Przetestuj różne nastroje, palety kolorystyczne i zestawy typograficzne. Każdy wariant możesz otworzyć jednym kliknięciem na pełnej stronie lub skopiować link do konsultacji.</p>
+      <div class="badge">✦ Kolekcja Monochromatyczna ✦</div>
+      <h1>10 Autorskich Wariantów dla Dominiki Szylar</h1>
+      <p class="lead">Całkowity brak pasiastej „zebry”. Pełna harmonia tonalna (karty wyrastają z tła zamiast razić bielą), nagłówki w lekkim i poetyckim Merriweather Light (300) oraz subtelne ambientowe światło.</p>
       <div class="actions-top">
-        <a href="../index.html" class="btn-main">🌐 Otwórz stronę główną z przełącznikiem</a>
-        <a href="../index.html?theme=sage-wellness" class="btn-outline">🌿 Wariant 1: Sage Wellness</a>
-        <a href="../index.html?theme=warm-earth" class="btn-outline">🌾 Wariant 2: Warm Earth</a>
-        <a href="../index.html?theme=forest-gold" class="btn-outline">🌲 Wariant 4: Forest VIP</a>
+        <a href="../index.html" class="btn-main">🌐 Otwórz stronę z wariantem 1 (Kaszmir)</a>
+        <a href="../index.html?theme=szalwiowy-spokoj" class="btn-outline">🌿 2. Szałwia</a>
+        <a href="../index.html?theme=gleboki-mech" class="btn-outline">🌲 4. Mech & Złoto</a>
+        <a href="../index.html?theme=pudrowy-kwiat" class="btn-outline">🌸 5. Puder & Jedwab</a>
+        <a href="../index.html?theme=ciemny-aksamit" class="btn-outline">🌌 10. Aksamit Dark</a>
       </div>
     </header>
 
     <div class="grid">
 
-      <!-- 1. Sage & Clean Wellness -->
+      <!-- 1. Ciepły Kaszmir & Piasek -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #f8faf8; border-color: #dfe7df; color: #182e22;">
-            <div class="mini-badge" style="background: #e3ede5; color: #214f3a; border: 1px solid #c4d7c8;">Fizjoterapia Kobiet</div>
-            <div class="mini-h1" style="font-family: 'Plus Jakarta Sans', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #45584d; font-family: 'Plus Jakarta Sans', sans-serif;">Skuteczna terapia dna miednicy, wsparcie w ciąży i regeneracja.</div>
-            <div class="mini-btn" style="background: #2e684d; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f5efeb;">
+            <div class="mini-card" style="background: #ebe2d8; border-color: #ddd1c3; color: #2d211a;">
+              <div class="mini-badge" style="background: #e4d7cb; color: #5a3320; border: 1px solid #d0c0b0;">Fizjoterapia Kobiet</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #5e4d43;">Terapia dna miednicy, wsparcie w ciąży i powrót do formy.</div>
+              <div class="mini-btn" style="background: #b06543; color: #fffdfb; border-radius: 8px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">1. Sage & Clean Wellness</div>
-            <div class="variant-desc">Świeży, naturalny, medyczny ład. Połączenie uspokajającej szałwii, kremowych bieli i leśnego grafitu. Nowoczesne podejście eko-medycyny.</div>
+            <div class="variant-title">1. Ciepły Kaszmir & Piasek</div>
+            <div class="variant-desc">Monochromatyczny, ciepły piasek i naturalny len. Karty w odcieniu kaszmiru idealnie wtapiają się w tło. Ciepły cynamonowy akcent.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#f8faf8"></span>#F8FAF8</div>
-              <div class="color-chip"><span class="color-dot" style="background:#2e684d"></span>#2E684D</div>
-              <div class="color-chip"><span class="color-dot" style="background:#182e22"></span>#182E22</div>
-              <div class="color-chip"><span class="color-dot" style="background:#dfe7df"></span>#DFE7DF</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f5efeb"></span>Tło: #F5EFEB</div>
+              <div class="color-chip"><span class="color-dot" style="background:#ebe2d8"></span>Karta: #EBE2D8</div>
+              <div class="color-chip"><span class="color-dot" style="background:#b06543"></span>Akcent: #B06543</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Plus Jakarta Sans</div>
-            <div class="font-sample" style="font-family: 'Plus Jakarta Sans', sans-serif;">Nowoczesny, humanistyczny, bardzo czytelny</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Lekka, poetycka antykwa o szlachetnym cieple</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=sage-wellness" class="launch-btn" style="background: #2e684d;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('sage-wellness')">🔗</button>
+          <a href="../index.html?theme=kaszmir-piasek" class="launch-btn" style="background: #b06543;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('kaszmir-piasek')">🔗</button>
         </div>
       </div>
 
-      <!-- 2. Warm Sand & Earth -->
+      <!-- 2. Szałwiowa Harmonia -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #faf6f0; border-color: #e6dacb; color: #38271d;">
-            <div class="mini-badge" style="background: #f4e8dc; color: #7d3c22; border: 1px solid #e5d1bf;">Holistyczne Wsparcie</div>
-            <div class="mini-h1" style="font-family: 'Playfair Display', serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #6b5647; font-family: 'Inter', sans-serif;">Ciepła, bezpieczna atmosfera bez pośpiechu i oceny.</div>
-            <div class="mini-btn" style="background: #bf6640; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #edf3ee;">
+            <div class="mini-card" style="background: #e0ece3; border-color: #ccdccf; color: #1a3024;">
+              <div class="mini-badge" style="background: #d4e5d8; color: #1e4733; border: 1px solid #bbd3bf;">Opieka Uroginekologiczna</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #41574b;">Uspokajająca zieleń szałwii, redukcja napięć i spokój.</div>
+              <div class="mini-btn" style="background: #2c6148; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">2. Warm Sand & Earth</div>
-            <div class="variant-desc">Ciepły piaskowy beż, terakota i cynamonowy orzech. Bardzo kobiecy, przyjazny, redukujący lęk przed pierwszą wizytą ginekologiczną.</div>
+            <div class="variant-title">2. Szałwiowa Harmonia</div>
+            <div class="variant-desc">Kojący klimat aromaterapii i ogrodu leczniczego. Jednolity szałwiowy ton w całym serwisie z dopasowanymi kartami.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#faf6f0"></span>#FAF6F0</div>
-              <div class="color-chip"><span class="color-dot" style="background:#bf6640"></span>#BF6640</div>
-              <div class="color-chip"><span class="color-dot" style="background:#38271d"></span>#38271D</div>
-              <div class="color-chip"><span class="color-dot" style="background:#e6dacb"></span>#E6DACB</div>
+              <div class="color-chip"><span class="color-dot" style="background:#edf3ee"></span>Tło: #EDF3EE</div>
+              <div class="color-chip"><span class="color-dot" style="background:#e0ece3"></span>Karta: #E0ECE3</div>
+              <div class="color-chip"><span class="color-dot" style="background:#2c6148"></span>Akcent: #2C6148</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Playfair Display + Inter</div>
-            <div class="font-sample" style="font-family: 'Playfair Display', serif;">Elegancki, szlachetny szeryf nagłówków</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Uspokajający, medyczny, pełen zaufania</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=warm-earth" class="launch-btn" style="background: #bf6640;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('warm-earth')">🔗</button>
+          <a href="../index.html?theme=szalwiowy-spokoj" class="launch-btn" style="background: #2c6148;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('szalwiowy-spokoj')">🔗</button>
         </div>
       </div>
 
-      <!-- 3. Nordic Minimalist -->
+      <!-- 3. Kremowy Alabaster -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #ffffff; border-color: #e2e8f0; color: #0f172a;">
-            <div class="mini-badge" style="background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0;">Precyzja Medyczna</div>
-            <div class="mini-h1" style="font-family: 'Geist', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #475569; font-family: 'Geist', sans-serif;">Dokładna diagnostyka funkcjonalna i nowoczesna terapia.</div>
-            <div class="mini-btn" style="background: #0f172a; color: #ffffff; border-radius: 6px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f9f8f5;">
+            <div class="mini-card" style="background: #f0ece5; border-color: #e0d9ce; color: #232528;">
+              <div class="mini-badge" style="background: #e8e2d7; color: #35383d; border: 1px solid #d6cdbe;">Precyzja & Estetyka</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #555960;">Czysta kość słoniowa z miękkimi perłowymi kartami.</div>
+              <div class="mini-btn" style="background: #232528; color: #f9f8f5; border-radius: 6px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">3. Nordic Minimalist</div>
-            <div class="variant-desc">Skandynawski ład, porcelanowa biel, atramentowy grafit i precyzyjne cienkie linie. Rzetelność, profesjonalizm, zero ozdobników.</div>
+            <div class="variant-title">3. Kremowy Alabaster</div>
+            <div class="variant-desc">Bardzo jasny, ale szlachetny i miękki. Zero surowej szpitalnej bieli — perłowe tło i delikatnie ciemniejsze kremowe karty.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#ffffff"></span>#FFFFFF</div>
-              <div class="color-chip"><span class="color-dot" style="background:#0f172a"></span>#0F172A</div>
-              <div class="color-chip"><span class="color-dot" style="background:#475569"></span>#475569</div>
-              <div class="color-chip"><span class="color-dot" style="background:#e2e8f0"></span>#E2E8F0</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f9f8f5"></span>Tło: #F9F8F5</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f0ece5"></span>Karta: #F0ECE5</div>
+              <div class="color-chip"><span class="color-dot" style="background:#232528"></span>Tekst: #232528</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Geist Pure</div>
-            <div class="font-sample" style="font-family: 'Geist', sans-serif;">Architektoniczny, geometryczny, modernistyczny</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Czysta, nieskazitelna elegancja</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=nordic-pure" class="launch-btn" style="background: #0f172a;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('nordic-pure')">🔗</button>
+          <a href="../index.html?theme=alabaster-krem" class="launch-btn" style="background: #232528;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('alabaster-krem')">🔗</button>
         </div>
       </div>
 
-      <!-- 4. Forest Deep & Gold -->
+      <!-- 4. Głęboki Mech & Złoto -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #fbfbf9; border-color: #e0e4d7; color: #12281d;">
-            <div class="mini-badge" style="background: #edf2eb; color: #153727; border: 1px solid #cdd9cb;">Klinika VIP</div>
-            <div class="mini-h1" style="font-family: 'Cormorant Garamond', serif; font-size: 19px;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #3f5247; font-family: 'Inter', sans-serif;">Najwyższy standard opieki i nowoczesna technologia INDIBA®.</div>
-            <div class="mini-btn" style="background: #153727; color: #f5eed9; border-radius: 6px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f1f4ee;">
+            <div class="mini-card" style="background: #e4ebe0; border-color: #cfdac9; color: #13261c;">
+              <div class="mini-badge" style="background: #d7e3d1; color: #163323; border: 1px solid #bfd3b7;">Klinika VIP</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #3a4e43;">Zaawansowana technologia INDIBA® i intymny komfort.</div>
+              <div class="mini-btn" style="background: #193627; color: #f5eedb; border-radius: 6px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">4. Forest Deep & Gold</div>
-            <div class="variant-desc">Butelkowa leśna zieleń, szampańskie złoto i heban. Wrażenie elitarnego, prywatnego gabinetu o najwyższym standardzie opieki.</div>
+            <div class="variant-title">4. Głęboki Mech & Złoto</div>
+            <div class="variant-desc">Oliwa, leśny mech i subtelny szampan. Prestiż prywatnej kliniki o najwyższych standardach medycznych.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#fbfbf9"></span>#FBFBF9</div>
-              <div class="color-chip"><span class="color-dot" style="background:#153727"></span>#153727</div>
-              <div class="color-chip"><span class="color-dot" style="background:#c9b788"></span>#C9B788</div>
-              <div class="color-chip"><span class="color-dot" style="background:#12281d"></span>#12281D</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f1f4ee"></span>Tło: #F1F4EE</div>
+              <div class="color-chip"><span class="color-dot" style="background:#e4ebe0"></span>Karta: #E4EBE0</div>
+              <div class="color-chip"><span class="color-dot" style="background:#193627"></span>Akcent: #193627</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Cormorant Garamond + Inter</div>
-            <div class="font-sample" style="font-family: 'Cormorant Garamond', serif; font-size: 18px;">Luksusowa klasyka z francuską gracją</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Dostojny, głęboki, budzący szacunek</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=forest-gold" class="launch-btn" style="background: #153727;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('forest-gold')">🔗</button>
+          <a href="../index.html?theme=gleboki-mech" class="launch-btn" style="background: #193627;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('gleboki-mech')">🔗</button>
         </div>
       </div>
 
-      <!-- 5. Soft Blush & Power -->
+      <!-- 5. Pudrowy Kwiat & Jedwab -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #fdf9f8; border-color: #eedadb; color: #302023;">
-            <div class="mini-badge" style="background: #f6e5e8; color: #7b3242; border: 1px solid #e9ccd2;">Zdrowie Kobiet</div>
-            <div class="mini-h1" style="font-family: 'Outfit', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #665054; font-family: 'Outfit', sans-serif;">Wzmocnienie mięśni głębokich i bezpieczny powrót do formy.</div>
-            <div class="mini-btn" style="background: #a35667; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f8f0ed;">
+            <div class="mini-card" style="background: #efe3df; border-color: #e2cfca; color: #352024;">
+              <div class="mini-badge" style="background: #e6d4cf; color: #6f2e3c; border: 1px solid #d4bfb8;">Zdrowie Kobiet</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #664e53;">Regeneracja po porodzie, mobilizacja blizn i opieka.</div>
+              <div class="mini-btn" style="background: #9a4f5f; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">5. Soft Blush & Power</div>
-            <div class="variant-desc">Pudrowy róż, zgaszony wrzos i ciepły grafit. Przyjazna, kobieca estetyka dedykowana młodym mamom i kobietom w każdym wieku.</div>
+            <div class="variant-title">5. Puder & Jedwab</div>
+            <div class="variant-desc">Ciepły, pudrowy nude i różany piasek. Kobiecy, delikatny i bezpieczny — redukuje stres przed wizytą.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#fdf9f8"></span>#FDF9F8</div>
-              <div class="color-chip"><span class="color-dot" style="background:#a35667"></span>#A35667</div>
-              <div class="color-chip"><span class="color-dot" style="background:#302023"></span>#302023</div>
-              <div class="color-chip"><span class="color-dot" style="background:#eedadb"></span>#EEDADB</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f8f0ed"></span>Tło: #F8F0ED</div>
+              <div class="color-chip"><span class="color-dot" style="background:#efe3df"></span>Karta: #EFE3DF</div>
+              <div class="color-chip"><span class="color-dot" style="background:#9a4f5f"></span>Akcent: #9A4F5F</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Outfit Rounded</div>
-            <div class="font-sample" style="font-family: 'Outfit', sans-serif;">Przyjazny, łagodny, z zaokrąglonymi kształtami</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Czuły, łagodny, pełen empatii</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=soft-blush" class="launch-btn" style="background: #a35667;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('soft-blush')">🔗</button>
+          <a href="../index.html?theme=pudrowy-kwiat" class="launch-btn" style="background: #9a4f5f;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('pudrowy-kwiat')">🔗</button>
         </div>
       </div>
 
-      <!-- 6. Athletic Energy -->
+      <!-- 6. Terakota & Glinka -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #0f1216; border-color: #2c333e; color: #f8fafc;">
-            <div class="mini-badge" style="background: #132820; color: #34d399; border: 1px solid #1a4231;">Trening Siłowy & Progres</div>
-            <div class="mini-h1" style="font-family: 'Syne', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #94a3b8; font-family: 'Inter', sans-serif;">Mądry trening, budowanie siły i stabilności bez kontuzji.</div>
-            <div class="mini-btn" style="background: #10b981; color: #052216; border-radius: 6px; font-weight: 800;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f4ece3;">
+            <div class="mini-card" style="background: #e8dccf; border-color: #d8c7b5; color: #331e15;">
+              <div class="mini-badge" style="background: #dfcebf; color: #6c2a15; border: 1px solid #ccb7a4;">Terapia Manualna</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #5f483d;">Ciepły dotyk, uziemienie i manualna praca z tkankami.</div>
+              <div class="mini-btn" style="background: #964227; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">6. Athletic Energy (Dark)</div>
-            <div class="variant-desc">Sportowy, węglowy ciemny motyw z neonowym akcentem szmaragdowo-limonkowym. Podkreśla siłę, dynamikę, progres i sprawność fizyczną.</div>
+            <div class="variant-title">6. Terakota & Glinka</div>
+            <div class="variant-desc">Naturalna glinka ceramiczna, surowy len i palony brąz. Fizjoterapia jako rzemiosło pracy z ciałem.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#0f1216"></span>#0F1216</div>
-              <div class="color-chip"><span class="color-dot" style="background:#10b981"></span>#10B981</div>
-              <div class="color-chip"><span class="color-dot" style="background:#1e232b"></span>#1E232B</div>
-              <div class="color-chip"><span class="color-dot" style="background:#f8fafc"></span>#F8FAFC</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f4ece3"></span>Tło: #F4ECE3</div>
+              <div class="color-chip"><span class="color-dot" style="background:#e8dccf"></span>Karta: #E8DCCF</div>
+              <div class="color-chip"><span class="color-dot" style="background:#964227"></span>Akcent: #964227</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Syne Grotesk</div>
-            <div class="font-sample" style="font-family: 'Syne', sans-serif;">Mocny, odważny, z charakterem</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Organiczny, surowy, z duszą i rzemiosłem</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=athletic-energy" class="launch-btn" style="background: #10b981; color: #042618;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('athletic-energy')">🔗</button>
+          <a href="../index.html?theme=terakota-ziemia" class="launch-btn" style="background: #964227;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('terakota-ziemia')">🔗</button>
         </div>
       </div>
 
-      <!-- 7. Ocean Petrol & Ice -->
+      <!-- 7. Morska Bryza & Mięta -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #f4f8f9; border-color: #d0e0e5; color: #0e2a30;">
-            <div class="mini-badge" style="background: #dbedf1; color: #11535d; border: 1px solid #bdd9e1;">Terapia Bólu</div>
-            <div class="mini-h1" style="font-family: 'DM Sans', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #3b565d; font-family: 'DM Sans', sans-serif;">Regeneracja powięziowa, praca z oddechem i likwidacja napięć.</div>
-            <div class="mini-btn" style="background: #196f7c; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #eaf1f2;">
+            <div class="mini-card" style="background: #dbe7e9; border-color: #c6d8db; color: #102b30;">
+              <div class="mini-badge" style="background: #cedeeb; color: #12464e; border: 1px solid #b2cbd3;">Ulga w Bólu</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #385257;">Praca z oddechem, uelastycznienie i ukojenie napięć.</div>
+              <div class="mini-btn" style="background: #18606b; color: #ffffff; border-radius: 999px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">7. Ocean Petrol & Ice</div>
-            <div class="variant-desc">Głęboki morski petrol, chłodna arktyczna mięta i przejrzyste perłowe tła. Działa kojąco na ból, wycisza układ nerwowy.</div>
+            <div class="variant-title">7. Morska Bryza & Mięta</div>
+            <div class="variant-desc">Chłodny błękit, eukaliptus i kojąca mięta. Działa jak przeciwbólowy kompres, ułatwiając głęboki oddech.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#f4f8f9"></span>#F4F8F9</div>
-              <div class="color-chip"><span class="color-dot" style="background:#196f7c"></span>#196F7C</div>
-              <div class="color-chip"><span class="color-dot" style="background:#0e2a30"></span>#0E2A30</div>
-              <div class="color-chip"><span class="color-dot" style="background:#d0e0e5"></span>#D0E0E5</div>
+              <div class="color-chip"><span class="color-dot" style="background:#eaf1f2"></span>Tło: #EAF1F2</div>
+              <div class="color-chip"><span class="color-dot" style="background:#dbe7e9"></span>Karta: #DBE7E9</div>
+              <div class="color-chip"><span class="color-dot" style="background:#18606b"></span>Akcent: #18606B</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: DM Sans</div>
-            <div class="font-sample" style="font-family: 'DM Sans', sans-serif;">Czysty, zbalansowany, odświeżający</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Przejrzysty, głęboki, przynoszący ulgę</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=ocean-petrol" class="launch-btn" style="background: #196f7c;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('ocean-petrol')">🔗</button>
+          <a href="../index.html?theme=morska-bryza" class="launch-btn" style="background: #18606b;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('morska-bryza')">🔗</button>
         </div>
       </div>
 
-      <!-- 8. Editorial Vogue -->
+      <!-- 8. Stary Pergamin & Antykwa -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #faf8f5; border-color: #ded7c8; color: #111111;">
-            <div class="mini-badge" style="background: #ffffff; color: #111111; border: 1px solid #111111; border-radius: 2px;">Vogue Wellness</div>
-            <div class="mini-h1" style="font-family: 'Cinzel', serif; font-size: 18px; letter-spacing: 0.04em;">POCZUJ ULGĘ I ZAUFANIE DO CIAŁA</div>
-            <div class="mini-p" style="color: #4a4a4a; font-family: 'Inter', sans-serif;">Prywatne konsultacje i indywidualne plany rehabilitacyjne.</div>
-            <div class="mini-btn" style="background: #111111; color: #ffffff; border-radius: 2px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f6f2e8;">
+            <div class="mini-card" style="background: #ece5d6; border-color: #ded4bf; color: #1f1c18;">
+              <div class="mini-badge" style="background: #e3d9c5; color: #2c261f; border: 1px solid #cfc2a8; border-radius: 4px;">Paryski Magazyn</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #4d473e;">Książkowa kompozycja, subtelne ramki, styl editorial.</div>
+              <div class="mini-btn" style="background: #2c261f; color: #f6f2e8; border-radius: 4px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">8. Editorial Vogue</div>
-            <div class="variant-desc">Styl prestiżowego magazynu modowego i wellness. Maksymalny kontrast czerni z ciepłym papierem, ostre geometryczne krawędzie.</div>
+            <div class="variant-title">8. Stary Pergamin & Antykwa</div>
+            <div class="variant-desc">Atmosfera paryskiej biblioteki lub prestiżowego magazynu. Papier pergaminowy, ostre krawędzie i klasa.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#faf8f5"></span>#FAF8F5</div>
-              <div class="color-chip"><span class="color-dot" style="background:#111111"></span>#111111</div>
-              <div class="color-chip"><span class="color-dot" style="background:#4a4a4a"></span>#4A4A4A</div>
-              <div class="color-chip"><span class="color-dot" style="background:#ded7c8"></span>#DED7C8</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f6f2e8"></span>Tło: #F6F2E8</div>
+              <div class="color-chip"><span class="color-dot" style="background:#ece5d6"></span>Karta: #ECE5D6</div>
+              <div class="color-chip"><span class="color-dot" style="background:#2c261f"></span>Akcent: #2C261F</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Cinzel + Inter</div>
-            <div class="font-sample" style="font-family: 'Cinzel', serif;">Wyrazista, dostojna antykwa nagłówków</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Ponadczasowy, literacki szyk</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=editorial-vogue" class="launch-btn" style="background: #111111;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('editorial-vogue')">🔗</button>
+          <a href="../index.html?theme=stary-pergamin" class="launch-btn" style="background: #2c261f;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('stary-pergamin')">🔗</button>
         </div>
       </div>
 
-      <!-- 9. Terracotta Craft -->
+      <!-- 9. Słoneczny Bursztyn & Wanilia -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #f7f2eb; border-color: #ded2c2; color: #302018;">
-            <div class="mini-badge" style="background: #f1e3d4; color: #73301c; border: 1px solid #dfc8b2;">Terapia Manualna</div>
-            <div class="mini-h1" style="font-family: 'Fraunces', serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #604d42; font-family: 'Inter', sans-serif;">Mobilizacja blizn, praca mięśniowo-powięziowa, bezpieczny dotyk.</div>
-            <div class="mini-btn" style="background: #9b442a; color: #ffffff; border-radius: 10px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #f7f3e8;">
+            <div class="mini-card" style="background: #efe6d4; border-color: #e0d2b8; color: #302613;">
+              <div class="mini-badge" style="background: #e6dac1; color: #6b4312; border: 1px solid #d4c29f;">Energia & Witalność</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #5c4e33;">Ciepła słoneczna wanilia i miodowy bursztyn.</div>
+              <div class="mini-btn" style="background: #a66b24; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">9. Terracotta Craft</div>
-            <div class="variant-desc">Naturalna glina, surowy len i palone drewno. Podkreśla fizjoterapeutyczne rzemiosło pracy z ciałem, dotyk i uziemienie.</div>
+            <div class="variant-title">9. Słoneczny Bursztyn</div>
+            <div class="variant-desc">Ciepłe popołudniowe słońce, maślana wanilia i miodowy optymizm. Dodaje otuchy i energii do działania.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#f7f2eb"></span>#F7F2EB</div>
-              <div class="color-chip"><span class="color-dot" style="background:#9b442a"></span>#9B442A</div>
-              <div class="color-chip"><span class="color-dot" style="background:#302018"></span>#302018</div>
-              <div class="color-chip"><span class="color-dot" style="background:#ded2c2"></span>#DED2C2</div>
+              <div class="color-chip"><span class="color-dot" style="background:#f7f3e8"></span>Tło: #F7F3E8</div>
+              <div class="color-chip"><span class="color-dot" style="background:#efe6d4"></span>Karta: #EFE6D4</div>
+              <div class="color-chip"><span class="color-dot" style="background:#a66b24"></span>Akcent: #A66B24</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Fraunces + Inter</div>
-            <div class="font-sample" style="font-family: 'Fraunces', serif;">Organiczny, miękki szeryf z duszą</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Słoneczny, optymistyczny, podnoszący na duchu</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=terracotta-craft" class="launch-btn" style="background: #9b442a;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('terracotta-craft')">🔗</button>
+          <a href="../index.html?theme=sloneczny-bursztyn" class="launch-btn" style="background: #a66b24;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('sloneczny-bursztyn')">🔗</button>
         </div>
       </div>
 
-      <!-- 10. Modern Obsidian Dark -->
+      <!-- 10. Ciemny Aksamit & Miedź -->
       <div class="variant-card">
         <div class="card-preview">
-          <div class="mini-hero" style="background: #0c0d10; border-color: #282d38; color: #f3f4f6;">
-            <div class="mini-badge" style="background: #211918; color: #f28e75; border: 1px solid #3d2925;">Studio Treningowe VIP</div>
-            <div class="mini-h1" style="font-family: 'Satoshi', sans-serif;">Poczuj ulgę i zaufanie do swojego ciała</div>
-            <div class="mini-p" style="color: #9ca3af; font-family: 'Satoshi', sans-serif;">Prywatne treningi personalne i zaawansowana regeneracja.</div>
-            <div class="mini-btn" style="background: #e07a5f; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+          <div class="mini-canvas" style="background: #131217;">
+            <div class="mini-card" style="background: #1d1c24; border-color: #2e2c3a; color: #f3eff5;">
+              <div class="mini-badge" style="background: #262330; color: #f09b84; border: 1px solid #3d374f;">Intymny Dark Mode</div>
+              <div class="mini-h1">Poczuj ulgę i zaufanie do swojego ciała</div>
+              <div class="mini-p" style="color: #a29db0;">Aksamitny grafit, wieczorny relaks i ciepła miedź.</div>
+              <div class="mini-btn" style="background: #d9795f; color: #ffffff; border-radius: 8px;">Umów wizytę</div>
+            </div>
           </div>
         </div>
         <div class="card-meta">
           <div>
-            <div class="variant-title">10. Modern Obsidian Dark</div>
-            <div class="variant-desc">Satynowy, wieczorny dark mode z ciepłymi miedziano-koralowymi akcentami. Bardzo ekskluzywne, prywatne i nowoczesne wrażenie.</div>
+            <div class="variant-title">10. Ciemny Aksamit & Miedź</div>
+            <div class="variant-desc">Intymny, satynowy dark mode bez agresywnego kontrastu. Ciepłe miedziane światło w nocnym zaciszu gabinetu.</div>
           </div>
           <div>
-            <div class="chips-label">Paleta Kolorów</div>
+            <div class="chips-label">Spójna Paleta Barw</div>
             <div class="color-palette">
-              <div class="color-chip"><span class="color-dot" style="background:#0c0d10"></span>#0C0D10</div>
-              <div class="color-chip"><span class="color-dot" style="background:#e07a5f"></span>#E07A5F</div>
-              <div class="color-chip"><span class="color-dot" style="background:#1a1d24"></span>#1A1D24</div>
-              <div class="color-chip"><span class="color-dot" style="background:#282d38"></span>#282D38</div>
+              <div class="color-chip"><span class="color-dot" style="background:#131217"></span>Tło: #131217</div>
+              <div class="color-chip"><span class="color-dot" style="background:#1d1c24"></span>Karta: #1D1C24</div>
+              <div class="color-chip"><span class="color-dot" style="background:#d9795f"></span>Akcent: #D9795F</div>
             </div>
           </div>
           <div class="font-info">
-            <div class="font-name">Font: Satoshi</div>
-            <div class="font-sample" style="font-family: 'Satoshi', sans-serif;">Wyrafinowany, nowoczesny sans-serif</div>
+            <div class="font-name">Nagłówki: Merriweather Light (300)</div>
+            <div class="font-sample">Dyskretny, zmysłowy, uspokajający wzrok</div>
           </div>
         </div>
         <div class="card-footer">
-          <a href="../index.html?theme=obsidian-luxe" class="launch-btn" style="background: #e07a5f;">Otwórz ten wariant ➔</a>
-          <button type="button" class="copy-btn" onclick="copyLink('obsidian-luxe')">🔗</button>
+          <a href="../index.html?theme=ciemny-aksamit" class="launch-btn" style="background: #d9795f;">Otwórz ten wariant ➔</a>
+          <button type="button" class="copy-btn" onclick="copyLink('ciemny-aksamit')">🔗</button>
         </div>
       </div>
 
